@@ -6,10 +6,38 @@ import { Card } from "../components/ui/card"
 import { Input } from "../components/ui/input"
 import { Badge } from "../components/ui/badge"
 import { Network, Zap, Globe, Upload, Database, Link2, Play } from "lucide-react"
+import { uploadGraph } from "../lib/api";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"url" | "upload" | "dataset">("url")
   const [url, setUrl] = useState("")
+
+  //for uploading files
+  const [uploadFile, setUploadFile] = useState<File | null>(null);
+  const [uploadResult, setUploadResult] = useState<any | null>(null);
+  const [uploadLoading, setUploadLoading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  //upload handler 
+  async function handleUpload() {
+  if (!uploadFile) {
+    setUploadError("Please upload a file first.");
+    return;
+  }
+
+  setUploadLoading(true);
+  setUploadError(null);
+  setUploadResult(null);
+
+  try {
+    const result = await uploadGraph(uploadFile, 10);
+    setUploadResult(result.top);
+  } catch (err: any) {
+    setUploadError(err.message);
+  } finally {
+    setUploadLoading(false);
+  }
+}
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1a1f3a] via-[#253058] to-[#2d2550]">
@@ -173,6 +201,7 @@ export default function Home() {
       </section>
 
       {/* Try the Demo Section */}
+      
       <section className="px-4 py-16">
         <div className="container mx-auto max-w-6xl">
           <h2 className="mb-4 text-center text-4xl font-bold text-white md:text-5xl">
@@ -261,14 +290,56 @@ export default function Home() {
 
             {/* Upload Tab Content */}
             {activeTab === "upload" && (
-              <div className="space-y-6">
-                <div className="rounded-lg border-2 border-dashed border-slate-600 bg-slate-900/50 p-12 text-center">
-                  <Upload className="mx-auto mb-4 h-12 w-12 text-slate-400" />
-                  <p className="mb-2 text-white">Drop your graph file here or click to browse</p>
-                  <p className="text-sm text-slate-400">Supports CSV and JSON formats</p>
-                </div>
-              </div>
-            )}
+  <div className="space-y-6">
+
+    {/* Upload Box */}
+    <div className="rounded-lg border-2 border-dashed border-slate-600 bg-slate-900/50 p-12 text-center">
+      <input
+        type="file"
+        id="file-upload"
+        className="hidden"
+        onChange={(e) => setUploadFile(e.target.files?.[0] || null)}
+      />
+      <label htmlFor="file-upload" className="cursor-pointer">
+        <Upload className="mx-auto mb-4 h-12 w-12 text-slate-400" />
+        <p className="mb-2 text-white">Drop your graph file here or click to browse</p>
+        <p className="text-sm text-slate-400">Supports TXT edge lists</p>
+      </label>
+    </div>
+
+    {/* Run Button */}
+    <Button
+      onClick={handleUpload}
+      disabled={uploadLoading}
+      className="bg-blue-500 text-white hover:bg-blue-600"
+    >
+      {uploadLoading ? "Running PageRank..." : "Run PageRank"}
+    </Button>
+
+    {/* Results */}
+    <Card className="border-slate-700 bg-slate-900/50 p-6">
+      <h3 className="mb-2 text-lg font-semibold text-white">Results</h3>
+
+      {uploadError && <p className="text-red-400">{uploadError}</p>}
+
+      {uploadResult && (
+        <ul className="space-y-2 text-white">
+          {uploadResult.map((node: any, idx: number) => (
+            <li key={idx}>
+              <span className="font-bold">Node {node.node}</span> → {node.score.toFixed(10)}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {!uploadResult && !uploadError && (
+        <p className="text-slate-400">Upload a graph to see PageRank scores.</p>
+      )}
+    </Card>
+
+  </div>
+)}
+
 
             {/* Dataset Tab Content */}
             {activeTab === "dataset" && (
