@@ -102,7 +102,7 @@ def main():
 
     args = parser.parse_args()
 
-    repo_root = os.path.join(os.path.dirname(__file__), "..")
+    repo_root = os.path.dirname(__file__)
     data_dir = os.path.join(repo_root, "data")
     output_path = os.path.join(data_dir, args.output)
 
