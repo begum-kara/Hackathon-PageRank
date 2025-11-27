@@ -12,7 +12,9 @@ export async function uploadGraph(file: File, topK: number): Promise<PageRankRes
   formData.append("file", file);
   formData.append("top_k", String(topK));
 
-  const res = await fetch("http://localhost:8000/api/pagerank/file", {
+  //const res = await fetch("http://localhost:8000/api/pagerank/file", {
+    const res = await fetch("http://172.17.255.190:8000/api/pagerank/file", {
+
     method: "POST",
     body: formData,
     // 👇 VERY IMPORTANT: must be client-side
