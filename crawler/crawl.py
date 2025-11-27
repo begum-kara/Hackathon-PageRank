@@ -31,8 +31,7 @@ def extract_text(html: str) -> str:
     """
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text(separator=" ", strip=True)
-    # collapse multiple spaces
-    text = " ".join(text.split())
+    text = " ".join(text.split())  # collapse spaces
     return text
 
 
@@ -41,9 +40,12 @@ def crawl(start_url, max_pages, output_file):
     base_netloc = urlparse(start_url).netloc
 
     visited = set()
-    edges = []
-    pages = []  # list of {"url": ..., "text": ...}
+    edges = []  # (source_url, target_id)
+    pages = []  # {"id":..., "url":..., "text":...}
     queue = deque([start_url])
+
+    url_to_id = {}
+    next_id = 0
 
     session = requests.Session()
 
@@ -68,45 +70,59 @@ def crawl(start_url, max_pages, output_file):
             continue
 
         html = resp.text
+
+        # ----- assign ID to this page -----
+        if url not in url_to_id:
+            url_to_id[url] = next_id
+            next_id += 1
+        page_id = url_to_id[url]
+
+        # ----- store page text -----
+        page_text = extract_text(html)
+        pages.append({"id": page_id, "url": url, "text": page_text})
+
+        # ----- parse links -----
         soup = BeautifulSoup(html, "html.parser")
 
-        # --- collect page text for TF-IDF / search ---
-        page_text = extract_text(html)
-        pages.append({"url": url, "text": page_text})
-
-        # --- collect edges (links) for PageRank ---
         for a in soup.find_all("a", href=True):
             href = a["href"]
             target = urljoin(url, href)
             target = normalize_url(target)
 
-            # only stay inside same host
             if not is_same_domain(target, base_netloc):
                 continue
 
-            # ignore mailto and similar
             if target.startswith("mailto:") or target.startswith("javascript:"):
                 continue
 
-            edges.append((url, target))
+            # assign ID to target
+            if target not in url_to_id:
+                url_to_id[target] = next_id
+                next_id += 1
+            target_id = url_to_id[target]
+
+            # --- CSV now has source URL string + target ID ---
+            edges.append((url, target_id))
 
             if target not in visited:
                 queue.append(target)
 
-    # --- write edge list CSV ---
+    # --- write edges.csv ---
     with open(output_file, "w", newline="", encoding="utf8") as f:
         writer = csv.writer(f)
-        writer.writerow(["source", "target"])
+        writer.writerow(["source", "target_id"])
         writer.writerows(edges)
 
-    # --- write pages.json next to the CSV (same folder: crawler/data/) ---
+    # --- write pages.json next to CSV ---
     pages_dir = os.path.dirname(output_file)
     pages_path = os.path.join(pages_dir, "pages.json")
+
     with open(pages_path, "w", encoding="utf8") as jf:
         json.dump(pages, jf, ensure_ascii=False, indent=2)
 
-    print(f"\nDone.")
+    print("\nDone.")
     print(f"Pages visited: {len(visited)}")
+    print(f"Unique pages: {len(url_to_id)}")
     print(f"Edges collected: {len(edges)}")
     print(f"Saved edges to {output_file}")
     print(f"Saved pages to {pages_path}")
@@ -134,6 +150,7 @@ def main():
 
     repo_root = os.path.dirname(__file__)
     data_dir = os.path.join(repo_root, "data")
+    os.makedirs(data_dir, exist_ok=True)
     output_path = os.path.join(data_dir, args.output)
 
     crawl(args.start_url, args.max_pages, output_path)
