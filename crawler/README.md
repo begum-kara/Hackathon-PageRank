@@ -1,18 +1,18 @@
-🚀 Crawler Usage Guide
+## 🚀 Crawler Usage Guide
 
 This folder contains the web crawler that generates the input graph for our C++ PageRank engine.
 It crawls a website, collects internal links, and saves them as a CSV file in the project’s /data/ directory.
 
-📦 1. Setup (one time)
-1) Open a terminal
+## 📦 1. Setup (one time)
+### 1) Open a terminal
 
 PowerShell, macOS Terminal, or Linux console.
 
-2) Navigate to the crawler folder
+### 2) Navigate to the crawler folder
 
 `cd Hackathon-PageRank/crawler`
 
-3) Create & activate a virtual environment
+### 3) Create & activate a virtual environment
 
 macOS / Linux
 
@@ -25,11 +25,11 @@ Windows (PowerShell)
 `python -m venv .venv
 .\.venv\Scripts\activate`
 
-4) Install dependencies
+### 4) Install dependencies
 
 `pip install -r requirements.txt`
 
-▶️ 2. Running the crawler
+## ▶️ 2. Running the crawler
 
 Activate the venv (same command as above), then run:
 
@@ -44,7 +44,7 @@ This produces:
 
 Hackathon-PageRank/data/python.csv
 
-📁 3. Output format
+## 📁 3. Output format
 
 Each row in the CSV represents a directed edge:
 
@@ -56,7 +56,7 @@ https://www.python.org/about,https://www.python.org/jobs
 
 The C++ PageRank engine uses this file to build the graph.
 
-🔁 4. Notes & Tips
+## 🔁 4. Notes & Tips
 
 Only same-domain links are followed
 
@@ -68,7 +68,7 @@ All output files are saved to:
 
 Hackathon-PageRank/data/<filename.csv>
 
-🧪 5. Example session
+## 🧪 5. Example session
 `cd Hackathon-PageRank/crawler
 source .venv/bin/activate    # Windows: .\.venv\Scripts\activate
 
