@@ -19,7 +19,7 @@ This project implements the PageRank algorithm using both CPU and CUDA backends,
      |   |-- main.py
      |   |-- requirements.txt
      |-- README.md
-     |-- LICENCE.md
+     |-- LICENCE
 </pre>
 
 ## What is PageRank
