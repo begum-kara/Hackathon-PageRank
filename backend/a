@@ -1,0 +1,10 @@
+Graph summary:
+  N (nodes) : 4
+  M (edges) : 6
+  Dangling nodes: 0
+
+Top 4 nodes by PageRank:
+  node 0 : 0.3245614030
+  node 2 : 0.3245614030
+  node 1 : 0.1754385970
+  node 3 : 0.1754385970

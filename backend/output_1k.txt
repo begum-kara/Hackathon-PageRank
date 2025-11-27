@@ -1,0 +1,16 @@
+Graph summary:
+  N (nodes) : 1000
+  M (edges) : 10000
+  Dangling nodes: 0
+
+Top 10 nodes by PageRank:
+  node 542 : 0.0026460511
+  node 265 : 0.0024032261
+  node 607 : 0.0020719925
+  node 838 : 0.0019410592
+  node 986 : 0.0019035931
+  node 701 : 0.0018464508
+  node 846 : 0.0018158514
+  node 306 : 0.0017929831
+  node 155 : 0.0017308630
+  node 366 : 0.0017251124
