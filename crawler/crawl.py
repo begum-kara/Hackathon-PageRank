@@ -5,9 +5,14 @@ from urllib.parse import urljoin, urlparse
 from collections import deque
 import csv
 import argparse
+import json
 
 
 def is_same_domain(url, base_netloc):
+    """
+    Simple same-host check:
+    Only keep links that stay on the exact same host as the start URL.
+    """
     try:
         return urlparse(url).netloc == base_netloc
     except Exception:
@@ -20,12 +25,24 @@ def normalize_url(url):
     return parsed._replace(fragment="").geturl()
 
 
+def extract_text(html: str) -> str:
+    """
+    Extract visible text from HTML and clean it up a bit.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text(separator=" ", strip=True)
+    # collapse multiple spaces
+    text = " ".join(text.split())
+    return text
+
+
 def crawl(start_url, max_pages, output_file):
     start_url = normalize_url(start_url)
     base_netloc = urlparse(start_url).netloc
 
     visited = set()
     edges = []
+    pages = []  # list of {"url": ..., "text": ...}
     queue = deque([start_url])
 
     session = requests.Session()
@@ -50,14 +67,20 @@ def crawl(start_url, max_pages, output_file):
         if resp.status_code != 200 or "text/html" not in content_type:
             continue
 
-        soup = BeautifulSoup(resp.text, "html.parser")
+        html = resp.text
+        soup = BeautifulSoup(html, "html.parser")
 
+        # --- collect page text for TF-IDF / search ---
+        page_text = extract_text(html)
+        pages.append({"url": url, "text": page_text})
+
+        # --- collect edges (links) for PageRank ---
         for a in soup.find_all("a", href=True):
             href = a["href"]
             target = urljoin(url, href)
             target = normalize_url(target)
 
-            # only stay inside same domain
+            # only stay inside same host
             if not is_same_domain(target, base_netloc):
                 continue
 
@@ -70,16 +93,23 @@ def crawl(start_url, max_pages, output_file):
             if target not in visited:
                 queue.append(target)
 
-    # write edge list
+    # --- write edge list CSV ---
     with open(output_file, "w", newline="", encoding="utf8") as f:
         writer = csv.writer(f)
         writer.writerow(["source", "target"])
         writer.writerows(edges)
 
+    # --- write pages.json next to the CSV (same folder: crawler/data/) ---
+    pages_dir = os.path.dirname(output_file)
+    pages_path = os.path.join(pages_dir, "pages.json")
+    with open(pages_path, "w", encoding="utf8") as jf:
+        json.dump(pages, jf, ensure_ascii=False, indent=2)
+
     print(f"\nDone.")
     print(f"Pages visited: {len(visited)}")
     print(f"Edges collected: {len(edges)}")
-    print(f"Saved to {output_file}")
+    print(f"Saved edges to {output_file}")
+    print(f"Saved pages to {pages_path}")
 
 
 def main():
