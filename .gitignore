@@ -14,3 +14,5 @@ __pycache__/
 data/
 
 node_modules/
+crawler/data/*
+!crawler/data/.gitkeep
