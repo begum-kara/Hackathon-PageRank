@@ -40,3 +40,14 @@ $$L_j$$ = number of outgoing links from page j
 The sum is over all pages linking to i.
 
 The algorithm repeats this computation until ranks converge.
+
+## Run the frontend locally
+
+```bash
+cd frontend
+corepack enable
+corepack prepare pnpm@latest --activate
+pnpm install
+pnpm dev
+```
+Then open: http://localhost:3000

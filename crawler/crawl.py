@@ -132,9 +132,8 @@ def main():
 
     args = parser.parse_args()
 
-    # save into crawler/data/<output>
-    script_dir = os.path.dirname(__file__)
-    data_dir = os.path.join(script_dir, "data")
+    repo_root = os.path.dirname(__file__)
+    data_dir = os.path.join(repo_root, "data")
     output_path = os.path.join(data_dir, args.output)
 
     crawl(args.start_url, args.max_pages, output_path)

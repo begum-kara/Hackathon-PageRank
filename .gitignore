@@ -11,8 +11,9 @@ __pycache__/
 .vscode/
 .idea/
 
-data/
+backend/data/
 
-node_modules/
-crawler/data/*
-!crawler/data/.gitkeep
+frontend/node_modules/
+
+frontend/.next/
+frontend/out/
