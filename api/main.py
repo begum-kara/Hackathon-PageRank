@@ -9,13 +9,16 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse, urlunparse
 from config import CLUSTER_USER, CLUSTER_HOST, REMOTE_WORKDIR, REMOTE_BIN
-from tfidf_index import TfidfSearchIndex 
+from tfidf_index import TfidfSearchIndex, create_tfidf_index
 from pydantic import BaseModel
 import sys
 
-API_DIR = Path(__file__).resolve().parent
+# For running via "python this_file.py"
+import uvicorn
 
+API_DIR = Path(__file__).resolve().parent
 ROOT_DIR = API_DIR.parent
+
 if str(ROOT_DIR) not in sys.path:
     sys.path.append(str(ROOT_DIR))
 
@@ -31,22 +34,50 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-ROOT_DIR = API_DIR.parent
 CRAWLER_PAGES_PATH = ROOT_DIR / "crawler" / "data" / "pages.json"
 PAGERANK_PATH = ROOT_DIR / "backend" / "data" / "pagerank.json"
 
-# Regex for cluster output 
+# Regex for cluster output
 TOP_LINE_RE = re.compile(r"^\s*node\s+(\d+)\s*:\s*([0-9\.Ee+-]+)\s*$")
 
-# Global search state 
+# Global search state
 tfidf_index: TfidfSearchIndex | None = None
 pages_by_url = {}           # url -> full page dict from crawler
 pagerank_by_url = {}        # url -> raw pagerank score
 pagerank_norm_by_url = {}   # url -> normalized pagerank score in [0, 1]
 
 
-# Offline data loading & index building (runs at startup)
+# ---------------------------------------------------------------------------
+# URL normalization (shared)
+# ---------------------------------------------------------------------------
 
+def normalize_url_backend(url: str) -> str:
+    """
+    Normalize URLs so minor variants map to the same key:
+    - lowercase host
+    - remove fragment (#...)
+    - normalize trailing slash (treat '/foo' and '/foo/' as same, except root '/')
+    """
+    parsed = urlparse(url)
+
+    # lowercase host
+    netloc = parsed.netloc.lower()
+
+    # drop fragment
+    parsed = parsed._replace(fragment="")
+
+    # normalize path
+    path = parsed.path or "/"
+    if path != "/" and path.endswith("/"):
+        path = path.rstrip("/")
+
+    parsed = parsed._replace(netloc=netloc, path=path)
+    return urlunparse(parsed)
+
+
+# ---------------------------------------------------------------------------
+# Offline data loading & index building (runs at startup)
+# ---------------------------------------------------------------------------
 
 def _load_data_and_build_index():
     global tfidf_index, pages_by_url, pagerank_by_url, pagerank_norm_by_url
@@ -60,7 +91,8 @@ def _load_data_and_build_index():
 
     # pages is like: [{ "id": ..., "url": "...", "text": "..." }, ...]
     pages_by_url = {}
-    index = TfidfSearchIndex()
+    # Use factory: GPU on cluster if available, CPU fallback on macOS
+    index = create_tfidf_index()
 
     for p in pages:
         raw_url = p["url"]
@@ -86,7 +118,6 @@ def _load_data_and_build_index():
 
     index.finalize()
     tfidf_index = index
-
 
     # ---- Load PageRank (CUDA output) ----
     pagerank_by_url = {}
@@ -125,30 +156,6 @@ def _load_data_and_build_index():
 
     print(f"[search] Loaded {len(pages_by_url)} pages, {len(pagerank_by_url)} PageRank scores.")
 
-#removing duplicate urls 
-def normalize_url_backend(url: str) -> str:
-    """
-    Normalize URLs so minor variants map to the same key:
-    - lowercase host
-    - remove fragment (#...)
-    - normalize trailing slash (treat '/foo' and '/foo/' as same, except root '/')
-    """
-    parsed = urlparse(url)
-
-    # lowercase host
-    netloc = parsed.netloc.lower()
-
-    # drop fragment
-    parsed = parsed._replace(fragment="")
-
-    # normalize path
-    path = parsed.path or "/"
-    if path != "/" and path.endswith("/"):
-        path = path.rstrip("/")
-
-    parsed = parsed._replace(netloc=netloc, path=path)
-    return urlunparse(parsed)
-
 
 @app.on_event("startup")
 async def startup_event():
@@ -160,7 +167,9 @@ async def startup_event():
         print(f"[startup] ERROR while building search index: {e}")
 
 
+# ---------------------------------------------------------------------------
 # Helper: call CUDA PageRank on cluster
+# ---------------------------------------------------------------------------
 
 def run_pagerank_on_cluster(local_input_path: str, top_k: int = 10):
     # 1) Upload file to cluster
@@ -215,13 +224,17 @@ def run_pagerank_on_cluster(local_input_path: str, top_k: int = 10):
     os.remove(local_output)
     return ranks
 
-#URL search
+
+# ---------------------------------------------------------------------------
+# URL PageRank endpoint
+# ---------------------------------------------------------------------------
+
 class UrlPageRankRequest(BaseModel):
     url: str
-    max_pages: int = 30   
-    top_k: int = 20      
-    
-    
+    max_pages: int = 30
+    top_k: int = 20
+
+
 @app.post("/api/pagerank/url")
 async def pagerank_from_url(payload: UrlPageRankRequest):
     start_url = payload.url.strip()
@@ -302,7 +315,9 @@ async def pagerank_from_url(payload: UrlPageRankRequest):
     }
 
 
+# ---------------------------------------------------------------------------
 # Existing endpoint: run PageRank on uploaded graph
+# ---------------------------------------------------------------------------
 
 @app.post("/api/pagerank/file")
 async def pagerank_file(file: UploadFile = File(...), top_k: int = Form(10)):
@@ -321,7 +336,9 @@ async def pagerank_file(file: UploadFile = File(...), top_k: int = Form(10)):
     return {"top": result}
 
 
+# ---------------------------------------------------------------------------
 # Helper: snippet generator for search results
+# ---------------------------------------------------------------------------
 
 def _make_snippet(text: str, query: str, max_len: int = 220) -> str:
     """
@@ -356,7 +373,9 @@ def _make_snippet(text: str, query: str, max_len: int = 220) -> str:
     return snippet
 
 
+# ---------------------------------------------------------------------------
 # New endpoint: search over TUM pages (TF-IDF + PageRank)
+# ---------------------------------------------------------------------------
 
 @app.get("/api/search")
 async def search_tum(
@@ -413,11 +432,14 @@ async def search_tum(
     }
 
 
-# Health check
+# ---------------------------------------------------------------------------
+# Health / debug endpoints
+# ---------------------------------------------------------------------------
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
 
 @app.get("/debug/search-status")
 def debug_search_status():
@@ -426,3 +448,19 @@ def debug_search_status():
         "num_pages": len(pages_by_url),
         "num_pagerank": len(pagerank_by_url),
     }
+
+
+# ---------------------------------------------------------------------------
+# Main entrypoint for local testing
+# ---------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(
+        "api.main:app",   # module:variable path to your FastAPI app
+        host="0.0.0.0",
+        port=8000,
+        reload=True,
+    )
+
