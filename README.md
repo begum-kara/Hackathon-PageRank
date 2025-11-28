@@ -30,8 +30,11 @@ This project implements the PageRank algorithm using both CPU and CUDA backends.
   │   ├── lib/
   │   ├── hooks/
   │   ├── styles/
+  │   ├── next-env.d.ts
   │   ├── next.config.mjs
   │   ├── package.json
+  │   ├── pnpm-lock.yaml  
+  │   ├── postccs.config.mjs
   │   └── tsconfig.json
   │
   ├── start.sh                
