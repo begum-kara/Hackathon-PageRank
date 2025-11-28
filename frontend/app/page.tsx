@@ -96,7 +96,7 @@ function MouseTrail() {
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<
-    "url" | "upload" | "dataset" | "wikipedia"
+    "url" | "upload" | "wikipedia"
   >("url");
   const [url, setUrl] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -196,10 +196,6 @@ export default function Home() {
         // URL mode is a PageRank demo, not TF-IDF search
         setSearchResults(null)
         return
-      }
-      else if (activeTab === "dataset") {
-        // Same, you can later switch datasets & call backend accordingly.
-        alert("Dataset demo not wired yet. You can try Upload or Search tabs.");
       }
     } catch (err: any) {
       console.error(err);
@@ -332,17 +328,6 @@ export default function Home() {
               >
                 <Upload className="mr-2 h-4 w-4" />
                 Upload
-              </Button>
-              <Button
-                onClick={() => setActiveTab("dataset")}
-                className={
-                  activeTab === "dataset"
-                    ? "bg-blue-500 text-white hover:bg-blue-600"
-                    : "bg-slate-700 text-slate-300 hover:bg-slate-600"
-                }
-              >
-                <Database className="mr-2 h-4 w-4" />
-                Dataset
               </Button>
               <Button
                 onClick={() => setActiveTab("wikipedia")}
@@ -599,7 +584,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-3 text-slate-300">
                     <span className="mt-1 h-2 w-2 rounded-full bg-blue-400" />
-                    <span>Use pre-loaded datasets</span>
+                    <span>Search query using keywords</span>
                   </li>
                 </ul>
               </div>
@@ -692,24 +677,24 @@ function ResultsDisplay({
           <h3 className="mb-4 text-lg font-semibold text-white">
             Top Ranked Pages
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-3 break-words">
             {results.pages.map((page) => (
               <div
                 key={page.rank}
-                className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-950/50 p-3"
+                className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-950/50 p-3 "
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3  max-w-full overflow-hidden">
                   <Badge
                     variant="outline"
-                    className="border-blue-400/50 bg-blue-950/30 text-blue-300"
+                    className="border-blue-400/50 bg-blue-950/30 text-blue-300 break-all"
                   >
                     #{page.rank}
                   </Badge>
-                  <span className="text-sm font-medium text-white">
+                  <span className="text-sm font-medium text-white break-all">
                     {page.name}
                   </span>
                 </div>
-                <span className="text-sm font-semibold text-orange-400">
+                <span className="text-sm font-semibold text-orange-400 pl-3">
                   {page.score.toFixed(3)}
                 </span>
               </div>
