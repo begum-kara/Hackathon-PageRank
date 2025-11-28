@@ -1,1452 +1,997 @@
 [
   {
-    "id": 207,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-alumni-unternehmen/tum-start-up-wall",
-    "score": 0.0034495088844152004
-  },
-  {
-    "id": 4,
-    "url": "https://www.tum.de/aktuelles/veranstaltungen/terminuebersicht",
-    "score": 0.0034494396967708497
-  },
-  {
-    "id": 65,
-    "url": "https://www.tum.de/studium/bewerbung/studienformen/studienkolleg",
-    "score": 0.003449225514032321
-  },
-  {
-    "id": 15,
-    "url": "https://www.tum.de/aktuelles/serien/newin",
-    "score": 0.003448947909286471
-  },
-  {
-    "id": 18,
-    "url": "https://www.tum.de/studium/studienangebot",
-    "score": 0.003448947909286471
-  },
-  {
-    "id": 178,
-    "url": "https://www.tum.de/forschung/forschungsziele/nachhaltiger-lebensraum",
-    "score": 0.0034488955914689836
-  },
-  {
-    "id": 182,
-    "url": "https://www.tum.de/forschung/forschungsziele/digitalisierung-ki-und-quantentechnologien",
-    "score": 0.0034488955914689836
-  },
-  {
-    "id": 229,
-    "url": "https://www.tum.de/community/campusleben/musik-und-kunst/center-for-culture-and-arts",
-    "score": 0.003448869112247072
-  },
-  {
-    "id": 69,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-beginnen/fit-for-tum",
-    "score": 0.003448842419483048
-  },
-  {
-    "id": 184,
-    "url": "https://www.tum.de/forschung/forschungsziele/digitalisierung-ki-und-quantentechnologien/quantentechnologien",
-    "score": 0.003448842419483048
-  },
-  {
-    "id": 233,
-    "url": "https://www.tum.de/community/public-engagement",
-    "score": 0.003448815726719024
-  },
-  {
-    "id": 13,
-    "url": "https://www.tum.de/aktuelles/podcasts/we-are-tum",
-    "score": 0.0034487617005646396
-  },
-  {
-    "id": 284,
-    "url": "https://www.tum.de/ueber-die-tum/fan-der-tum",
-    "score": 0.0034487617005646396
-  },
-  {
-    "id": 166,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-mitarbeitende/people-development/faculty",
-    "score": 0.0034487617005646396
-  },
-  {
-    "id": 9,
-    "url": "https://www.tum.de/aktuelles/magazin",
-    "score": 0.0034487617005646396
-  },
-  {
-    "id": 221,
-    "url": "https://www.tum.de/community",
-    "score": 0.0034487343671742786
-  },
-  {
-    "id": 236,
-    "url": "https://www.tum.de/community/globales-netzwerk",
-    "score": 0.0034486792733093327
-  },
-  {
-    "id": 47,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/dokumentenglossar",
-    "score": 0.0034486792733093327
-  },
-  {
-    "id": 177,
-    "url": "https://www.tum.de/forschung/forschungsziele/medizin-und-gesundheit",
-    "score": 0.0034486792733093327
-  },
-  {
-    "id": 245,
-    "url": "https://www.tum.de/ueber-die-tum/ziele-und-werte/gender-und-diversity",
-    "score": 0.0034486515128347483
-  },
-  {
-    "id": 176,
-    "url": "https://www.tum.de/forschung/forschungsziele/grundlagen-des-lebens",
-    "score": 0.003448623752360163
-  },
-  {
-    "id": 58,
-    "url": "https://www.tum.de/studium/bewerbung/master/bewerbung-master",
-    "score": 0.003448623752360163
-  },
-  {
-    "id": 194,
-    "url": "https://www.tum.de/innovation",
-    "score": 0.003448623752360163
-  },
-  {
-    "id": 180,
-    "url": "https://www.tum.de/forschung/forschungsziele/materialien-und-fertigungstechnologien",
-    "score": 0.0034485955648013537
-  },
-  {
-    "id": 219,
-    "url": "https://www.tum.de/innovation/oekosystem-muenchen",
-    "score": 0.0034485955648013537
-  },
-  {
-    "id": 173,
-    "url": "https://www.tum.de/forschung/exzellenzcluster",
-    "score": 0.0034485955648013537
-  },
-  {
-    "id": 161,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-mitarbeitende/people-development/mental-health-day",
-    "score": 0.0034485955648013537
-  },
-  {
-    "id": 256,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/geschichte",
-    "score": 0.0034485955648013537
-  },
-  {
-    "id": 193,
-    "url": "https://www.tum.de/forschung/service-fuer-forschende",
-    "score": 0.003448567163700432
-  },
-  {
-    "id": 56,
-    "url": "https://www.tum.de/studium/bewerbung/bachelor/bewerbung-bachelor",
-    "score": 0.003448567163700432
-  },
-  {
-    "id": 255,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/preise-auszeichnungen/auszeichnungen-der-universitaet",
-    "score": 0.003448567163700432
-  },
-  {
-    "id": 222,
-    "url": "https://www.tum.de/community/onboarding",
-    "score": 0.0034485387625995106
-  },
-  {
-    "id": 46,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/zulassungsvoraussetzungen/sprachnachweise",
-    "score": 0.0034485387625995106
-  },
-  {
-    "id": 232,
-    "url": "https://www.tum.de/community/campusleben/musik-und-kunst/museen-und-ausstellungen",
-    "score": 0.0034485387625995106
-  },
-  {
-    "id": 3,
-    "url": "https://www.tum.de/aktuelles/veranstaltungen",
-    "score": 0.0034485101479564766
-  },
-  {
-    "id": 130,
-    "url": "https://www.tum.de/studium/lehre/didaktik/pruefungen-gestalten",
-    "score": 0.0034485101479564766
-  },
-  {
-    "id": 214,
-    "url": "https://www.tum.de/innovation/entrepreneurship/news-events/tum-entrepreneurship-day",
-    "score": 0.0034485101479564766
-  },
-  {
-    "id": 295,
-    "url": "https://www.tum.de/mitarbeitende",
-    "score": 0.0034485101479564766
-  },
-  {
-    "id": 185,
-    "url": "https://www.tum.de/forschung/forschungsziele/technik-und-gesellschaft",
-    "score": 0.0034484813197713307
-  },
-  {
-    "id": 16,
-    "url": "https://www.tum.de/aktuelles/serien/one-topic-one-loop",
-    "score": 0.0034484813197713307
-  },
-  {
-    "id": 235,
-    "url": "https://www.tum.de/community/public-engagement/dialog-und-partnerschaft-mit-der-gesellschaft",
-    "score": 0.0034484813197713307
-  },
-  {
-    "id": 238,
-    "url": "https://www.tum.de/community/globales-netzwerk/singapur",
-    "score": 0.0034484813197713307
-  },
-  {
-    "id": 215,
-    "url": "https://www.tum.de/innovation/entrepreneurship/news-events/tum-ideaward",
-    "score": 0.003448452278044073
-  },
-  {
-    "id": 10,
-    "url": "https://www.tum.de/aktuelles/magazin/tum-magazin-ausgabe-02/25",
-    "score": 0.003448452278044073
-  },
-  {
-    "id": 249,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/rankings",
-    "score": 0.003448452278044073
-  },
-  {
-    "id": 165,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-mitarbeitende/people-development/science-management",
-    "score": 0.0034484232363168146
-  },
-  {
-    "id": 75,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-organisieren/satzungen-ordnungen",
-    "score": 0.0034484232363168146
-  },
-  {
-    "id": 150,
-    "url": "https://www.tum.de/studium/lehre/qualitaetsmanagement/systemakkreditierung",
-    "score": 0.0034484232363168146
-  },
-  {
-    "id": 212,
-    "url": "https://www.tum.de/innovation/entrepreneurship/news-events/tum-gruendergefluester",
-    "score": 0.0034484232363168146
-  },
-  {
-    "id": 42,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/onlinebewerbung",
-    "score": 0.0034484232363168146
-  },
-  {
-    "id": 41,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/zulassungsvoraussetzungen",
-    "score": 0.0034484232363168146
-  },
-  {
-    "id": 112,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/gesundheit/studieren-mit-behinderung",
-    "score": 0.0034484232363168146
-  },
-  {
-    "id": 252,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/preise-auszeichnungen/leibnizpreis",
-    "score": 0.0034484232363168146
-  },
-  {
-    "id": 240,
-    "url": "https://www.tum.de/ueber-die-tum",
-    "score": 0.003448393767505332
-  },
-  {
-    "id": 5,
-    "url": "https://www.tum.de/aktuelles/veranstaltungen/presidential-lunches",
-    "score": 0.003448393767505332
-  },
-  {
-    "id": 226,
-    "url": "https://www.tum.de/community/campusleben/student-clubs-galerie",
-    "score": 0.003448393767505332
-  },
-  {
-    "id": 224,
-    "url": "https://www.tum.de/community/campusleben/student-clubs",
-    "score": 0.003448393767505332
-  },
-  {
-    "id": 73,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-organisieren",
-    "score": 0.003448393767505332
-  },
-  {
-    "id": 164,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-mitarbeitende/people-development/career-design",
-    "score": 0.0034483642986938494
-  },
-  {
-    "id": 122,
-    "url": "https://www.tum.de/studium/studienfinanzierung/stipendien/tum-stipendien",
-    "score": 0.0034483642986938494
-  },
-  {
-    "id": 241,
-    "url": "https://www.tum.de/ueber-die-tum/exzellenzuniversitaet",
-    "score": 0.0034483642986938494
-  },
-  {
-    "id": 228,
-    "url": "https://www.tum.de/community/campusleben/musik-und-kunst",
-    "score": 0.0034483642986938494
-  },
-  {
-    "id": 11,
-    "url": "https://www.tum.de/aktuelles/magazin/tum-magazin-ausgabe-01/25",
-    "score": 0.0034483642986938494
-  },
-  {
-    "id": 49,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-einschreibung/immatrikulation",
-    "score": 0.0034483642986938494
-  },
-  {
-    "id": 55,
-    "url": "https://www.tum.de/studium/bewerbung/bachelor",
-    "score": 0.0034483642986938494
-  },
-  {
-    "id": 2,
-    "url": "https://www.tum.de/aktuelles/alle-meldungen",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 45,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/uni-assist",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 40,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/termine-und-fristen",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 57,
-    "url": "https://www.tum.de/studium/bewerbung/master",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 114,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/gesundheit/tum4mind",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 239,
-    "url": "https://www.tum.de/community/spenden-und-foerdern",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 281,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs/postdocs",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 170,
-    "url": "https://www.tum.de/lebenslanges-lernen/publikationen-und-medienbeitraege",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 70,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-beginnen/first-steps",
-    "score": 0.0034483344027981424
-  },
-  {
     "id": 0,
-    "url": "https://www.tum.de/",
-    "score": 0.0034483344027981424
-  },
-  {
-    "id": 29,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/angebote-fuer-studieninteressierte/vorlesungen-erleben",
-    "score": 0.0034483045069024355
-  },
-  {
-    "id": 246,
-    "url": "https://www.tum.de/ueber-die-tum/ziele-und-werte/nachhaltigkeit",
-    "score": 0.0034483045069024355
-  },
-  {
-    "id": 26,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/tum-bachelor-sessions",
-    "score": 0.0034483045069024355
-  },
-  {
-    "id": 17,
-    "url": "https://www.tum.de/studium",
-    "score": 0.0034483045069024355
-  },
-  {
-    "id": 38,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung",
-    "score": 0.0034483045069024355
-  },
-  {
-    "id": 72,
-    "url": "https://www.tum.de/studinews/ausgabe-03/2024-1",
-    "score": 0.0034483045069024355
-  },
-  {
-    "id": 27,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/angebote-fuer-studieninteressierte/tum-open-campus",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 35,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/fuer-schulgruppen",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 134,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre/ideenwettbewerb",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 43,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/bewerbung-international",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 154,
-    "url": "https://www.tum.de/studium/lehre/downloads",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 211,
-    "url": "https://www.tum.de/innovation/entrepreneurship/news-events/entrepreneurshipnews",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 285,
-    "url": "https://www.tum.de/ueber-die-tum/kontakt-und-anfahrt",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 251,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/preise-auszeichnungen/nobelpreise",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 76,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-organisieren/pruefungen-und-ergebnisse",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 24,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 208,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-alumni-unternehmen/entrepreneur-of-excellence",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 265,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/hochschulpraesidium/ehemalige-praesidenten",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 202,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruenderinnen-start-ups/gruenderwettbewerbe",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 54,
-    "url": "https://www.tum.de/studium/studienfinanzierung",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 91,
-    "url": "https://www.tum.de/studium/studienabschluss/exmatrikulation",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 203,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruenderinnen-start-ups/internationale-programme",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 60,
-    "url": "https://www.tum.de/studium/bewerbung/medizin",
-    "score": 0.0034482743974646166
-  },
-  {
-    "id": 89,
-    "url": "https://www.tum.de/studium/studienabschluss/abschlussarbeit",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 74,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-organisieren/organisatorisches-vor-studienbeginn",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 126,
-    "url": "https://www.tum.de/studium/studienfinanzierung/gebuehren/stipendien-und-erlasse",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 133,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre/lehrpreise",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 25,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/angebote-fuer-studieninteressierte",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 63,
-    "url": "https://www.tum.de/studium/bewerbung/studienformen/doppelstudium",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 62,
-    "url": "https://www.tum.de/studium/bewerbung/studienformen/double-degree",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 90,
-    "url": "https://www.tum.de/studium/studienabschluss/abschlussdokumente",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 116,
-    "url": "https://www.tum.de/studium/im-studium/wohnen-und-arbeiten/wohnen",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 155,
-    "url": "https://www.tum.de/lebenslanges-lernen",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 111,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/gesundheit",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 53,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-einschreibung/studentcard",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 52,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-einschreibung/krankenversicherung",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 273,
-    "url": "https://www.tum.de/ueber-die-tum/standorte",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 44,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/bewerbung-fuer-meisterinnen-und-beruflich-qualifizierte",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 248,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/tum-in-zahlen",
-    "score": 0.0034482440744846854
-  },
-  {
-    "id": 151,
-    "url": "https://www.tum.de/studium/lehre/qualitaetsmanagement/evaluation",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 135,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre/ideenwettbewerb-archiv",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 160,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-mitarbeitende/people-development",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 96,
-    "url": "https://www.tum.de/studium/studienfinanzierung/studiengebuehren-fuer-studierende-aus-nicht-eu-laendern",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 132,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre/agenda-lehre",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 129,
-    "url": "https://www.tum.de/studium/lehre/didaktik/lehre-gestalten",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 117,
-    "url": "https://www.tum.de/studium/im-studium/wohnen-und-arbeiten/jobs-und-praktika",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 102,
-    "url": "https://www.tum.de/studium/internationale-studierende/ukraine/integrationsprogramm",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 104,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/studienorientierung",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 105,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/hilfe-im-studium/studieninformation",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 39,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-bewerbung/anforderungen-an-dokumente",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 59,
-    "url": "https://www.tum.de/studium/bewerbung/lehramt",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 243,
-    "url": "https://www.tum.de/ueber-die-tum/ziele-und-werte/leitbild",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 88,
-    "url": "https://www.tum.de/studium/studienabschluss",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 278,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs/professuren-berufung-und-karriere/evaluation-aufstieg",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 71,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-beginnen/masters-days",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 64,
-    "url": "https://www.tum.de/studium/bewerbung/studienformen/gaststudium",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 294,
-    "url": "https://www.tum.de/studierende",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 259,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/hochschulpraesidium",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 258,
-    "url": "https://www.tum.de/ueber-die-tum/organisation",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 254,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/preise-auszeichnungen/weitere-auszeichnungen",
-    "score": 0.0034482135379626413
-  },
-  {
-    "id": 282,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs/postdocs/tum-global-postdoc-fellowship",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 37,
-    "url": "https://www.tum.de/studium/bewerbung",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 192,
-    "url": "https://www.tum.de/forschung/unsere-partner",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 6,
-    "url": "https://www.tum.de/aktuelles/veranstaltungen/welcometum",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 79,
-    "url": "https://www.tum.de/studium/im-studium/erfolgreich-lernen/lernraeume",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 197,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruendungsinteressierte/internationale-education-programme",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 68,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-beginnen/ihr-start",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 67,
-    "url": "https://www.tum.de/studium/im-studium/das-studium-beginnen",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 257,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/geschichte/chronik",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 61,
-    "url": "https://www.tum.de/studium/bewerbung/studienformen",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 28,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/angebote-fuer-studieninteressierte/campustouren",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 34,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/angebote-fuer-leistungsstarke-schuelerinnen",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 195,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruendungsinteressierte",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 87,
-    "url": "https://www.tum.de/studium/im-studium/wohnen-und-arbeiten",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 51,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-einschreibung/rueckstellung-eines-studienplatzes",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 50,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-einschreibung/rueckmeldesperre",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 118,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/kinder-pflege-angehoeriger",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 115,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/wohnen-arbeit-finanzen",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 272,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/satzungen-und-leitlinien",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 144,
-    "url": "https://www.tum.de/studium/lehre/lehre-im-dialog/infoforum-studium-und-lehre",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 108,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/hilfe-im-studium/service-desk",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 146,
-    "url": "https://www.tum.de/studium/lehre/qualitaetsmanagement/leitbild-und-lehrverfassung",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 107,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/hilfe-im-studium",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 106,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/hilfe-im-studium/studienberatung",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 149,
-    "url": "https://www.tum.de/studium/lehre/qualitaetsmanagement/qm-handbuch",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 271,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/verwaltung-service",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 95,
-    "url": "https://www.tum.de/studium/internationale-studierende",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 94,
-    "url": "https://www.tum.de/innovation/entrepreneurship",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 120,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/gender-diversity",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 123,
-    "url": "https://www.tum.de/studium/studienfinanzierung/stipendien/weitere-stipendien",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 93,
-    "url": "https://www.tum.de/studium/studienabschluss/verifikation-von-abschluessen",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 83,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung",
-    "score": 0.003448182787898486
-  },
-  {
-    "id": 223,
-    "url": "https://www.tum.de/community/campusleben",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 268,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/senat",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 263,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/hochschulpraesidium/strategie",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 253,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/preise-auszeichnungen/ieee-fellows",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 230,
-    "url": "https://www.tum.de/community/campusleben/musik-und-kunst/tum-chor",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 274,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 234,
-    "url": "https://www.tum.de/community/public-engagement/schule-trifft-wissenschaft",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 131,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 277,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs/berufungen/tum-faculty-tenure-track",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 199,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruenderinnen-start-ups",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 201,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruenderinnen-start-ups/finanzierung",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 242,
-    "url": "https://www.tum.de/ueber-die-tum/ziele-und-werte",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 80,
-    "url": "https://www.tum.de/studium/im-studium/erfolgreich-lernen/online-lernen",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 119,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/kinder-pflege-angehoeriger/mutterschutz-elternzeit",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 113,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/gesundheit/hilfe-bei-psychischen-belastungen",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 110,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/hilfe-im-studium/studienzweifel",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 109,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/hilfe-im-studium/lern-workshops",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 103,
-    "url": "https://www.tum.de/studium/internationale-studierende/ukraine/bewerbung-fuer-einen-regulaeren-studienplatz",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 101,
-    "url": "https://www.tum.de/studium/internationale-studierende/ukraine",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 100,
-    "url": "https://www.tum.de/studium/internationale-studierende/freizeitundvernetzung",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 99,
-    "url": "https://www.tum.de/studium/internationale-studierende/sprachenundinterkulturelles",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 98,
-    "url": "https://www.tum.de/studium/internationale-studierende/veranstaltungen-fuer-internationale",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 97,
-    "url": "https://www.tum.de/studium/internationale-studierende/tutoren-undbuddy-programme",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 92,
-    "url": "https://www.tum.de/studium/studienabschluss/rentenversicherung",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 86,
-    "url": "https://www.tum.de/studium/im-studium/mobilitaet-im-studium",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 299,
-    "url": "https://www.tum.de/kooperationspartner",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 84,
-    "url": "https://www.tum.de/studium/im-studium/unterstuetzung-finden/talentfoerderung-stipendien-und-preise",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 81,
-    "url": "https://www.tum.de/studium/im-studium/unterstuetzung-finden",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 286,
-    "url": "https://www.tum.de/ueber-die-tum/kontakt-und-anfahrt/feedback",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 78,
-    "url": "https://www.tum.de/studium/hilfe-und-beratung/hilfe-im-studium/lern-und-pruefungscoaching",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 77,
-    "url": "https://www.tum.de/studium/im-studium/erfolgreich-lernen",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 66,
-    "url": "https://www.tum.de/studium/im-studium",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 48,
-    "url": "https://www.tum.de/studium/bewerbung/infoportal-einschreibung",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 33,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/fuer-maedchen-und-junge-frauen",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 32,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/angebote-fuer-studieninteressierte/angebote-der-tum-schools",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 31,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/angebote-fuer-studieninteressierte/meet-a-student",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 30,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/workshop-zur-studienorientierung",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 23,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruendungsinteressierte/education-offerings",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 22,
-    "url": "https://www.tum.de/studium/studienangebot/key-skill-programs/lebenslanges-lernen",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 21,
-    "url": "https://www.tum.de/studium/studienangebot/key-skill-programs/projektwochen",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 20,
-    "url": "https://www.tum.de/studium/studienangebot/key-skill-programs/plug-in-module",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 19,
-    "url": "https://www.tum.de/studium/studienangebot/key-skill-programs",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 14,
-    "url": "https://www.tum.de/aktuelles/serien",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 12,
-    "url": "https://www.tum.de/aktuelles/podcasts",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 140,
-    "url": "https://www.tum.de/studium/lehre/lehre-im-dialog",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 156,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-der-executive-and-professional-education",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 168,
-    "url": "https://www.tum.de/lebenslanges-lernen/innovation-in-lehre-und-weiterbildung",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 124,
-    "url": "https://www.tum.de/studium/studienfinanzierung/stiftungen",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 152,
-    "url": "https://www.tum.de/studium/lehre/weiterbildung",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 148,
-    "url": "https://www.tum.de/studium/lehre/qualitaetsmanagement/arbeitsgremien",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 147,
-    "url": "https://www.tum.de/studium/lehre/qualitaetsmanagement/studiengaenge-gestalten",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 145,
-    "url": "https://www.tum.de/studium/lehre/qualitaetsmanagement",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 142,
-    "url": "https://www.tum.de/studium/lehre/lehre-im-dialog/symposium-lehre",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 292,
-    "url": "https://www.tum.de/ueber-die-tum/notfall",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 141,
-    "url": "https://www.tum.de/studium/lehre/lehre-im-dialog/lehr-apero",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 138,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre/ausschreibungen-wettbewerbe",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 137,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre/studienzuschuesse",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 136,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre/lehrfonds",
-    "score": 0.0034481520378343306
+    "url": "https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)",
+    "score": 0.019692493078244284
   },
   {
     "id": 171,
-    "url": "https://www.tum.de/lebenslanges-lernen/kontakt",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 288,
-    "url": "https://www.tum.de/presse-und-medien",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 296,
-    "url": "https://www.tum.de/fuer-alumni",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 159,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-mitarbeitende",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 167,
-    "url": "https://www.tum.de/lebenslanges-lernen/studierende",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 163,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-mitarbeitende/people-development/horizons",
-    "score": 0.0034481520378343306
-  },
-  {
-    "id": 280,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs/professuren-berufung-und-karriere/kontakt",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 279,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs/professuren-berufung-und-karriere/faq-fragen-antworten",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 275,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs/stellenangebote",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 289,
-    "url": "https://www.tum.de/ueber-die-tum/kontakt-und-anfahrt/logins",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 287,
-    "url": "https://www.tum.de/ueber-die-tum/kontakt-und-anfahrt/fundbuero",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 283,
-    "url": "https://www.tum.de/ueber-die-tum/karriere-und-jobs/postdocs/eurotechpostdoc2-programm",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 262,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/hochschulpraesidium/berufungen",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 264,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/hochschulpraesidium/beauftragte-des-praesidenten",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 290,
-    "url": "https://www.tum.de/ueber-die-tum/kontakt-und-anfahrt/logins/tumonline",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 291,
-    "url": "https://www.tum.de/ueber-die-tum/kontakt-und-anfahrt/impressum",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 293,
-    "url": "https://www.tum.de/studieninteressierte",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 266,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/erweitertes-hochschulpraesidium",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 267,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/hochschulrat",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 270,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/ethikkommission",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 244,
-    "url": "https://www.tum.de/ueber-die-tum/ziele-und-werte/compliance",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 297,
-    "url": "https://www.tum.de/fach-und-fuehrungskraefte",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 298,
-    "url": "https://www.tum.de/gruenden",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 269,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/kuratorium",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 153,
-    "url": "https://www.tum.de/studium/lehre/sprachdienst-internationalisierung",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 190,
-    "url": "https://www.tum.de/forschung/projekte/forschungsgruppen",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 189,
-    "url": "https://www.tum.de/forschung/projekte/graduiertenkollegs",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 188,
-    "url": "https://www.tum.de/forschung/projekte/schwerpunktprogramme-spp",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 187,
-    "url": "https://www.tum.de/forschung/projekte/sonderforschungsbereiche-sfb",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 186,
-    "url": "https://www.tum.de/forschung/projekte",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 175,
-    "url": "https://www.tum.de/forschung/forschungsziele",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 169,
-    "url": "https://www.tum.de/lebenslanges-lernen/innovation-in-lehre-und-weiterbildung/moocs-der-tum",
-    "score": 0.0034481208606859503
+    "url": "https://en.wikipedia.org/wiki/Wikipedia:Verifiability",
+    "score": 0.016633323038745578
   },
   {
     "id": 162,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-mitarbeitende/people-development/learning-days-digitales-arbeiten-kuenstliche-intelligenz",
-    "score": 0.0034481208606859503
+    "url": "https://en.wikipedia.org/wiki/Help:Category",
+    "score": 0.009931472722051549
   },
   {
-    "id": 158,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-der-executive-and-professional-education/professional-education",
-    "score": 0.0034481208606859503
+    "id": 165,
+    "url": "https://en.wikipedia.org/wiki/Category:Articles_with_short_description",
+    "score": 0.009109396791339543
   },
   {
-    "id": 157,
-    "url": "https://www.tum.de/lebenslanges-lernen/angebote-der-executive-and-professional-education/executive-education",
-    "score": 0.0034481208606859503
+    "id": 134,
+    "url": "https://en.wikipedia.org/wiki/ISBN_(identifier)",
+    "score": 0.008646075323873148
   },
   {
-    "id": 260,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/hochschulpraesidium/praesidialbuero",
-    "score": 0.0034481208606859503
+    "id": 5,
+    "url": "https://en.wikipedia.org/wiki/Graph_theory",
+    "score": 0.008023866105340723
   },
   {
-    "id": 143,
-    "url": "https://www.tum.de/studium/lehre/lehre-im-dialog/forum-der-lehre",
-    "score": 0.0034481208606859503
+    "id": 137,
+    "url": "https://en.wikipedia.org/wiki/Doi_(identifier)",
+    "score": 0.008010715040392712
   },
   {
-    "id": 139,
-    "url": "https://www.tum.de/studium/lehre/chancen-fuer-die-lehre/digitalisierung",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 128,
-    "url": "https://www.tum.de/studium/lehre/didaktik",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 125,
-    "url": "https://www.tum.de/studium/studienfinanzierung/kredite-darlehen",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 121,
-    "url": "https://www.tum.de/studium/studienfinanzierung/stipendien",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 85,
-    "url": "https://www.tum.de/studium/im-studium/tum-future-learning-initiative",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 82,
-    "url": "https://www.tum.de/studium/im-studium/unterstuetzung-finden/unfaelle",
-    "score": 0.0034481208606859503
-  },
-  {
-    "id": 8,
-    "url": "https://www.tum.de/aktuelles/veranstaltungen/adventskonzerte",
-    "score": 0.0034481208606859503
+    "id": 166,
+    "url": "https://en.wikipedia.org/wiki/Category:Short_description_is_different_from_Wikidata",
+    "score": 0.007865264435450225
   },
   {
     "id": 7,
-    "url": "https://www.tum.de/aktuelles/veranstaltungen/dies-academicus",
-    "score": 0.0034481208606859503
+    "url": "https://en.wikipedia.org/wiki/Vertex_(graph_theory)",
+    "score": 0.006905254032498388
   },
   {
-    "id": 196,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruendungsinteressierte/tum-female-founders",
-    "score": 0.0034481208606859503
+    "id": 158,
+    "url": "https://en.wikipedia.org/wiki/File:Commons-logo.svg",
+    "score": 0.0066073828448822355
   },
   {
-    "id": 191,
-    "url": "https://www.tum.de/forschung/forschung-mit-tieren",
-    "score": 0.0034481208606859503
+    "id": 28,
+    "url": "https://en.wikipedia.org/wiki/Directed_graph",
+    "score": 0.006226660815006258
   },
   {
-    "id": 250,
-    "url": "https://www.tum.de/ueber-die-tum/daten-und-fakten/preise-auszeichnungen",
-    "score": 0.0034481208606859503
+    "id": 160,
+    "url": "https://en.wikipedia.org/wiki/MathWorld",
+    "score": 0.00609833173496313
   },
   {
-    "id": 261,
-    "url": "https://www.tum.de/ueber-die-tum/organisation/hochschulpraesidium/buero-des-kanzlers",
-    "score": 0.0034481208606859503
+    "id": 45,
+    "url": "https://en.wikipedia.org/wiki/Complete_graph",
+    "score": 0.0060484582500284455
   },
   {
-    "id": 237,
-    "url": "https://www.tum.de/community/globales-netzwerk/standorte-weltweit",
-    "score": 0.0034481208606859503
+    "id": 159,
+    "url": "https://en.wikipedia.org/wiki/Eric_W._Weisstein",
+    "score": 0.00601256806618878
   },
   {
-    "id": 231,
-    "url": "https://www.tum.de/community/campusleben/musik-und-kunst/kammerorchester",
-    "score": 0.0034481208606859503
+    "id": 63,
+    "url": "https://en.wikipedia.org/wiki/Planar_graph",
+    "score": 0.005711506640009102
   },
   {
-    "id": 227,
-    "url": "https://www.tum.de/community/campusleben/sport-und-gesundheit",
-    "score": 0.0034481208606859503
+    "id": 60,
+    "url": "https://en.wikipedia.org/wiki/Glossary_of_graph_theory",
+    "score": 0.005555618406722908
   },
   {
-    "id": 225,
-    "url": "https://www.tum.de/community/campusleben/student-clubs/einstieg-leicht-gemacht",
-    "score": 0.0034481208606859503
+    "id": 1,
+    "url": "https://en.wikipedia.org/wiki/Graph_of_a_function",
+    "score": 0.005509680705233443
   },
   {
-    "id": 220,
-    "url": "https://www.tum.de/innovation/patente-und-lizenzen",
-    "score": 0.0034481208606859503
+    "id": 61,
+    "url": "https://en.wikipedia.org/wiki/Path_(graph_theory)",
+    "score": 0.005387012564815266
   },
   {
-    "id": 217,
-    "url": "https://www.tum.de/innovation/entrepreneurship/ueber-uns/faqs",
-    "score": 0.0034481208606859503
+    "id": 69,
+    "url": "https://en.wikipedia.org/wiki/Cycle_(graph_theory)",
+    "score": 0.005365842557825783
   },
   {
-    "id": 213,
-    "url": "https://www.tum.de/innovation/entrepreneurship/news-events/start-up-meet-talk",
-    "score": 0.0034481208606859503
+    "id": 50,
+    "url": "https://en.wikipedia.org/wiki/Connectivity_(graph_theory)",
+    "score": 0.005361187236878465
   },
   {
-    "id": 210,
-    "url": "https://www.tum.de/innovation/entrepreneurship/news-events",
-    "score": 0.0034481208606859503
+    "id": 67,
+    "url": "https://en.wikipedia.org/wiki/Tree_(graph_theory)",
+    "score": 0.0053597308236212025
   },
   {
-    "id": 209,
-    "url": "https://www.tum.de/innovation/entrepreneurship/forschung",
-    "score": 0.0034481208606859503
+    "id": 65,
+    "url": "https://en.wikipedia.org/wiki/Cycle_graph",
+    "score": 0.005319800826817943
   },
   {
-    "id": 206,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-alumni-unternehmen/gruendungsvorbilder",
-    "score": 0.0034481208606859503
+    "id": 79,
+    "url": "https://en.wikipedia.org/wiki/Graph_automorphism",
+    "score": 0.005317468831781018
   },
   {
-    "id": 205,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-alumni-unternehmen",
-    "score": 0.0034481208606859503
+    "id": 16,
+    "url": "https://en.wikipedia.org/wiki/Ordered_pair",
+    "score": 0.005308687006604791
   },
   {
-    "id": 204,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruenderinnen-start-ups/tum-incubator",
-    "score": 0.0034481208606859503
+    "id": 56,
+    "url": "https://en.wikipedia.org/wiki/Chromatic_number",
+    "score": 0.005299558416367311
   },
   {
-    "id": 200,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruenderinnen-start-ups/beratung-mentoring",
-    "score": 0.0034481208606859503
+    "id": 80,
+    "url": "https://en.wikipedia.org/wiki/Vertex-transitive_graph",
+    "score": 0.005283589885296619
   },
   {
-    "id": 216,
-    "url": "https://www.tum.de/innovation/entrepreneurship/ueber-uns",
-    "score": 0.0034481208606859503
+    "id": 18,
+    "url": "https://en.wikipedia.org/wiki/Loop_(graph_theory)",
+    "score": 0.0052623505252948856
+  },
+  {
+    "id": 88,
+    "url": "https://en.wikipedia.org/wiki/Category_theory",
+    "score": 0.005261379583123378
+  },
+  {
+    "id": 54,
+    "url": "https://en.wikipedia.org/wiki/Bipartite_graph",
+    "score": 0.00524431874210974
+  },
+  {
+    "id": 138,
+    "url": "https://en.wikipedia.org/wiki/JSTOR_(identifier)",
+    "score": 0.005222073763430373
+  },
+  {
+    "id": 6,
+    "url": "https://en.wikipedia.org/wiki/Set_(mathematics)",
+    "score": 0.005211029296229471
+  },
+  {
+    "id": 25,
+    "url": "https://en.wikipedia.org/wiki/Adjacency_matrix",
+    "score": 0.005205576415641271
+  },
+  {
+    "id": 43,
+    "url": "https://en.wikipedia.org/wiki/Regular_graph",
+    "score": 0.0052010164550857964
+  },
+  {
+    "id": 57,
+    "url": "https://en.wikipedia.org/wiki/Complete_bipartite_graph",
+    "score": 0.005181580273402578
+  },
+  {
+    "id": 90,
+    "url": "https://en.wikipedia.org/wiki/Functor",
+    "score": 0.005173890758169297
+  },
+  {
+    "id": 96,
+    "url": "https://en.wikipedia.org/wiki/Cayley_graph",
+    "score": 0.0051681171198994375
+  },
+  {
+    "id": 174,
+    "url": "https://en.wikipedia.org/wiki/Help:Maintenance_template_removal",
+    "score": 0.005144016948142369
+  },
+  {
+    "id": 92,
+    "url": "https://en.wikipedia.org/wiki/Computer_science",
+    "score": 0.005130129007439194
+  },
+  {
+    "id": 68,
+    "url": "https://en.wikipedia.org/wiki/Connected_graph",
+    "score": 0.005113111512058214
+  },
+  {
+    "id": 73,
+    "url": "https://en.wikipedia.org/wiki/Directed_acyclic_graph",
+    "score": 0.0050866359996315615
+  },
+  {
+    "id": 20,
+    "url": "https://en.wikipedia.org/wiki/Binary_relation",
+    "score": 0.005080038794341228
+  },
+  {
+    "id": 15,
+    "url": "https://en.wikipedia.org/wiki/Multigraph",
+    "score": 0.005069739872022019
+  },
+  {
+    "id": 59,
+    "url": "https://en.wikipedia.org/wiki/Path_graph",
+    "score": 0.005053797348330922
+  },
+  {
+    "id": 176,
+    "url": "https://en.wikipedia.org/wiki/Function_(mathematics)",
+    "score": 0.0050518814713675
+  },
+  {
+    "id": 106,
+    "url": "https://en.wikipedia.org/wiki/Complement_graph",
+    "score": 0.005049246056901979
+  },
+  {
+    "id": 75,
+    "url": "https://en.wikipedia.org/wiki/Petersen_graph",
+    "score": 0.005003845841257457
+  },
+  {
+    "id": 104,
+    "url": "https://en.wikipedia.org/wiki/Line_graph",
+    "score": 0.00498639488954991
+  },
+  {
+    "id": 183,
+    "url": "https://en.wikipedia.org/wiki/Sequence",
+    "score": 0.004979849699018763
+  },
+  {
+    "id": 83,
+    "url": "https://en.wikipedia.org/wiki/Strongly_regular_graph",
+    "score": 0.004960890319294767
+  },
+  {
+    "id": 164,
+    "url": "https://en.wikipedia.org/wiki/Category:Webarchive_template_wayback_links",
+    "score": 0.004935385749039623
+  },
+  {
+    "id": 136,
+    "url": "https://en.wikipedia.org/wiki/Wayback_Machine",
+    "score": 0.004935385749039623
+  },
+  {
+    "id": 194,
+    "url": "https://en.wikipedia.org/wiki/Polynomial",
+    "score": 0.0049116150040907445
+  },
+  {
+    "id": 129,
+    "url": "https://en.wikipedia.org/wiki/Graph_drawing",
+    "score": 0.004909707796253854
+  },
+  {
+    "id": 76,
+    "url": "https://en.wikipedia.org/wiki/Perfect_graph",
+    "score": 0.004908286059502717
+  },
+  {
+    "id": 193,
+    "url": "https://en.wikipedia.org/wiki/Linear_map",
+    "score": 0.004879851324479987
+  },
+  {
+    "id": 178,
+    "url": "https://en.wikipedia.org/wiki/Domain_of_a_function",
+    "score": 0.004876609071157274
+  },
+  {
+    "id": 199,
+    "url": "https://en.wikipedia.org/wiki/Continuous_function",
+    "score": 0.004870427983940443
+  },
+  {
+    "id": 181,
+    "url": "https://en.wikipedia.org/wiki/Boolean_function",
+    "score": 0.004862643108315318
+  },
+  {
+    "id": 179,
+    "url": "https://en.wikipedia.org/wiki/Codomain",
+    "score": 0.00485438143073097
+  },
+  {
+    "id": 82,
+    "url": "https://en.wikipedia.org/wiki/Distance-transitive_graph",
+    "score": 0.004842669440787157
+  },
+  {
+    "id": 70,
+    "url": "https://en.wikipedia.org/wiki/Disjoint_union_of_graphs",
+    "score": 0.004841256373162552
+  },
+  {
+    "id": 22,
+    "url": "https://en.wikipedia.org/wiki/Empty_set",
+    "score": 0.004840190070599199
+  },
+  {
+    "id": 84,
+    "url": "https://en.wikipedia.org/wiki/Distance-regular_graph",
+    "score": 0.004831642311839317
+  },
+  {
+    "id": 51,
+    "url": "https://en.wikipedia.org/wiki/K-vertex-connected_graph",
+    "score": 0.00482995183216571
+  },
+  {
+    "id": 197,
+    "url": "https://en.wikipedia.org/wiki/Analytic_function",
+    "score": 0.004825305180344923
+  },
+  {
+    "id": 77,
+    "url": "https://en.wikipedia.org/wiki/Cograph",
+    "score": 0.004812240806662224
+  },
+  {
+    "id": 189,
+    "url": "https://en.wikipedia.org/wiki/Function_of_several_complex_variables",
+    "score": 0.004808885854694603
+  },
+  {
+    "id": 192,
+    "url": "https://en.wikipedia.org/wiki/Identity_function",
+    "score": 0.004796445658122159
   },
   {
     "id": 198,
-    "url": "https://www.tum.de/innovation/entrepreneurship/fuer-gruendungsinteressierte/gruendungsbotschafterinnen",
-    "score": 0.0034481208606859503
+    "url": "https://en.wikipedia.org/wiki/Smooth_function",
+    "score": 0.00478863477511744
+  },
+  {
+    "id": 177,
+    "url": "https://en.wikipedia.org/wiki/History_of_the_function_concept",
+    "score": 0.0047835459978435545
+  },
+  {
+    "id": 188,
+    "url": "https://en.wikipedia.org/wiki/Function_of_a_complex_variable",
+    "score": 0.0047835459978435545
+  },
+  {
+    "id": 187,
+    "url": "https://en.wikipedia.org/wiki/Complex-valued_function",
+    "score": 0.0047835459978435545
+  },
+  {
+    "id": 170,
+    "url": "https://en.wikipedia.org/wiki/File:Question_book-new.svg",
+    "score": 0.00478108396590866
+  },
+  {
+    "id": 195,
+    "url": "https://en.wikipedia.org/wiki/Rational_function",
+    "score": 0.00477911607418605
+  },
+  {
+    "id": 196,
+    "url": "https://en.wikipedia.org/wiki/Algebraic_function",
+    "score": 0.004772492861516122
+  },
+  {
+    "id": 191,
+    "url": "https://en.wikipedia.org/wiki/Constant_function",
+    "score": 0.004771634617989521
+  },
+  {
+    "id": 186,
+    "url": "https://en.wikipedia.org/wiki/Function_of_several_real_variables",
+    "score": 0.004768695784095404
+  },
+  {
+    "id": 127,
+    "url": "https://en.wikipedia.org/wiki/Graph_(abstract_data_type)",
+    "score": 0.0047621939391969135
+  },
+  {
+    "id": 114,
+    "url": "https://en.wikipedia.org/wiki/Hypergraph",
+    "score": 0.004762003218413225
+  },
+  {
+    "id": 185,
+    "url": "https://en.wikipedia.org/wiki/Function_of_a_real_variable",
+    "score": 0.004761777821123411
+  },
+  {
+    "id": 184,
+    "url": "https://en.wikipedia.org/wiki/Real-valued_function",
+    "score": 0.0047550765863147
+  },
+  {
+    "id": 139,
+    "url": "https://en.wikipedia.org/wiki/CRC_Press",
+    "score": 0.004752363149710397
+  },
+  {
+    "id": 4,
+    "url": "https://en.wikipedia.org/wiki/Discrete_mathematics",
+    "score": 0.004750664000910258
+  },
+  {
+    "id": 108,
+    "url": "https://en.wikipedia.org/wiki/Cartesian_product_of_graphs",
+    "score": 0.004750204537204098
+  },
+  {
+    "id": 182,
+    "url": "https://en.wikipedia.org/wiki/Integer-valued_function",
+    "score": 0.004747187681171198
+  },
+  {
+    "id": 30,
+    "url": "https://en.wikipedia.org/wiki/Multiple_edges",
+    "score": 0.004741639440191154
+  },
+  {
+    "id": 180,
+    "url": "https://en.wikipedia.org/wiki/Boolean-valued_function",
+    "score": 0.004741119292599275
+  },
+  {
+    "id": 87,
+    "url": "https://en.wikipedia.org/wiki/Null_graph",
+    "score": 0.00474082454229721
+  },
+  {
+    "id": 105,
+    "url": "https://en.wikipedia.org/wiki/Dual_graph",
+    "score": 0.004732181423145484
+  },
+  {
+    "id": 128,
+    "url": "https://en.wikipedia.org/wiki/Graph_database",
+    "score": 0.004723408267095788
+  },
+  {
+    "id": 55,
+    "url": "https://en.wikipedia.org/wiki/Partition_of_a_set",
+    "score": 0.004716429620238076
+  },
+  {
+    "id": 173,
+    "url": "https://en.wikipedia.org/wiki/Help:Referencing_for_beginners",
+    "score": 0.004696915416416075
+  },
+  {
+    "id": 31,
+    "url": "https://en.wikipedia.org/wiki/Quiver_(mathematics)",
+    "score": 0.004688116252986785
+  },
+  {
+    "id": 41,
+    "url": "https://en.wikipedia.org/wiki/Orientation_(graph_theory)",
+    "score": 0.004681787790618922
+  },
+  {
+    "id": 78,
+    "url": "https://en.wikipedia.org/wiki/Chordal_graph",
+    "score": 0.004678718919826834
+  },
+  {
+    "id": 163,
+    "url": "https://en.wikipedia.org/wiki/Category:Graph_theory",
+    "score": 0.0046738988854754205
+  },
+  {
+    "id": 99,
+    "url": "https://en.wikipedia.org/wiki/Forgetful_functor",
+    "score": 0.004671332824022149
+  },
+  {
+    "id": 109,
+    "url": "https://en.wikipedia.org/wiki/Tensor_product_of_graphs",
+    "score": 0.004670500587875143
+  },
+  {
+    "id": 124,
+    "url": "https://en.wikipedia.org/wiki/Geographic_information_systems",
+    "score": 0.004658823274437455
+  },
+  {
+    "id": 37,
+    "url": "https://en.wikipedia.org/wiki/Shortest_path_problem",
+    "score": 0.00465610116870662
+  },
+  {
+    "id": 52,
+    "url": "https://en.wikipedia.org/wiki/K-edge-connected_graph",
+    "score": 0.004654566733310577
+  },
+  {
+    "id": 48,
+    "url": "https://en.wikipedia.org/wiki/Finite_set",
+    "score": 0.004653387732102317
+  },
+  {
+    "id": 157,
+    "url": "https://en.wikipedia.org/wiki/Wikipedia:The_Wikipedia_Library",
+    "score": 0.004652737547612468
+  },
+  {
+    "id": 148,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-3-540-26183-4",
+    "score": 0.004641172932819688
+  },
+  {
+    "id": 3,
+    "url": "https://en.wikipedia.org/wiki/File:6n-graf.svg",
+    "score": 0.00463173225402708
+  },
+  {
+    "id": 167,
+    "url": "https://en.wikipedia.org/wiki/Category:CS1_French-language_sources_(fr)",
+    "score": 0.004630561921945352
+  },
+  {
+    "id": 72,
+    "url": "https://en.wikipedia.org/wiki/Polytree",
+    "score": 0.00462700758006751
+  },
+  {
+    "id": 110,
+    "url": "https://en.wikipedia.org/wiki/Strong_product_of_graphs",
+    "score": 0.004615781061209452
+  },
+  {
+    "id": 118,
+    "url": "https://en.wikipedia.org/wiki/Model_theory",
+    "score": 0.004611316461045822
+  },
+  {
+    "id": 95,
+    "url": "https://en.wikipedia.org/wiki/Twitter",
+    "score": 0.00460296809219616
+  },
+  {
+    "id": 93,
+    "url": "https://en.wikipedia.org/wiki/Conceptual_graph",
+    "score": 0.004600055265681637
+  },
+  {
+    "id": 132,
+    "url": "https://en.wikipedia.org/wiki/Network_theory",
+    "score": 0.0045988936027264405
+  },
+  {
+    "id": 86,
+    "url": "https://en.wikipedia.org/wiki/Graph_property",
+    "score": 0.0045947931058771254
+  },
+  {
+    "id": 103,
+    "url": "https://en.wikipedia.org/wiki/Edge_contraction",
+    "score": 0.004594134252260746
+  },
+  {
+    "id": 140,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-1-58488-090-5",
+    "score": 0.004593206655721894
+  },
+  {
+    "id": 33,
+    "url": "https://en.wikipedia.org/wiki/Mixed_graph",
+    "score": 0.004592504456472858
+  },
+  {
+    "id": 107,
+    "url": "https://en.wikipedia.org/wiki/Graph_rewriting",
+    "score": 0.004592469779966732
+  },
+  {
+    "id": 102,
+    "url": "https://en.wikipedia.org/wiki/Graph_operations",
+    "score": 0.004590891998938032
+  },
+  {
+    "id": 12,
+    "url": "https://en.wikipedia.org/wiki/Mathematical_structure",
+    "score": 0.004590259152701245
+  },
+  {
+    "id": 21,
+    "url": "https://en.wikipedia.org/wiki/Empty_graph",
+    "score": 0.00458963497559099
+  },
+  {
+    "id": 190,
+    "url": "https://en.wikipedia.org/wiki/List_of_types_of_functions",
+    "score": 0.004588005179803102
+  },
+  {
+    "id": 122,
+    "url": "https://en.wikipedia.org/wiki/Computational_biology",
+    "score": 0.004585317750578393
+  },
+  {
+    "id": 117,
+    "url": "https://en.wikipedia.org/wiki/Matroid",
+    "score": 0.00458194546035771
+  },
+  {
+    "id": 98,
+    "url": "https://en.wikipedia.org/wiki/Small_category",
+    "score": 0.004574620048438745
+  },
+  {
+    "id": 112,
+    "url": "https://en.wikipedia.org/wiki/Series%E2%80%93parallel_graph",
+    "score": 0.004568430292095382
+  },
+  {
+    "id": 111,
+    "url": "https://en.wikipedia.org/wiki/Lexicographic_product_of_graphs",
+    "score": 0.004553744791751326
+  },
+  {
+    "id": 94,
+    "url": "https://en.wikipedia.org/wiki/Finite-state_machine",
+    "score": 0.004552496437530816
+  },
+  {
+    "id": 116,
+    "url": "https://en.wikipedia.org/wiki/Simplex",
+    "score": 0.004549488250624447
+  },
+  {
+    "id": 120,
+    "url": "https://en.wikipedia.org/wiki/Cardinal_number",
+    "score": 0.004548144536012093
+  },
+  {
+    "id": 130,
+    "url": "https://en.wikipedia.org/wiki/List_of_graph_theory_topics",
+    "score": 0.004543177126509647
+  },
+  {
+    "id": 17,
+    "url": "https://en.wikipedia.org/wiki/Incidence_(graph)",
+    "score": 0.004535331566998802
+  },
+  {
+    "id": 23,
+    "url": "https://en.wikipedia.org/wiki/Computational_complexity",
+    "score": 0.00453006073806776
+  },
+  {
+    "id": 29,
+    "url": "https://en.wikipedia.org/wiki/File:Directed.svg",
+    "score": 0.004528578317430904
+  },
+  {
+    "id": 89,
+    "url": "https://en.wikipedia.org/wiki/Comma_category",
+    "score": 0.004527555360500209
+  },
+  {
+    "id": 19,
+    "url": "https://en.wikipedia.org/wiki/Infinite_graph",
+    "score": 0.0045252927184755345
+  },
+  {
+    "id": 115,
+    "url": "https://en.wikipedia.org/wiki/Simplicial_complex",
+    "score": 0.004525258041969409
+  },
+  {
+    "id": 155,
+    "url": "https://en.wikipedia.org/wiki/Dover_Publications",
+    "score": 0.004525015306426532
+  },
+  {
+    "id": 2,
+    "url": "https://en.wikipedia.org/wiki/Graph_(disambiguation)",
+    "score": 0.004520654735781278
+  },
+  {
+    "id": 100,
+    "url": "https://en.wikipedia.org/wiki/Category_of_small_categories",
+    "score": 0.004519033609119921
+  },
+  {
+    "id": 97,
+    "url": "https://en.wikipedia.org/wiki/Schreier_coset_graph",
+    "score": 0.004514967788776731
+  },
+  {
+    "id": 38,
+    "url": "https://en.wikipedia.org/wiki/Traveling_salesman_problem",
+    "score": 0.004511196718735608
+  },
+  {
+    "id": 135,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-486-67870-2",
+    "score": 0.004510182430931443
+  },
+  {
+    "id": 46,
+    "url": "https://en.wikipedia.org/wiki/File:Complete_graph_K5.svg",
+    "score": 0.004510182430931443
+  },
+  {
+    "id": 26,
+    "url": "https://en.wikipedia.org/wiki/Symmetric_matrix",
+    "score": 0.004509488900808938
+  },
+  {
+    "id": 24,
+    "url": "https://en.wikipedia.org/wiki/Symmetric_relation",
+    "score": 0.004509358863910968
+  },
+  {
+    "id": 123,
+    "url": "https://en.wikipedia.org/wiki/Power_graph_analysis",
+    "score": 0.004507807090261861
+  },
+  {
+    "id": 131,
+    "url": "https://en.wikipedia.org/wiki/List_of_publications_in_mathematics",
+    "score": 0.004506073264955598
+  },
+  {
+    "id": 145,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-07-005489-9",
+    "score": 0.004499970199877548
+  },
+  {
+    "id": 9,
+    "url": "https://en.wikipedia.org/wiki/James_Joseph_Sylvester",
+    "score": 0.00449755151357531
+  },
+  {
+    "id": 121,
+    "url": "https://en.wikipedia.org/wiki/Continuous_graph",
+    "score": 0.004493190942930056
+  },
+  {
+    "id": 125,
+    "url": "https://en.wikipedia.org/wiki/Geometric_networks",
+    "score": 0.004491604492774824
+  },
+  {
+    "id": 147,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-387-98488-9",
+    "score": 0.00448974063057059
+  },
+  {
+    "id": 153,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-1-58488-291-6",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 141,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-03-010567-8",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 34,
+    "url": "https://en.wikipedia.org/wiki/File:Example_of_simple_mixed_graph.jpg",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 42,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=8",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 126,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=23",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 133,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=24",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 152,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-262-09016-2",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 151,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-201-41033-4",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 40,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=7",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 149,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-262-07169-7",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 146,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-521-45897-9",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 144,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=25",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 39,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=6",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 143,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-53492-373-0",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 142,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-13-325012-1",
+    "score": 0.004485284699533493
   },
   {
     "id": 36,
-    "url": "https://www.tum.de/studium/von-der-schule-zur-universitaet/aufnahme-in-regelmaessigen-versand",
-    "score": 0.003448089469995458
+    "url": "https://en.wikipedia.org/wiki/File:Weighted_network.svg",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 35,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=5",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 91,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=20",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 156,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=27",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 62,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=14",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 64,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=15",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 168,
+    "url": "https://en.wikipedia.org/wiki/Category:Inconsistent_wikidata_for_Commons_category",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 66,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=16",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 71,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=17",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 74,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=18",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 81,
+    "url": "https://en.wikipedia.org/wiki/Arc-transitive_graph",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 85,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=19",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 44,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=9",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 101,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=21",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 113,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=22",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 119,
+    "url": "https://en.wikipedia.org/wiki/Structure_(model_theory)",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 14,
+    "url": "https://en.wikipedia.org/wiki/File:Undirected.svg",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 13,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=2",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 11,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=1",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 10,
+    "url": "https://en.wikipedia.org/wiki/Chemical_structure",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 8,
+    "url": "https://en.wikipedia.org/wiki/Diagrammatic_form",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 53,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=12",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 58,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=13",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 154,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=26",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 27,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=3",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 47,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=10",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 32,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=4",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 49,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=11",
+    "score": 0.004485284699533493
+  },
+  {
+    "id": 161,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&oldid=1318446031",
+    "score": 0.004463481846307222
+  },
+  {
+    "id": 169,
+    "url": "https://en.wikipedia.org/wiki/Functional_graph",
+    "score": 0.004397492455150816
+  },
+  {
+    "id": 175,
+    "url": "https://en.wikipedia.org/wiki/File:Polynomial_of_degree_three.svg",
+    "score": 0.004374970064422446
+  },
+  {
+    "id": 172,
+    "url": "https://en.wikipedia.org/wiki/Special:EditPage/Graph_of_a_function",
+    "score": 0.004374970064422446
   }
 ]

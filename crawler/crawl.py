@@ -1,15 +1,15 @@
-import os
+# crawl.py
 import csv
-import argparse
 import json
+import argparse
 from pathlib import Path
 
-from core import crawl_graph  # 👈 new import from core.py
+from core import crawl_graph
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Simple web crawler that outputs an edge list for PageRank."
+        description="Concurrent web crawler that outputs an edge list for PageRank."
     )
     parser.add_argument("start_url", help="Start URL for crawling")
     parser.add_argument(
@@ -22,7 +22,19 @@ def main():
         "--output",
         type=str,
         default="edges.csv",
-        help="Output CSV file",
+        help="Output CSV file name (inside ./data)",
+    )
+    parser.add_argument(
+        "--lang",
+        type=str,
+        default=None,
+        help="Optional language code (e.g. 'en' or 'de') to restrict pages.",
+    )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=5,
+        help="Number of concurrent workers (threads) for crawling.",
     )
 
     args = parser.parse_args()
@@ -32,13 +44,15 @@ def main():
     data_dir.mkdir(parents=True, exist_ok=True)
     output_path = data_dir / args.output
 
-    # ---- call shared core logic ----
+    # ---- call core logic with concurrency + language filter ----
     pages, edges_url, url_to_id, visited = crawl_graph(
         args.start_url,
         max_pages=args.max_pages,
+        target_lang=args.lang,
+        workers=args.workers,
     )
 
-    # ---- write edges.csv (same format as before) ----
+    # ---- write edges.csv (source URL string + target_id) ----
     with output_path.open("w", newline="", encoding="utf8") as f:
         writer = csv.writer(f)
         writer.writerow(["source", "target_id"])
@@ -46,7 +60,7 @@ def main():
             target_id = url_to_id[tgt_url]
             writer.writerow([src_url, target_id])
 
-    # ---- write pages.json next to CSV (same as before) ----
+    # ---- write pages.json next to CSV ----
     pages_path = data_dir / "pages.json"
     with pages_path.open("w", encoding="utf8") as jf:
         json.dump(pages, jf, ensure_ascii=False, indent=2)

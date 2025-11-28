@@ -220,7 +220,8 @@ class UrlPageRankRequest(BaseModel):
     url: str
     max_pages: int = 30   
     top_k: int = 20      
-    
+    lang: str | None = None      # e.g. "en" or "de"
+    workers: int = 5    
     
 @app.post("/api/pagerank/url")
 async def pagerank_from_url(payload: UrlPageRankRequest):
@@ -237,6 +238,9 @@ async def pagerank_from_url(payload: UrlPageRankRequest):
         pages, edges_url, url_to_id, visited = crawl_graph(
             start_url,
             max_pages=payload.max_pages,
+            target_lang=payload.lang,      
+            workers=payload.workers,       
+            verbose=False,                 
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Crawl failed: {e}")

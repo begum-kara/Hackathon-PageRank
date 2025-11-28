@@ -7,7 +7,7 @@ export interface PageRankResponse {
   top: PageRankNode[];
 }
 
-const API_BASE = "http://172.17.245.18:8000";
+const API_BASE = "http://172.17.240.246:8000";
 //const API_BASE = "http://localhost:8000";
 
 
@@ -21,8 +21,10 @@ export async function uploadGraph(file: File, topK: number): Promise<PageRankRes
 
     method: "POST",
     body: formData,
-    // 👇 VERY IMPORTANT: must be client-side
     cache: "no-store",
+    headers: {
+      "ngrok-skip-browser-warning": "true",   
+    },
   });
 
   if (!res.ok) {
@@ -57,6 +59,9 @@ export async function searchTum(query: string, topK = 10): Promise<SearchRespons
   const res = await fetch(url, {
     method: "GET",
     cache: "no-store",
+    headers: {
+      "ngrok-skip-browser-warning": "true",   
+    },
   });
 
   if (!res.ok) {
@@ -97,13 +102,14 @@ export async function pagerankFromUrl(
 ): Promise<UrlPagerankResponse> {
   const res = await fetch(`${API_BASE}/api/pagerank/url`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json","ngrok-skip-browser-warning": "true" },
     body: JSON.stringify({
       url,
       max_pages: maxPages,
       top_k: topK,
     }),
     cache: "no-store",
+    
   });
 
   if (!res.ok) {
