@@ -6,6 +6,7 @@ from collections import deque
 import csv
 import argparse
 import json
+import re
 
 
 def is_same_domain(url, base_netloc):
@@ -18,6 +19,34 @@ def is_same_domain(url, base_netloc):
     except Exception:
         return False
 
+
+from urllib.parse import urlparse, urlunparse
+
+def normalize_url(url):
+    """
+    Normalize URLs early in the crawl:
+    - remove fragment
+    - lowercase host
+    - normalize trailing slash
+    """
+    parsed = urlparse(url)
+
+    # remove fragment
+    parsed = parsed._replace(fragment="")
+
+    # lowercase host
+    netloc = parsed.netloc.lower()
+
+    # normalize path: treat /foo and /foo/ as same (except root)
+    path = parsed.path or "/"
+    if path != "/" and path.endswith("/"):
+        path = path.rstrip("/")
+
+    parsed = parsed._replace(netloc=netloc, path=path)
+    return urlunparse(parsed)
+
+
+'''
 
 def normalize_url(url):
     # remove fragment part like #section
@@ -32,6 +61,72 @@ def extract_text(html: str) -> str:
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text(separator=" ", strip=True)
     text = " ".join(text.split())  # collapse spaces
+    return text
+'''
+def extract_text(html: str) -> str:
+    """
+    Extract main visible text from HTML, trying to skip header/nav/footer
+    and other boilerplate. Designed to be generic and work across sites,
+    not just TUM.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    # 1) Remove obviously non-content tags (scripts, styles, forms, etc.)
+    for tag in soup(["script", "style", "noscript", "svg", "img", "picture", "video", "audio", "canvas", "form", "button"]):
+        tag.decompose()
+
+    # 2) Remove typical boilerplate containers (navbars, headers, footers, cookie banners, etc.)
+    boilerplate_selectors = [
+        "header",
+        "footer",
+        "nav",
+        "aside",
+        ".navbar",
+        ".nav",
+        ".navigation",
+        ".site-header",
+        ".site-footer",
+        ".footer",
+        "#header",
+        "#footer",
+        "#nav",
+        "#navbar",
+        ".cookie",
+        ".cookie-banner",
+        "#cookie-banner",
+        ".banner",
+    ]
+    for selector in boilerplate_selectors:
+        for el in soup.select(selector):
+            el.decompose()
+
+    # 3) Try to find a "main content" container if present
+    main = soup.find("main")
+    if not main:
+        # common generic candidates across many sites
+        for cand in [
+            "article",
+            "#main",
+            ".main",
+            ".main-content",
+            "#content",
+            ".content",
+            ".page-content",
+            ".layout__content",
+        ]:
+            main = soup.select_one(cand)
+            if main:
+                break
+
+    # Fallback: use <body>, or entire document if no better choice
+    root = main or soup.body or soup
+
+    # 4) Extract text from chosen root
+    text = root.get_text(" ", strip=True)
+
+    # 5) Normalize whitespace (collapse multiple spaces/newlines)
+    text = re.sub(r"\s+", " ", text).strip()
+
     return text
 
 
