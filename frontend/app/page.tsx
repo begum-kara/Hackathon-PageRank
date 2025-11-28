@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import { Input } from "../components/ui/input";
@@ -24,7 +24,7 @@ import {
   SearchResult,
   PageRankResponse,
   pagerankFromUrl,
-  SearchResponse
+  SearchResponse,
 } from "@/lib/api";
 
 function MouseTrail() {
@@ -35,7 +35,7 @@ function MouseTrail() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const size = 10; // star size in px (smaller trail)
+      const size = 10;
       const newDot = {
         id: nextIdRef.current++,
         x: e.clientX,
@@ -54,8 +54,8 @@ function MouseTrail() {
     const interval = setInterval(() => {
       setDots((prev) =>
         prev
-          .map((dot) => ({ ...dot, opacity: dot.opacity - 0.12 })) // faster fade
-          .filter((dot) => dot.opacity > 0)
+          .map((dot) => ({ ...dot, opacity: dot.opacity - 0.12 }))
+          .filter((dot) => dot.opacity > 0),
       );
     }, 30);
     return () => clearInterval(interval);
@@ -109,9 +109,11 @@ export default function Home() {
 
   const [uploadFile, setUploadFile] = useState<File | null>(null);
   const [pagerankResults, setPagerankResults] = useState<PageRankNode[] | null>(
-    null
+    null,
   );
-  const [searchResults, setSearchResults] = useState<SearchResponse | null>(null)
+  const [searchResults, setSearchResults] = useState<SearchResponse | null>(
+    null,
+  );
 
   const demoSectionRef = useRef<HTMLElement>(null);
 
@@ -135,18 +137,18 @@ export default function Home() {
     });
   };
 
-  function mapPageRankToResults(payload: PageRankResponse) {
+  function mapPageRankToResults(payload: PageRankResponse): ResultsPayload {
     return {
       pages: payload.top.map((node, idx) => ({
-        name: `Node ${node.node}`, 
-        rank: idx + 1, 
-        score: node.score, 
+        name: `Node ${node.node}`,
+        rank: idx + 1,
+        score: node.score,
       })),
       metrics: {
-        time: 0, 
-        memory: 0, 
+        time: 0,
+        memory: 0,
       },
-      graphData: generateMockGraphData(), 
+      graphData: generateMockGraphData(),
     };
   }
 
@@ -162,21 +164,26 @@ export default function Home() {
         const apiRes = await uploadGraph(uploadFile, 10);
         setResults(mapPageRankToResults(apiRes));
       } else if (activeTab === "wikipedia") {
-          const q = searchQuery.trim();
-          if (!q) return;
-          const res = await searchTum(q, 10); // from lib/api
-          setSearchResults(res);
-          setResults(null); // optional: clear pagerank demo
+        const q = searchQuery.trim();
+        if (!q) return;
+        const res = await searchTum(q, 10);
+        setSearchResults(res);
+        setResults(null);
       } else if (activeTab === "url") {
-        const trimmed = url.trim()
+        const trimmed = url.trim();
         if (!trimmed) {
-          alert("Please enter a URL")
-          return
+          alert("Please enter a URL");
+          return;
         }
-        // call backend URL PageRank endpoint
+
         const apiRes = await pagerankFromUrl(trimmed, 30, 20);
 
-        // map to ResultsDisplay shape
+        const startNode =
+          apiRes.nodes.find((n: any) => n.url === trimmed) ?? apiRes.nodes[0];
+        const topUrl = apiRes.pages[0]?.url;
+        const bestNode =
+          apiRes.nodes.find((n: any) => n.url === topUrl) ?? apiRes.nodes[0];
+
         setResults({
           pages: apiRes.pages.map((p) => ({
             name: p.url,
@@ -185,20 +192,19 @@ export default function Home() {
           })),
           metrics: { time: 0, memory: 0 },
           graphData: {
-            nodes: apiRes.nodes.map((n) => ({
+            nodes: apiRes.nodes.map((n: any) => ({
               id: n.id,
               label: n.url,
             })),
             edges: apiRes.edges,
+            startId: startNode?.id,
+            bestId: bestNode?.id,
           },
         });
 
-        // URL mode is a PageRank demo, not TF-IDF search
-        setSearchResults(null)
-        return
-      }
-      else if (activeTab === "dataset") {
-        // Same, you can later switch datasets & call backend accordingly.
+        setSearchResults(null);
+        return;
+      } else if (activeTab === "dataset") {
         alert("Dataset demo not wired yet. You can try Upload or Search tabs.");
       }
     } catch (err: any) {
@@ -216,7 +222,7 @@ export default function Home() {
       size: Math.random() * 20 + 10,
     }));
 
-    const edges = [];
+    const edges: { from: number; to: number }[] = [];
     for (let i = 0; i < 30; i++) {
       const from = Math.floor(Math.random() * 20);
       const to = Math.floor(Math.random() * 20);
@@ -304,7 +310,7 @@ export default function Home() {
               Demo
             </span>
           </h2>
-          <p className="mb-12 text-balance text-center text-lg text-slate-300">
+        <p className="mb-12 text-balance text-center text-lg text-slate-300">
             Experience PageRank in action with your own data or our sample
             datasets.
           </p>
@@ -385,8 +391,8 @@ export default function Home() {
                     </Button>
                   </div>
                   <p className="mt-2 text-sm text-slate-400">
-                    We'll crawl a small neighborhood around this URL and calculate PageRank
-                    scores for the discovered pages.
+                    We'll crawl a small neighborhood around this URL and
+                    calculate PageRank scores for the discovered pages.
                   </p>
                 </div>
                 {!results ? (
@@ -396,7 +402,8 @@ export default function Home() {
                       PageRank results will appear here
                     </h3>
                     <p className="text-slate-400">
-                      Enter a URL and click Analyze to see the most important pages in its local link graph.
+                      Enter a URL and click Analyze to see the most important
+                      pages in its local link graph.
                     </p>
                   </Card>
                 ) : (
@@ -404,7 +411,6 @@ export default function Home() {
                 )}
               </div>
             )}
-
 
             {activeTab === "upload" && (
               <div className="space-y-6">
@@ -417,22 +423,21 @@ export default function Home() {
                     Supports CSV and JSON formats
                   </p>
 
-                  {/* Simple file input */}
                   <div className="mt-4 flex flex-col items-center gap-3">
-                      <label className="cursor-pointer">
-                        <span className="rounded bg-slate-800/80 px-3 py-2 text-xs text-slate-200">
-                          Browse files
-                        </span>
-                        <input
-                          type="file"
-                          accept=".txt,.csv,.json"
-                          onChange={(e) => {
-                            const file = e.target.files?.[0] || null;
-                            setUploadFile(file);
-                          }}
-                          className="hidden"
-                        />
-                      </label>
+                    <label className="cursor-pointer">
+                      <span className="rounded bg-slate-800/80 px-3 py-2 text-xs text-slate-200">
+                        Browse files
+                      </span>
+                      <input
+                        type="file"
+                        accept=".txt,.csv,.json"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0] || null;
+                          setUploadFile(file);
+                        }}
+                        className="hidden"
+                      />
+                    </label>
                     {uploadFile && (
                       <p className="text-xs text-slate-400">
                         Selected:{" "}
@@ -450,7 +455,36 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Show PageRank results (uploaded graph) */}
+                {results && <ResultsDisplay results={results} />}
+              </div>
+            )}
+
+            {activeTab === "dataset" && (
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <Card
+                    className="cursor-pointer border-slate-700 bg-slate-900/50 p-4 transition-colors hover:border-blue-500"
+                    onClick={handleAnalyze}
+                  >
+                    <h4 className="mb-1 font-semibold text-white">
+                      Wikipedia Sample
+                    </h4>
+                    <p className="text-sm text-slate-400">
+                      10,000 interconnected Wikipedia pages
+                    </p>
+                  </Card>
+                  <Card
+                    className="cursor-pointer border-slate-700 bg-slate-900/50 p-4 transition-colors hover:border-blue-500"
+                    onClick={handleAnalyze}
+                  >
+                    <h4 className="mb-1 font-semibold text-white">
+                      TUM Internal Pages
+                    </h4>
+                    <p className="text-sm text-slate-400">
+                      Complete TUM website graph structure
+                    </p>
+                  </Card>
+                </div>
                 {results && <ResultsDisplay results={results} />}
               </div>
             )}
@@ -499,7 +533,8 @@ export default function Home() {
                       Search results will appear here
                     </h3>
                     <p className="text-slate-400">
-                      Enter a topic and click Search to see the most relevant TUM pages ranked by TF-IDF + PageRank.
+                      Enter a topic and click Search to see the most relevant
+                      TUM pages ranked by TF-IDF + PageRank.
                     </p>
                   </Card>
                 ) : (
@@ -683,8 +718,10 @@ function ResultsDisplay({
           <h3 className="mb-4 text-lg font-semibold text-white">
             Network Graph
           </h3>
-          <div className="relative aspect-square overflow-hidden rounded-lg bg-slate-950/50">
-            <GraphVisualization data={results.graphData} />
+          <div className="relative flex flex-col gap-3">
+            <div className="aspect-square overflow-hidden rounded-lg bg-slate-950/50">
+              <GraphVisualization data={results.graphData} />
+            </div>
           </div>
         </Card>
 
@@ -722,7 +759,10 @@ function ResultsDisplay({
 }
 
 function GraphVisualization({ data }: { data: any }) {
-  if (!data || !data.nodes || !data.edges) {
+  const width = 400;
+  const height = 220;
+
+  if (!data || !data.nodes || !data.edges || !data.nodes.length) {
     return (
       <div className="flex h-full w-full items-center justify-center text-xs text-slate-500">
         No graph data available.
@@ -730,92 +770,245 @@ function GraphVisualization({ data }: { data: any }) {
     );
   }
 
-  return (
-    <div className="relative h-full w-full">
-<svg className="h-full w-full" viewBox="0 0 400 400">
-  {/* Draw edges */}
-  {data.edges?.map((edge: any, i: number) => {
-    // Find nodes by id instead of indexing by array position
-    const fromNode = data.nodes?.find((n: any) => n.id === edge.from);
-    const toNode = data.nodes?.find((n: any) => n.id === edge.to);
+  const nodesById: Record<number, any> = {};
+  for (const n of data.nodes) {
+    if (!n) continue;
+    nodesById[n.id] = n;
+  }
 
-    // If we can't find either node, skip this edge
-    if (!fromNode || !toNode) return null;
+  const startId: number | undefined = data.startId;
+  const bestId: number | undefined = data.bestId;
 
-    if (
-      typeof fromNode.id !== "number" ||
-      typeof toNode.id !== "number" ||
-      Number.isNaN(fromNode.id) ||
-      Number.isNaN(toNode.id)
-    ) {
-      return null;
+  const getShortLabel = (label: string) => {
+      return label.replace(/^https?:\/\//, "")
+
+  };
+
+  const pathNodes = useMemo(() => {
+    if (typeof startId !== "number" || typeof bestId !== "number") {
+      return [] as any[];
     }
 
-    const x1 = 50 + (fromNode.id % 5) * 70 + Math.random() * 20;
-    const y1 = 50 + Math.floor(fromNode.id / 5) * 90 + Math.random() * 20;
-    const x2 = 50 + (toNode.id % 5) * 70 + Math.random() * 20;
-    const y2 = 50 + Math.floor(toNode.id / 5) * 90 + Math.random() * 20;
-
-    return (
-      <line
-        key={`edge-${i}`}
-        x1={x1}
-        y1={y1}
-        x2={x2}
-        y2={y2}
-        stroke="rgb(100, 116, 139)"
-        strokeWidth="1"
-        opacity="0.3"
-      />
-    );
-  })}
-
-  {/* Draw nodes */}
-  {data.nodes?.map((node: any) => {
-    if (
-      !node ||
-      typeof node.id !== "number" ||
-      Number.isNaN(node.id)
-    ) {
-      return null;
+    const adj: Record<number, number[]> = {};
+    for (const e of data.edges || []) {
+      if (!e) continue;
+      const f = e.from as number;
+      const t = e.to as number;
+      if (!adj[f]) adj[f] = [];
+      adj[f].push(t);
     }
 
-    const x = 50 + (node.id % 5) * 70 + Math.random() * 20;
-    const y = 50 + Math.floor(node.id / 5) * 90 + Math.random() * 20;
+    const queue: number[] = [startId];
+    const visited = new Set<number>([startId]);
+    const parent = new Map<number, number | null>();
+    parent.set(startId, null);
 
-    // Fallback radius if size is missing (URL mode)
-    const baseSize = typeof node.size === "number" && !Number.isNaN(node.size)
-      ? node.size
-      : 12; // default size
-    const radius = baseSize / 2;
+    while (queue.length > 0) {
+      const cur = queue.shift() as number;
+      if (cur === bestId) break;
+      for (const nb of adj[cur] || []) {
+        if (!visited.has(nb)) {
+          visited.add(nb);
+          parent.set(nb, cur);
+          queue.push(nb);
+        }
+      }
+    }
+
+    if (!visited.has(bestId)) {
+      return [] as any[];
+    }
+
+    const path: number[] = [];
+    let cur: number | null = bestId;
+    while (cur !== null) {
+      path.push(cur);
+      const p = parent.get(cur);
+      cur = p === undefined ? null : p;
+    }
+    path.reverse();
+
+    return path.map((id) => nodesById[id]).filter(Boolean);
+  }, [data, startId, bestId]);
+
+  // Case 1: start -> best path with arrows + labels under each node
+  if (pathNodes.length >= 2) {
+    const marginX = 40;
+    const centerY = height / 2;
+    const n = pathNodes.length;
+    const spacing = n > 1 ? (width - 2 * marginX) / (n - 1) : 0;
+
+    const laidOut = pathNodes.map((node, idx) => {
+      const x = marginX + idx * spacing;
+      const y = centerY;
+      const baseRadius = 7;
+      let r = baseRadius;
+      if (idx === 0 || idx === n - 1) r = baseRadius + 3;
+      return { ...node, x, y, r };
+    });
 
     return (
-      <g key={`node-${node.id}`}>
-        <circle
-          cx={x}
-          cy={y}
-          r={radius}
-          fill="rgb(96, 165, 250)"
-          opacity="0.7"
-        />
-        <circle
-          cx={x}
-          cy={y}
-          r={radius + 2}
-          fill="none"
-          stroke="rgb(147, 197, 253)"
-          strokeWidth="1"
-        />
-      </g>
-    );
-  })}
-</svg>
+      <div className="h-full w-full">
+        <svg className="h-full w-full" viewBox={`0 0 ${width} ${height}`}>
+          <defs>
+            <marker
+              id="arrowhead"
+              markerWidth="8"
+              markerHeight="8"
+              refX="6"
+              refY="3.5"
+              orient="auto"
+            >
+              <polygon points="0 0, 7 3.5, 0 7" fill="rgb(148, 163, 184)" />
+            </marker>
+          </defs>
 
-      <div className="absolute inset-0 flex items-center justify-center">
-        <p className="rounded-lg bg-slate-900/80 px-3 py-1 text-xs text-slate-400">
-          Interactive graph with {data.nodes.length} nodes
-        </p>
+          {laidOut.map((node, i) => {
+            if (i === laidOut.length - 1) return null;
+            const next = laidOut[i + 1];
+            return (
+              <line
+                key={`edge-${node.id}-${next.id}`}
+                x1={node.x}
+                y1={node.y}
+                x2={next.x}
+                y2={next.y}
+                stroke="rgb(148, 163, 184)"
+                strokeWidth={2}
+                markerEnd="url(#arrowhead)"
+                opacity={0.9}
+              />
+            );
+          })}
+
+          {laidOut.map((node, idx) => (
+            <g key={`node-${node.id}`}>
+              <circle
+                cx={node.x}
+                cy={node.y}
+                r={node.r}
+                fill={
+                  idx === 0
+                    ? "rgb(52, 211, 153)"
+                    : idx === laidOut.length - 1
+                    ? "rgb(249, 115, 22)"
+                    : "rgb(96, 165, 250)"
+                }
+                opacity={0.95}
+              />
+              <circle
+                cx={node.x}
+                cy={node.y}
+                r={node.r + 2}
+                fill="none"
+                stroke="rgb(148, 163, 184)"
+                strokeWidth={1}
+              />
+              <text
+                x={node.x}
+                y={node.y + node.r + 10}
+                textAnchor="middle"
+                fontSize="8"
+                fill="rgb(209, 213, 219)"
+              >
+                {getShortLabel(node.label)}
+              </text>
+            </g>
+          ))}
+        </svg>
       </div>
+    );
+  }
+
+  // Case 2: fallback compact circular graph with arrows + labels under each node
+  const MAX_NODES = 20;
+  const allNodes: any[] = data.nodes;
+  const visibleNodes = allNodes.slice(0, MAX_NODES);
+  const visibleIds = new Set<number>(visibleNodes.map((n) => n.id));
+  const visibleEdges = (data.edges || []).filter(
+    (e: any) => e && visibleIds.has(e.from) && visibleIds.has(e.to),
+  );
+
+  const centerX = width / 2;
+  const centerY = height / 2;
+  const radius = Math.min(width, height) * 0.35;
+
+  const laidOut = visibleNodes.map((node, idx) => {
+    const angle = (2 * Math.PI * idx) / visibleNodes.length;
+    const x = centerX + radius * Math.cos(angle);
+    const y = centerY + radius * Math.sin(angle);
+    return { ...node, x, y };
+  });
+
+  const posById: Record<number, { x: number; y: number }> = {};
+  for (const n of laidOut) {
+    posById[n.id] = { x: n.x, y: n.y };
+  }
+
+  return (
+    <div className="h-full w-full">
+      <svg className="h-full w-full" viewBox={`0 0 ${width} ${height}`}>
+        <defs>
+          <marker
+            id="arrowhead"
+            markerWidth="8"
+            markerHeight="8"
+            refX="6"
+            refY="3.5"
+            orient="auto"
+          >
+            <polygon points="0 0, 7 3.5, 0 7" fill="rgb(148, 163, 184)" />
+          </marker>
+        </defs>
+
+        {visibleEdges.map((e: any, i: number) => {
+          const fromPos = posById[e.from];
+          const toPos = posById[e.to];
+          if (!fromPos || !toPos) return null;
+          return (
+            <line
+              key={`edge-${i}`}
+              x1={fromPos.x}
+              y1={fromPos.y}
+              x2={toPos.x}
+              y2={toPos.y}
+              stroke="rgb(100, 116, 139)"
+              strokeWidth={1}
+              markerEnd="url(#arrowhead)"
+              opacity={0.5}
+            />
+          );
+        })}
+
+        {laidOut.map((node: any) => (
+          <g key={`node-${node.id}`}>
+            <circle
+              cx={node.x}
+              cy={node.y}
+              r={6}
+              fill="rgb(96, 165, 250)"
+              opacity={0.9}
+            />
+            <circle
+              cx={node.x}
+              cy={node.y}
+              r={8}
+              fill="none"
+              stroke="rgb(148, 163, 184)"
+              strokeWidth={1}
+            />
+            <text
+              x={node.x}
+              y={node.y + 12}
+              textAnchor="middle"
+              fontSize="8"
+              fill="rgb(209, 213, 219)"
+            >
+              {getShortLabel(node.label)}
+            </text>
+          </g>
+        ))}
+      </svg>
     </div>
   );
 }
@@ -840,7 +1033,7 @@ function SearchResultsDisplay({ results }: { results: SearchResult[] }) {
             href={r.url}
             target="_blank"
             rel="noreferrer"
-            className="text-blue-400 hover:underline break-all"
+            className="break-all text-blue-400 hover:underline"
           >
             {r.url}
           </a>
