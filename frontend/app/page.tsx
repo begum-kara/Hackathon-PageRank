@@ -36,7 +36,6 @@ import {
   SelectValue,
 } from "../components/ui/select";
 
-
 function MouseTrail() {
   const [dots, setDots] = useState<
     Array<{ id: number; x: number; y: number; opacity: number; s: number }>
@@ -158,6 +157,7 @@ export default function Home() {
   );
 
   const demoSectionRef = useRef<HTMLElement>(null);
+  const whatIsSectionRef = useRef<HTMLElement>(null);
 
   interface ResultsPayload {
     pages: {
@@ -174,6 +174,13 @@ export default function Home() {
 
   const scrollToDemo = () => {
     demoSectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const scrollToWhatIs = () => {
+    whatIsSectionRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -417,22 +424,25 @@ export default function Home() {
         // URL mode is a PageRank demo, not TF-IDF search
         setSearchResults(null);
         return;
-      } if (activeTab === "custom") {
-          const pageRankResults = calculatePageRank();
-          const endTime = performance.now();
+      } else if (activeTab === "custom") {
+        const pageRankResults = calculatePageRank();
+        const endTime = performance.now();
 
-          setResults({
-            pages: pageRankResults,
-            graphData: {
-              nodes: customNodes.map((n) => ({
-               ...n,
-               size: (pageRankResults.find((p) => p.id === n.id)?.score || 0) * 400 + 10,
-         })),
-         edges: customEdges,
-       },
-     });
-    return;
-}
+        setResults({
+          pages: pageRankResults,
+          graphData: {
+            nodes: customNodes.map((n) => ({
+              ...n,
+              size:
+                (pageRankResults.find((p) => p.id === n.id)?.score || 0) *
+                  400 +
+                10,
+            })),
+            edges: customEdges,
+          },
+        });
+        return;
+      }
     } catch (err: any) {
       console.error(err);
       alert(err?.message ?? "Something went wrong while running PageRank.");
@@ -501,6 +511,7 @@ export default function Home() {
               size="lg"
               variant="outline"
               className="border-slate-600 bg-slate-800/50 text-white hover:bg-slate-700"
+              onClick={scrollToWhatIs}
             >
               Learn More
             </Button>
@@ -1060,9 +1071,11 @@ export default function Home() {
                         <div className="rounded-lg bg-slate-950/50 p-4">
                           <div className="overflow-x-auto text-center">
                             <div className="text-base text-white">
-<span className="font-mono text-white">
-  {"PR(pᵢ) = (1-d)/N + d Σ_{pⱼ ∈ M(pᵢ)} PR(pⱼ)/L(pⱼ)"}
-</span>
+                              <span className="font-mono text-white">
+                                {
+                                  "PR(pᵢ) = (1-d)/N + d Σ_{pⱼ ∈ M(pᵢ)} PR(pⱼ)/L(pⱼ)"
+                                }
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1202,7 +1215,7 @@ export default function Home() {
       </section>
 
       {/* What is PageRank Section */}
-      <section className="px-4 py-16">
+      <section ref={whatIsSectionRef} className="px-4 py-16">
         <div className="container mx-auto max-w-6xl">
           <h2 className="mb-4 text-center text-4xl font-bold text-white md:text-5xl">
             What is{" "}
@@ -1390,94 +1403,104 @@ function GraphVisualization({
   nodePositions = new Map(),
   setNodePositions = () => {},
 }: {
-  data: any
-  zoom?: number
-  pan?: { x: number; y: number }
-  draggedNode?: string | null
-  setDraggedNode?: (id: string | null) => void
-  nodePositions?: Map<string, { x: number; y: number }>
-  setNodePositions?: (positions: Map<string, { x: number; y: number }>) => void
+  data: any;
+  zoom?: number;
+  pan?: { x: number; y: number };
+  draggedNode?: string | null;
+  setDraggedNode?: (id: string | null) => void;
+  nodePositions?: Map<string, { x: number; y: number }>;
+  setNodePositions?: (positions: Map<string, { x: number; y: number }>) => void;
 }) {
   if (!data || !data.nodes || !data.edges) {
     return (
       <div className="absolute inset-0 flex items-center justify-center">
         <p className="text-slate-500">No graph data available.</p>
       </div>
-    )
+    );
   }
 
-  const nodeMap = new Map<string, { x: number; y: number; size: number }>()
-  const canvasWidth = 400
-  const canvasHeight = 400
-  const padding = 50
+  const nodeMap = new Map<string, { x: number; y: number; size: number }>();
+  const canvasWidth = 400;
+  const canvasHeight = 400;
+  const padding = 50;
 
   // Initialize positions if not set
   if (nodePositions.size === 0) {
-    const nodesPerRow = Math.min(5, data.nodes.length)
-    const newPositions = new Map<string, { x: number; y: number }>()
+    const nodesPerRow = Math.min(5, data.nodes.length);
+    const newPositions = new Map<string, { x: number; y: number }>();
 
     data.nodes.forEach((node: any, index: number) => {
       if (node.id !== undefined && node.size !== undefined) {
-        const x = padding + ((index % nodesPerRow) * (canvasWidth - 2 * padding)) / nodesPerRow
+        const x =
+          padding +
+          ((index % nodesPerRow) * (canvasWidth - 2 * padding)) / nodesPerRow;
         const y =
           padding +
-          (Math.floor(index / nodesPerRow) * (canvasHeight - 2 * padding)) / Math.ceil(data.nodes.length / nodesPerRow)
-        newPositions.set(node.id.toString(), { x, y })
-        nodeMap.set(node.id.toString(), { x, y, size: node.size })
+          (Math.floor(index / nodesPerRow) *
+            (canvasHeight - 2 * padding)) /
+            Math.ceil(data.nodes.length / nodesPerRow);
+        newPositions.set(node.id.toString(), { x, y });
+        nodeMap.set(node.id.toString(), { x, y, size: node.size });
       }
-    })
+    });
 
-    setNodePositions(newPositions)
+    setNodePositions(newPositions);
   } else {
     // Use existing positions
     data.nodes.forEach((node: any) => {
-      const pos = nodePositions.get(node.id.toString())
+      const pos = nodePositions.get(node.id.toString());
       if (pos && node.size !== undefined) {
-        nodeMap.set(node.id.toString(), { ...pos, size: node.size })
+        nodeMap.set(node.id.toString(), { ...pos, size: node.size });
       }
-    })
+    });
   }
 
   const handleNodeMouseDown = (e: React.MouseEvent, nodeId: string) => {
-    e.stopPropagation()
-    setDraggedNode(nodeId)
-  }
+    e.stopPropagation();
+    setDraggedNode(nodeId);
+  };
 
   const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
-    if (!draggedNode) return
+    if (!draggedNode) return;
 
-    const svg = e.currentTarget
-    const rect = svg.getBoundingClientRect()
-    const x = ((e.clientX - rect.left) / rect.width) * canvasWidth
-    const y = ((e.clientY - rect.top) / rect.height) * canvasHeight
+    const svg = e.currentTarget;
+    const rect = svg.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * canvasWidth;
+    const y = ((e.clientY - rect.top) / rect.height) * canvasHeight;
 
-    const clampedX = Math.max(30, Math.min(canvasWidth - 30, x))
-    const clampedY = Math.max(30, Math.min(canvasHeight - 30, y))
+    const clampedX = Math.max(30, Math.min(canvasWidth - 30, x));
+    const clampedY = Math.max(30, Math.min(canvasHeight - 30, y));
 
-    const newPositions = new Map(nodePositions)
-    newPositions.set(draggedNode, { x: clampedX, y: clampedY })
-    setNodePositions(newPositions)
-  }
+    const newPositions = new Map(nodePositions);
+    newPositions.set(draggedNode, { x: clampedX, y: clampedY });
+    setNodePositions(newPositions);
+  };
 
   const handleMouseUp = () => {
-    setDraggedNode(null)
-  }
+    setDraggedNode(null);
+  };
 
-  const calculateArrowEndpoint = (fromX: number, fromY: number, toX: number, toY: number, nodeRadius: number) => {
-    const dx = toX - fromX
-    const dy = toY - fromY
-    const distance = Math.sqrt(dx * dx + dy * dy)
+  const calculateArrowEndpoint = (
+    fromX: number,
+    fromY: number,
+    toX: number,
+    toY: number,
+    nodeRadius: number
+  ) => {
+    const dx = toX - fromX;
+    const dy = toY - fromY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-    if (distance === 0) return { x: toX, y: toY }
+    if (distance === 0) return { x: toX, y: toY };
 
-    const ux = dx / distance
-    const uy = dy / distance
+    const ux = dx / distance;
+    const uy = dy / distance;
 
     return {
       x: toX - ux * nodeRadius,
       y: toY - uy * nodeRadius,
-    }
-  }
+    };
+  };
 
   return (
     <div className="relative h-full w-full">
@@ -1488,19 +1511,27 @@ function GraphVisualization({
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         style={{
-          transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`,
+          transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${
+            pan.y / zoom
+          }px)`,
           transformOrigin: "center",
           transition: draggedNode ? "none" : "transform 0.1s ease-out",
         }}
       >
         {data.edges.map((edge: any, i: number) => {
-          const fromNode = nodeMap.get(edge.from.toString())
-          const toNode = nodeMap.get(edge.to.toString())
+          const fromNode = nodeMap.get(edge.from.toString());
+          const toNode = nodeMap.get(edge.to.toString());
 
-          if (!fromNode || !toNode) return null
+          if (!fromNode || !toNode) return null;
 
-          const nodeRadius = toNode.size / 2
-          const endpoint = calculateArrowEndpoint(fromNode.x, fromNode.y, toNode.x, toNode.y, nodeRadius)
+          const nodeRadius = toNode.size / 2;
+          const endpoint = calculateArrowEndpoint(
+            fromNode.x,
+            fromNode.y,
+            toNode.x,
+            toNode.y,
+            nodeRadius
+          );
 
           return (
             <line
@@ -1514,17 +1545,20 @@ function GraphVisualization({
               opacity="0.4"
               markerEnd="url(#network-arrowhead)"
             />
-          )
+          );
         })}
 
         {data.nodes.map((node: any) => {
-          const nodeData = nodeMap.get(node.id.toString())
-          if (!nodeData) return null
+          const nodeData = nodeMap.get(node.id.toString());
+          if (!nodeData) return null;
 
-          const radius = nodeData.size / 2
+          const radius = nodeData.size / 2;
 
           return (
-            <g key={`node-${node.id}`} style={{ cursor: draggedNode === node.id.toString() ? "grabbing" : "grab" }}>
+            <g
+              key={`node-${node.id}`}
+              style={{ cursor: draggedNode === node.id.toString() ? "grabbing" : "grab" }}
+            >
               <circle
                 cx={nodeData.x}
                 cy={nodeData.y}
@@ -1543,7 +1577,7 @@ function GraphVisualization({
                 className="pointer-events-none"
               />
             </g>
-          )
+          );
         })}
 
         <defs>
@@ -1566,7 +1600,7 @@ function GraphVisualization({
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 function SearchResultsDisplay({ results }: { results: SearchResult[] }) {
