@@ -7,8 +7,8 @@ export interface PageRankResponse {
   top: PageRankNode[];
 }
 
-//const API_BASE = "http://172.17.255.190:8000";
-const API_BASE = "http://localhost:8000";
+const API_BASE = "http://172.17.245.18:8000";
+//const API_BASE = "http://localhost:8000";
 
 
 export async function uploadGraph(file: File, topK: number): Promise<PageRankResponse> {
