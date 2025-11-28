@@ -138,15 +138,15 @@ export default function Home() {
   function mapPageRankToResults(payload: PageRankResponse) {
     return {
       pages: payload.top.map((node, idx) => ({
-        name: `Node ${node.node}`, // label shown in the UI
-        rank: idx + 1, // 1, 2, 3, ...
-        score: node.score, // pagerank score from backend
+        name: `Node ${node.node}`, 
+        rank: idx + 1, 
+        score: node.score, 
       })),
       metrics: {
-        time: 0, // you can plug real timing later
-        memory: 0, // same here
+        time: 0, 
+        memory: 0, 
       },
-      graphData: generateMockGraphData(), // fill with real graph visualization later if you want
+      graphData: generateMockGraphData(), 
     };
   }
 
@@ -292,123 +292,6 @@ export default function Home() {
               <p className="text-sm text-slate-400">Analysis</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* What is PageRank Section */}
-      <section className="px-4 py-16">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="mb-4 text-center text-4xl font-bold text-white md:text-5xl">
-            What is{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              PageRank
-            </span>
-            ?
-          </h2>
-          <p className="mx-auto mb-12 max-w-3xl text-balance text-center text-lg text-slate-300">
-            The algorithm that powered Google's search engine revolution. Now
-            available as a web service.
-          </p>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card className="border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
-              <div className="mb-4 inline-flex rounded-lg bg-blue-500/10 p-3">
-                <Network className="h-8 w-8 text-blue-400" />
-              </div>
-              <h3 className="mb-3 text-xl font-bold text-white">
-                Graph Analysis
-              </h3>
-              <p className="text-balance text-slate-400">
-                Analyze complex network structures and relationships between
-                nodes with precision.
-              </p>
-            </Card>
-
-            <Card className="border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
-              <div className="mb-4 inline-flex rounded-lg bg-orange-500/10 p-3">
-                <Zap className="h-8 w-8 text-orange-400" />
-              </div>
-              <h3 className="mb-3 text-xl font-bold text-white">
-                Fast Processing
-              </h3>
-              <p className="text-balance text-slate-400">
-                Optimized algorithms handle large-scale graphs efficiently,
-                processing millions of nodes.
-              </p>
-            </Card>
-
-            <Card className="border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
-              <div className="mb-4 inline-flex rounded-lg bg-purple-500/10 p-3">
-                <Globe className="h-8 w-8 text-purple-400" />
-              </div>
-              <h3 className="mb-3 text-xl font-bold text-white">
-                Real-World Data
-              </h3>
-              <p className="text-balance text-slate-400">
-                Apply PageRank to actual networks like Wikipedia and TUM's
-                internal pages.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="px-4 py-16">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="mb-6 text-4xl font-bold text-white">How It Works</h2>
-
-          <p className="mb-12 text-balance text-lg leading-relaxed text-slate-300">
-            PageRank is a link analysis algorithm that assigns a numerical
-            weighting to each element of a hyperlinked set of documents. The
-            algorithm outputs a probability distribution representing the
-            likelihood that a person randomly clicking on links will arrive at
-            any particular page.
-          </p>
-
-          <Card className="border-slate-700 bg-slate-800/30 p-8 backdrop-blur">
-            <div className="grid gap-8 md:grid-cols-2">
-              <div>
-                <h3 className="mb-6 text-2xl font-bold text-white">
-                  Input Options
-                </h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3 text-slate-300">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-blue-400" />
-                    <span>Upload graph files (CSV, JSON)</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-slate-300">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-blue-400" />
-                    <span>Provide URL for web crawling</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-slate-300">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-blue-400" />
-                    <span>Use pre-loaded datasets</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="mb-6 text-2xl font-bold text-white">
-                  Output Data
-                </h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3 text-slate-300">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-orange-400" />
-                    <span>Ranked list of pages</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-slate-300">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-orange-400" />
-                    <span>PageRank scores</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-slate-300">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-orange-400" />
-                    <span>Network visualizations</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </Card>
         </div>
       </section>
 
@@ -572,36 +455,6 @@ export default function Home() {
               </div>
             )}
 
-            {activeTab === "dataset" && (
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  <Card
-                    className="cursor-pointer border-slate-700 bg-slate-900/50 p-4 transition-colors hover:border-blue-500"
-                    onClick={handleAnalyze}
-                  >
-                    <h4 className="mb-1 font-semibold text-white">
-                      Wikipedia Sample
-                    </h4>
-                    <p className="text-sm text-slate-400">
-                      10,000 interconnected Wikipedia pages
-                    </p>
-                  </Card>
-                  <Card
-                    className="cursor-pointer border-slate-700 bg-slate-900/50 p-4 transition-colors hover:border-blue-500"
-                    onClick={handleAnalyze}
-                  >
-                    <h4 className="mb-1 font-semibold text-white">
-                      TUM Internal Pages
-                    </h4>
-                    <p className="text-sm text-slate-400">
-                      Complete TUM website graph structure
-                    </p>
-                  </Card>
-                </div>
-                {results && <ResultsDisplay results={results} />}
-              </div>
-            )}
-
             {activeTab === "wikipedia" && (
               <div className="space-y-6">
                 <div>
@@ -654,6 +507,123 @@ export default function Home() {
                 )}
               </div>
             )}
+          </Card>
+        </div>
+      </section>
+
+      {/* What is PageRank Section */}
+      <section className="px-4 py-16">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="mb-4 text-center text-4xl font-bold text-white md:text-5xl">
+            What is{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              PageRank
+            </span>
+            ?
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-balance text-center text-lg text-slate-300">
+            The algorithm that powered Google's search engine revolution. Now
+            available as a web service.
+          </p>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card className="border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+              <div className="mb-4 inline-flex rounded-lg bg-blue-500/10 p-3">
+                <Network className="h-8 w-8 text-blue-400" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-white">
+                Graph Analysis
+              </h3>
+              <p className="text-balance text-slate-400">
+                Analyze complex network structures and relationships between
+                nodes with precision.
+              </p>
+            </Card>
+
+            <Card className="border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+              <div className="mb-4 inline-flex rounded-lg bg-orange-500/10 p-3">
+                <Zap className="h-8 w-8 text-orange-400" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-white">
+                Fast Processing
+              </h3>
+              <p className="text-balance text-slate-400">
+                Optimized algorithms handle large-scale graphs efficiently,
+                processing millions of nodes.
+              </p>
+            </Card>
+
+            <Card className="border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+              <div className="mb-4 inline-flex rounded-lg bg-purple-500/10 p-3">
+                <Globe className="h-8 w-8 text-purple-400" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-white">
+                Real-World Data
+              </h3>
+              <p className="text-balance text-slate-400">
+                Apply PageRank to actual networks like Wikipedia and TUM's
+                internal pages.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="px-4 py-16">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="mb-6 text-4xl font-bold text-white">How It Works</h2>
+
+          <p className="mb-12 text-balance text-lg leading-relaxed text-slate-300">
+            PageRank is a link analysis algorithm that assigns a numerical
+            weighting to each element of a hyperlinked set of documents. The
+            algorithm outputs a probability distribution representing the
+            likelihood that a person randomly clicking on links will arrive at
+            any particular page.
+          </p>
+
+          <Card className="border-slate-700 bg-slate-800/30 p-8 backdrop-blur">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h3 className="mb-6 text-2xl font-bold text-white">
+                  Input Options
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-blue-400" />
+                    <span>Upload graph files (CSV, JSON)</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-blue-400" />
+                    <span>Provide URL for web crawling</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-blue-400" />
+                    <span>Use pre-loaded datasets</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="mb-6 text-2xl font-bold text-white">
+                  Output Data
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-orange-400" />
+                    <span>Ranked list of pages</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-orange-400" />
+                    <span>PageRank scores</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-orange-400" />
+                    <span>Network visualizations</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </Card>
         </div>
       </section>
