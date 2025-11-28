@@ -103,7 +103,6 @@ export default function Home() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [results, setResults] = useState<{
     pages: Array<{ name: string; rank: number; score: number }>;
-    metrics: { time: number; memory: number };
     graphData: any;
   } | null>(null);
 
@@ -183,7 +182,6 @@ export default function Home() {
             rank: p.rank,
             score: p.score,
           })),
-          metrics: { time: 0, memory: 0 },
           graphData: {
             nodes: apiRes.nodes.map((n) => ({
               id: n.id,
@@ -301,8 +299,7 @@ export default function Home() {
             </span>
           </h2>
           <p className="mb-12 text-balance text-center text-lg text-slate-300">
-            Experience PageRank in action with your own data or our sample
-            datasets.
+            Experience PageRank in action. Search for a URL, upload a file or explore by keywords.
           </p>
 
           <Card className="border-slate-700 bg-slate-800/50 p-8 backdrop-blur">
@@ -628,41 +625,11 @@ function ResultsDisplay({
 }: {
   results: {
     pages: Array<{ name: string; rank: number; score: number }>;
-    metrics: { time: number; memory: number };
     graphData: any;
   };
 }) {
   return (
     <div className="space-y-6">
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card className="border-slate-700 bg-gradient-to-br from-blue-950/50 to-slate-900/50 p-4">
-          <div className="flex items-center gap-3">
-            <div className="rounded-lg bg-blue-500/10 p-2">
-              <Clock className="h-5 w-5 text-blue-400" />
-            </div>
-            <div>
-              <p className="text-sm text-slate-400">Processing Time</p>
-              <p className="text-2xl font-bold text-white">
-                {results.metrics.time.toFixed(2)}s
-              </p>
-            </div>
-          </div>
-        </Card>
-        <Card className="border-slate-700 bg-gradient-to-br from-purple-950/50 to-slate-900/50 p-4">
-          <div className="flex items-center gap-3">
-            <div className="rounded-lg bg-purple-500/10 p-2">
-              <HardDrive className="h-5 w-5 text-purple-400" />
-            </div>
-            <div>
-              <p className="text-sm text-slate-400">Memory Used</p>
-              <p className="text-2xl font-bold text-white">
-                {results.metrics.memory.toFixed(1)} MB
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-
       <div className="grid gap-6 lg:grid-cols-2">
         <Card className="border-slate-700 bg-slate-900/50 p-6">
           <h3 className="mb-4 text-lg font-semibold text-white">
