@@ -23,6 +23,8 @@ import {
   searchTum,
   SearchResult,
   PageRankResponse,
+  pagerankFromUrl,
+  SearchResponse
 } from "@/lib/api";
 
 function MouseTrail() {
@@ -109,8 +111,7 @@ export default function Home() {
   const [pagerankResults, setPagerankResults] = useState<PageRankNode[] | null>(
     null
   );
-  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null);
-
+  const [searchResults, setSearchResults] = useState<SearchResponse | null>(null)
 
   const demoSectionRef = useRef<HTMLElement>(null);
 
@@ -158,27 +159,51 @@ export default function Home() {
           alert("Please choose a graph file first.");
           return;
         }
-
         const apiRes = await uploadGraph(uploadFile, 10);
         setResults(mapPageRankToResults(apiRes));
       } else if (activeTab === "wikipedia") {
           const q = searchQuery.trim();
           if (!q) return;
-
           const res = await searchTum(q, 10); // from lib/api
-          setSearchResults(res.results);
+          setSearchResults(res);
           setResults(null); // optional: clear pagerank demo
       } else if (activeTab === "url") {
-        // You can implement this later (e.g., crawl a URL & run PageRank)
-        // For now, maybe just reuse uploadGraph or show a TODO.
-        alert("URL demo not wired yet. You can try Upload or Search tabs.");
-      } else if (activeTab === "dataset") {
+        const trimmed = url.trim()
+        if (!trimmed) {
+          alert("Please enter a URL")
+          return
+        }
+        // call backend URL PageRank endpoint
+        const apiRes = await pagerankFromUrl(trimmed, 30, 20);
+
+        // map to ResultsDisplay shape
+        setResults({
+          pages: apiRes.pages.map((p) => ({
+            name: p.url,
+            rank: p.rank,
+            score: p.score,
+          })),
+          metrics: { time: 0, memory: 0 },
+          graphData: {
+            nodes: apiRes.nodes.map((n) => ({
+              id: n.id,
+              label: n.url,
+            })),
+            edges: apiRes.edges,
+          },
+        });
+
+        // URL mode is a PageRank demo, not TF-IDF search
+        setSearchResults(null)
+        return
+      }
+      else if (activeTab === "dataset") {
         // Same, you can later switch datasets & call backend accordingly.
         alert("Dataset demo not wired yet. You can try Upload or Search tabs.");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      alert("Something went wrong. Check the console for details.");
+      alert(err?.message ?? "Something went wrong while running PageRank.");
     } finally {
       setIsAnalyzing(false);
     }
@@ -477,27 +502,26 @@ export default function Home() {
                     </Button>
                   </div>
                   <p className="mt-2 text-sm text-slate-400">
-                    We'll generate a sample graph and calculate PageRank scores
-                    for demonstration.
+                    We'll crawl a small neighborhood around this URL and calculate PageRank
+                    scores for the discovered pages.
                   </p>
                 </div>
-
-                {!searchResults ? (
+                {!results ? (
                   <Card className="border-slate-700 bg-slate-900/50 p-6">
                     <h3 className="mb-2 flex items-center gap-2 text-lg font-semibold text-white">
                       <span className="h-2 w-2 rounded-full bg-purple-400" />
-                      Search results will appear here
+                      PageRank results will appear here
                     </h3>
                     <p className="text-slate-400">
-                      Enter a topic and click Search to see the most relevant
-                      TUM pages ranked by TF-IDF + PageRank.
+                      Enter a URL and click Analyze to see the most important pages in its local link graph.
                     </p>
                   </Card>
                 ) : (
-                  <SearchResultsDisplay results={searchResults} />
+                  <ResultsDisplay results={results} />
                 )}
               </div>
             )}
+
 
             {activeTab === "upload" && (
               <div className="space-y-6">
@@ -626,7 +650,7 @@ export default function Home() {
                     </p>
                   </Card>
                 ) : (
-                  <SearchResultsDisplay results={searchResults} />
+                  <SearchResultsDisplay results={searchResults.results} />
                 )}
               </div>
             )}
@@ -738,55 +762,85 @@ function GraphVisualization({ data }: { data: any }) {
 
   return (
     <div className="relative h-full w-full">
-      <svg className="h-full w-full" viewBox="0 0 400 400">
-        {data.edges.map((edge: any, i: number) => {
-          const fromNode = data.nodes[edge.from];
-          const toNode = data.nodes[edge.to];
-          const x1 = 50 + (fromNode.id % 5) * 70 + Math.random() * 20;
-          const y1 = 50 + Math.floor(fromNode.id / 5) * 90 + Math.random() * 20;
-          const x2 = 50 + (toNode.id % 5) * 70 + Math.random() * 20;
-          const y2 = 50 + Math.floor(toNode.id / 5) * 90 + Math.random() * 20;
+<svg className="h-full w-full" viewBox="0 0 400 400">
+  {/* Draw edges */}
+  {data.edges?.map((edge: any, i: number) => {
+    // Find nodes by id instead of indexing by array position
+    const fromNode = data.nodes?.find((n: any) => n.id === edge.from);
+    const toNode = data.nodes?.find((n: any) => n.id === edge.to);
 
-          return (
-            <line
-              key={`edge-${i}`}
-              x1={x1}
-              y1={y1}
-              x2={x2}
-              y2={y2}
-              stroke="rgb(100, 116, 139)"
-              strokeWidth="1"
-              opacity="0.3"
-            />
-          );
-        })}
+    // If we can't find either node, skip this edge
+    if (!fromNode || !toNode) return null;
 
-        {data.nodes.map((node: any) => {
-          const x = 50 + (node.id % 5) * 70 + Math.random() * 20;
-          const y = 50 + Math.floor(node.id / 5) * 90 + Math.random() * 20;
-          const radius = node.size / 2;
+    if (
+      typeof fromNode.id !== "number" ||
+      typeof toNode.id !== "number" ||
+      Number.isNaN(fromNode.id) ||
+      Number.isNaN(toNode.id)
+    ) {
+      return null;
+    }
 
-          return (
-            <g key={`node-${node.id}`}>
-              <circle
-                cx={x}
-                cy={y}
-                r={radius}
-                fill="rgb(96, 165, 250)"
-                opacity="0.7"
-              />
-              <circle
-                cx={x}
-                cy={y}
-                r={radius + 2}
-                fill="none"
-                stroke="rgb(147, 197, 253)"
-                strokeWidth="1"
-              />
-            </g>
-          );
-        })}
-      </svg>
+    const x1 = 50 + (fromNode.id % 5) * 70 + Math.random() * 20;
+    const y1 = 50 + Math.floor(fromNode.id / 5) * 90 + Math.random() * 20;
+    const x2 = 50 + (toNode.id % 5) * 70 + Math.random() * 20;
+    const y2 = 50 + Math.floor(toNode.id / 5) * 90 + Math.random() * 20;
+
+    return (
+      <line
+        key={`edge-${i}`}
+        x1={x1}
+        y1={y1}
+        x2={x2}
+        y2={y2}
+        stroke="rgb(100, 116, 139)"
+        strokeWidth="1"
+        opacity="0.3"
+      />
+    );
+  })}
+
+  {/* Draw nodes */}
+  {data.nodes?.map((node: any) => {
+    if (
+      !node ||
+      typeof node.id !== "number" ||
+      Number.isNaN(node.id)
+    ) {
+      return null;
+    }
+
+    const x = 50 + (node.id % 5) * 70 + Math.random() * 20;
+    const y = 50 + Math.floor(node.id / 5) * 90 + Math.random() * 20;
+
+    // Fallback radius if size is missing (URL mode)
+    const baseSize = typeof node.size === "number" && !Number.isNaN(node.size)
+      ? node.size
+      : 12; // default size
+    const radius = baseSize / 2;
+
+    return (
+      <g key={`node-${node.id}`}>
+        <circle
+          cx={x}
+          cy={y}
+          r={radius}
+          fill="rgb(96, 165, 250)"
+          opacity="0.7"
+        />
+        <circle
+          cx={x}
+          cy={y}
+          r={radius + 2}
+          fill="none"
+          stroke="rgb(147, 197, 253)"
+          strokeWidth="1"
+        />
+      </g>
+    );
+  })}
+</svg>
+
       <div className="absolute inset-0 flex items-center justify-center">
         <p className="rounded-lg bg-slate-900/80 px-3 py-1 text-xs text-slate-400">
           Interactive graph with {data.nodes.length} nodes

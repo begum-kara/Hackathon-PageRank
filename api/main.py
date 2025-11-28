@@ -8,9 +8,18 @@ import re
 import json
 from pathlib import Path
 from urllib.parse import urlparse, urlunparse
-
 from config import CLUSTER_USER, CLUSTER_HOST, REMOTE_WORKDIR, REMOTE_BIN
-from tfidf_index import TfidfSearchIndex  # make sure this file is in the same folder as main.py
+from tfidf_index import TfidfSearchIndex 
+from pydantic import BaseModel
+import sys
+
+API_DIR = Path(__file__).resolve().parent
+
+ROOT_DIR = API_DIR.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
+
+from crawler.core import crawl_graph
 
 app = FastAPI(title="PageRank Service")
 
@@ -22,20 +31,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ---------------- Paths to data ----------------
-API_DIR = Path(__file__).resolve().parent
 ROOT_DIR = API_DIR.parent
-
-# Crawler text data (used for TF-IDF)
 CRAWLER_PAGES_PATH = ROOT_DIR / "crawler" / "data" / "pages.json"
-
-# CUDA PageRank output
 PAGERANK_PATH = ROOT_DIR / "backend" / "data" / "pagerank.json"
 
-# ---------------- Regex for cluster output ----------------
+# Regex for cluster output 
 TOP_LINE_RE = re.compile(r"^\s*node\s+(\d+)\s*:\s*([0-9\.Ee+-]+)\s*$")
 
-# ---------------- Global search state ----------------
+# Global search state 
 tfidf_index: TfidfSearchIndex | None = None
 pages_by_url = {}           # url -> full page dict from crawler
 pagerank_by_url = {}        # url -> raw pagerank score
@@ -157,9 +160,8 @@ async def startup_event():
         print(f"[startup] ERROR while building search index: {e}")
 
 
-# =========================================================
 # Helper: call CUDA PageRank on cluster
-# =========================================================
+
 def run_pagerank_on_cluster(local_input_path: str, top_k: int = 10):
     # 1) Upload file to cluster
     remote_input = f"{REMOTE_WORKDIR}/input.txt"
@@ -213,10 +215,95 @@ def run_pagerank_on_cluster(local_input_path: str, top_k: int = 10):
     os.remove(local_output)
     return ranks
 
+#URL search
+class UrlPageRankRequest(BaseModel):
+    url: str
+    max_pages: int = 30   
+    top_k: int = 20      
+    
+    
+@app.post("/api/pagerank/url")
+async def pagerank_from_url(payload: UrlPageRankRequest):
+    start_url = payload.url.strip()
+    if not start_url:
+        raise HTTPException(status_code=400, detail="URL is required")
 
-# =========================================================
+    parsed = urlparse(start_url)
+    if not parsed.scheme.startswith("http"):
+        raise HTTPException(status_code=400, detail="URL must start with http:// or https://")
+
+    # 1) Crawl a small graph using the shared crawler core
+    try:
+        pages, edges_url, url_to_id, visited = crawl_graph(
+            start_url,
+            max_pages=payload.max_pages,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Crawl failed: {e}")
+
+    if not edges_url:
+        raise HTTPException(status_code=400, detail="No crawlable links found from this URL.")
+
+    # 2) Convert URL-edges -> ID-edges for CUDA
+    edges_id = [
+        (url_to_id[src], url_to_id[tgt])
+        for (src, tgt) in edges_url
+        if src in url_to_id and tgt in url_to_id
+    ]
+
+    if not edges_id:
+        raise HTTPException(status_code=400, detail="Crawled pages but found no internal links to rank.")
+
+    id_to_url = {node_id: url for url, node_id in url_to_id.items()}
+
+    # 3) Write edges to a temporary file in "src dst" format
+    with tempfile.NamedTemporaryFile(delete=False, mode="w") as tmp:
+        for src_id, dst_id in edges_id:
+            tmp.write(f"{src_id} {dst_id}\n")
+        local_edges_path = tmp.name
+
+    # 4) Run PageRank on the cluster using existing helper
+    try:
+        raw_ranks = run_pagerank_on_cluster(local_edges_path, top_k=payload.top_k)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Cluster PageRank failed: {e}")
+    finally:
+        os.remove(local_edges_path)
+
+    # 5) Map node IDs back to URLs and shape response
+    pages_out = []
+    for i, entry in enumerate(raw_ranks):
+        node_id = entry["node"]
+        url = id_to_url.get(node_id, f"node-{node_id}")
+        pages_out.append(
+            {
+                "node_id": node_id,
+                "url": url,
+                "rank": i + 1,
+                "score": entry["score"],
+            }
+        )
+
+    edges_out = [{"from": src, "to": dst} for (src, dst) in edges_id]
+
+    # Also return a simple edge list with IDs, so frontend can visualize a graph if it wants
+    nodes_out = [
+        {"id": node_id, "url": url}
+        for node_id, url in id_to_url.items()
+    ]
+
+    return {
+        "start_url": start_url,
+        "page_count": len(url_to_id),
+        "edge_count": len(edges_id),
+        "pages": pages_out,
+        "nodes": nodes_out,
+        "edges": edges_out,
+    }
+
+
 # Existing endpoint: run PageRank on uploaded graph
-# =========================================================
+
 @app.post("/api/pagerank/file")
 async def pagerank_file(file: UploadFile = File(...), top_k: int = Form(10)):
     # Save file locally on laptop
@@ -234,9 +321,8 @@ async def pagerank_file(file: UploadFile = File(...), top_k: int = Form(10)):
     return {"top": result}
 
 
-# =========================================================
 # Helper: snippet generator for search results
-# =========================================================
+
 def _make_snippet(text: str, query: str, max_len: int = 220) -> str:
     """
     Very simple snippet: find first occurrence of any query term
@@ -270,9 +356,8 @@ def _make_snippet(text: str, query: str, max_len: int = 220) -> str:
     return snippet
 
 
-# =========================================================
 # New endpoint: search over TUM pages (TF-IDF + PageRank)
-# =========================================================
+
 @app.get("/api/search")
 async def search_tum(
     q: str = Query(..., alias="query", min_length=1, description="Search query string"),
@@ -328,9 +413,8 @@ async def search_tum(
     }
 
 
-# =========================================================
 # Health check
-# =========================================================
+
 @app.get("/health")
 def health():
     return {"status": "ok"}

@@ -65,3 +65,60 @@ export async function searchTum(query: string, topK = 10): Promise<SearchRespons
 
   return res.json();
 }
+
+
+// ---------- URL PageRank demo ----------
+
+export interface UrlPage {
+  node_id: number;
+  url: string;
+  rank: number;
+  score: number;
+}
+
+export interface UrlNode {
+  id: number;
+  url: string;
+}
+
+export interface UrlPagerankResponse {
+  start_url: string;
+  page_count: number;
+  edge_count: number;
+  pages: UrlPage[];
+  nodes: UrlNode[];
+  edges: { from: number; to: number }[];
+}
+
+export async function pagerankFromUrl(
+  url: string,
+  maxPages = 30,
+  topK = 20
+): Promise<UrlPagerankResponse> {
+  const res = await fetch(`${API_BASE}/api/pagerank/url`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      url,
+      max_pages: maxPages,
+      top_k: topK,
+    }),
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    let message = `URL PageRank API error: ${res.status}`;
+    try {
+      const data = await res.json();
+      if (data?.detail) {
+        message = `URL PageRank API error ${res.status}: ${data.detail}`;
+      }
+    } catch {
+      // ignore parse errors, keep default message
+    }
+
+    throw new Error(message);
+  }
+
+  return res.json();
+}
