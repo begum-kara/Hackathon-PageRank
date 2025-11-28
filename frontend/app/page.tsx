@@ -36,7 +36,6 @@ import {
   SelectValue,
 } from "../components/ui/select";
 
-
 function MouseTrail() {
   const [dots, setDots] = useState<
     Array<{ id: number; x: number; y: number; opacity: number; s: number }>
@@ -192,11 +191,13 @@ export default function Home() {
 
     setCustomNodes([...customNodes, newNode]);
     setNewNodeName("");
+    setResults(null);
   };
 
   const removeNode = (id: string) => {
     setCustomNodes(customNodes.filter((n) => n.id !== id));
     setCustomEdges(customEdges.filter((e) => e.from !== id && e.to !== id));
+    setResults(null);
   };
 
   const addEdge = () => {
@@ -204,12 +205,14 @@ export default function Home() {
     if (edgeFrom === edgeTo) return;
 
     setCustomEdges([...customEdges, { from: edgeFrom, to: edgeTo }]);
+    setResults(null);
   };
 
   const removeEdge = (from: string, to: string) => {
     setCustomEdges(
       customEdges.filter((e) => !(e.from === from && e.to === to))
     );
+    setResults(null);
   };
 
   const handleNodeMouseDown = (e: any, nodeId: string) => {
@@ -279,68 +282,78 @@ export default function Home() {
   };
 
   const calculatePageRank = () => {
-    const N = customNodes.length;
-    if (N === 0) return [];
+  const N = customNodes.length;
+  if (N === 0) return [];
 
-    // Build adjacency list
-    const inbound: Record<string, string[]> = {};
-    customNodes.forEach((n) => (inbound[n.id] = []));
+  // Build adjacency
+  const inbound: Record<string, string[]> = {};
+  const outDegree: Record<string, number> = {};
 
-    customEdges.forEach((edge) => {
-      if (inbound[edge.to]) {
-        inbound[edge.to].push(edge.from);
+  customNodes.forEach((n) => {
+    inbound[n.id] = [];
+    outDegree[n.id] = 0;
+  });
+
+  customEdges.forEach((e) => {
+    inbound[e.to].push(e.from);
+    outDegree[e.from]++;
+  });
+
+  // Initialize rank
+  let rank: Record<string, number> = {};
+  customNodes.forEach((n) => (rank[n.id] = 1 / N));
+
+  let converged = false;
+
+  while (!converged) {
+    const newRank: Record<string, number> = {};
+    converged = true;
+
+    // Total rank from dangling nodes
+    let danglingMass = 0;
+    customNodes.forEach((n) => {
+      if (outDegree[n.id] === 0) {
+        danglingMass += rank[n.id];
       }
     });
 
-    // out-degree table
-    const outDegree: Record<string, number> = {};
-    customNodes.forEach((n) => (outDegree[n.id] = 0));
-    customEdges.forEach((e) => outDegree[e.from]++);
+    customNodes.forEach((node) => {
+      const id = node.id;
 
-    // Initialize rank
-    const rank: Record<string, number> = {};
-    customNodes.forEach((n) => (rank[n.id] = 1 / N));
+      // (1-d)/N teleportation base
+      let r = (1 - dampingFactor) / N;
 
-    let converged = false;
-    while (!converged) {
-      const newRank: Record<string, number> = {};
-      converged = true;
+      // Dangling node contribution
+      if (danglingNodeStrategy === "distribute") {
+        r += dampingFactor * (danglingMass / N);
+      } else if (danglingNodeStrategy === "teleport") {
+        // teleporting: danglingMass is absorbed into teleport (already in base term)
+        // so we add nothing here
+      }
 
-      customNodes.forEach((node) => {
-        const id = node.id;
-
-        // base teleport probability
-        let r = (1 - dampingFactor) / N;
-
-        // sum of PR of inbound links
-        inbound[id].forEach((src) => {
-          if (outDegree[src] > 0) {
-            r += (dampingFactor * rank[src]) / outDegree[src];
-          } else {
-            // Dangling node
-            if (danglingNodeStrategy === "distribute") {
-              r += (dampingFactor * rank[src]) / N;
-            } else {
-              r += 0; // teleport case handled already
-            }
-          }
-        });
-
-        newRank[id] = r;
-
-        // Check convergence
-        if (Math.abs(newRank[id] - rank[id]) > convergenceThreshold) {
-          converged = false;
+      // Add inbound contribution
+      inbound[id].forEach((src) => {
+        if (outDegree[src] > 0) {
+          r += (dampingFactor * rank[src]) / outDegree[src];
         }
       });
 
-      Object.assign(rank, newRank);
-    }
+      newRank[id] = r;
 
-    return customNodes
-      .map((n) => ({ id: n.id, score: rank[n.id] }))
-      .sort((a, b) => b.score - a.score);
-  };
+      // Check convergence
+      if (Math.abs(newRank[id] - rank[id]) > convergenceThreshold) {
+        converged = false;
+      }
+    });
+
+    rank = newRank;
+  }
+
+  return customNodes
+    .map((n) => ({ id: n.id, score: rank[n.id] }))
+    .sort((a, b) => b.score - a.score);
+};
+
 
   const buildAdjacencyMatrix = () => {
     const size = customNodes.length;
@@ -417,22 +430,33 @@ export default function Home() {
         // URL mode is a PageRank demo, not TF-IDF search
         setSearchResults(null);
         return;
-      } if (activeTab === "custom") {
-          const pageRankResults = calculatePageRank();
-          const endTime = performance.now();
+      } else if (activeTab === "custom") {
+        const pageRankResults = calculatePageRank();
+        const endTime = performance.now();
+        const formattedPages = pageRankResults.map((r, i) => ({
+          name: customNodes.find((n) => n.id === r.id)?.name ?? `Node ${r.id}`,
+          rank: i + 1,
+          score: r.score,
+        }));
 
-          setResults({
-            pages: pageRankResults,
-            graphData: {
-              nodes: customNodes.map((n) => ({
-               ...n,
-               size: (pageRankResults.find((p) => p.id === n.id)?.score || 0) * 400 + 10,
-         })),
-         edges: customEdges,
-       },
-     });
-    return;
-}
+        setResults({
+          pages: formattedPages,
+          graphData: {
+            nodes: customNodes.map((n) => ({
+              id: n.id,
+              label: n.name,
+              size:
+                (pageRankResults.find((p) => p.id === n.id)?.score || 0) * 400 +
+                10,
+            })),
+            edges: customEdges.map((e) => ({
+              from: e.from,
+              to: e.to,
+            })),
+          },
+        });
+        return;
+      }
     } catch (err: any) {
       console.error(err);
       alert(err?.message ?? "Something went wrong while running PageRank.");
@@ -977,11 +1001,12 @@ export default function Home() {
                               max="1"
                               step="0.05"
                               value={dampingFactor}
-                              onChange={(e) =>
+                              onChange={(e) => {
                                 setDampingFactor(
                                   Number.parseFloat(e.target.value)
-                                )
-                              }
+                                );
+                                setResults(null);
+                              }}
                               className="border-slate-600 bg-slate-950/50 text-white"
                             />
                             <span className="text-sm text-slate-400">
@@ -1000,11 +1025,12 @@ export default function Home() {
                             max="0.01"
                             step="0.0001"
                             value={convergenceThreshold}
-                            onChange={(e) =>
+                            onChange={(e) => {
                               setConvergenceThreshold(
                                 Number.parseFloat(e.target.value)
-                              )
-                            }
+                              );
+                              setResults(null);
+                            }}
                             className="border-slate-600 bg-slate-950/50 text-white"
                           />
                         </div>
@@ -1015,9 +1041,10 @@ export default function Home() {
                           </Label>
                           <Select
                             value={danglingNodeStrategy}
-                            onValueChange={(v: any) =>
-                              setDanglingNodeStrategy(v)
-                            }
+                            onValueChange={(v: any) => {
+                              setDanglingNodeStrategy(v);
+                              setResults(null);
+                            }}
                           >
                             <SelectTrigger className="border-slate-600 bg-slate-950/50 text-white">
                               <SelectValue />
@@ -1060,9 +1087,11 @@ export default function Home() {
                         <div className="rounded-lg bg-slate-950/50 p-4">
                           <div className="overflow-x-auto text-center">
                             <div className="text-base text-white">
-<span className="font-mono text-white">
-  {"PR(pᵢ) = (1-d)/N + d Σ_{pⱼ ∈ M(pᵢ)} PR(pⱼ)/L(pⱼ)"}
-</span>
+                              <span className="font-mono text-white">
+                                {
+                                  "PR(pᵢ) = (1-d)/N + d Σ_{pⱼ ∈ M(pᵢ)} PR(pⱼ)/L(pⱼ)"
+                                }
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1100,9 +1129,7 @@ export default function Home() {
                                 {"M(pᵢ)"}
                               </span>
                               <span className="text-slate-400">-</span>
-                              <span>
-                                {"Set of pages that link to page pᵢ"}
-                              </span>
+                              <span>{"Set of pages that link to page pᵢ"}</span>
                             </div>
                             <div className="flex gap-2">
                               <span className="font-mono text-blue-400">
@@ -1196,6 +1223,9 @@ export default function Home() {
                   )}
                 </Button>
               </div>
+            )}
+            {activeTab === "custom" && results && (
+              <ResultsDisplay results={results} />
             )}
           </Card>
         </div>
@@ -1344,7 +1374,13 @@ function ResultsDisplay({
             Network Graph
           </h3>
           <div className="relative aspect-square overflow-hidden rounded-lg bg-slate-950/50">
-            <GraphVisualization data={results.graphData} />
+            <GraphVisualization
+              data={results.graphData}
+              draggedNode={null}
+              setDraggedNode={() => {}}
+              nodePositions={new Map()}
+              setNodePositions={() => {}}
+            />
           </div>
         </Card>
 
@@ -1390,94 +1426,103 @@ function GraphVisualization({
   nodePositions = new Map(),
   setNodePositions = () => {},
 }: {
-  data: any
-  zoom?: number
-  pan?: { x: number; y: number }
-  draggedNode?: string | null
-  setDraggedNode?: (id: string | null) => void
-  nodePositions?: Map<string, { x: number; y: number }>
-  setNodePositions?: (positions: Map<string, { x: number; y: number }>) => void
+  data: any;
+  zoom?: number;
+  pan?: { x: number; y: number };
+  draggedNode?: string | null;
+  setDraggedNode?: (id: string | null) => void;
+  nodePositions?: Map<string, { x: number; y: number }>;
+  setNodePositions?: (positions: Map<string, { x: number; y: number }>) => void;
 }) {
   if (!data || !data.nodes || !data.edges) {
     return (
       <div className="absolute inset-0 flex items-center justify-center">
         <p className="text-slate-500">No graph data available.</p>
       </div>
-    )
+    );
   }
 
-  const nodeMap = new Map<string, { x: number; y: number; size: number }>()
-  const canvasWidth = 400
-  const canvasHeight = 400
-  const padding = 50
+  const nodeMap = new Map<string, { x: number; y: number; size: number }>();
+  const canvasWidth = 400;
+  const canvasHeight = 400;
+  const padding = 50;
 
   // Initialize positions if not set
   if (nodePositions.size === 0) {
-    const nodesPerRow = Math.min(5, data.nodes.length)
-    const newPositions = new Map<string, { x: number; y: number }>()
+    const nodesPerRow = Math.min(5, data.nodes.length);
+    const newPositions = new Map<string, { x: number; y: number }>();
 
     data.nodes.forEach((node: any, index: number) => {
       if (node.id !== undefined && node.size !== undefined) {
-        const x = padding + ((index % nodesPerRow) * (canvasWidth - 2 * padding)) / nodesPerRow
+        const x =
+          padding +
+          ((index % nodesPerRow) * (canvasWidth - 2 * padding)) / nodesPerRow;
         const y =
           padding +
-          (Math.floor(index / nodesPerRow) * (canvasHeight - 2 * padding)) / Math.ceil(data.nodes.length / nodesPerRow)
-        newPositions.set(node.id.toString(), { x, y })
-        nodeMap.set(node.id.toString(), { x, y, size: node.size })
+          (Math.floor(index / nodesPerRow) * (canvasHeight - 2 * padding)) /
+            Math.ceil(data.nodes.length / nodesPerRow);
+        newPositions.set(node.id.toString(), { x, y });
+        nodeMap.set(node.id.toString(), { x, y, size: node.size });
       }
-    })
+    });
 
-    setNodePositions(newPositions)
+    setNodePositions(newPositions);
   } else {
     // Use existing positions
     data.nodes.forEach((node: any) => {
-      const pos = nodePositions.get(node.id.toString())
+      const pos = nodePositions.get(node.id.toString());
       if (pos && node.size !== undefined) {
-        nodeMap.set(node.id.toString(), { ...pos, size: node.size })
+        nodeMap.set(node.id.toString(), { ...pos, size: node.size });
       }
-    })
+    });
   }
 
   const handleNodeMouseDown = (e: React.MouseEvent, nodeId: string) => {
-    e.stopPropagation()
-    setDraggedNode(nodeId)
-  }
+    e.stopPropagation();
+    setDraggedNode(nodeId);
+  };
 
   const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
-    if (!draggedNode) return
+    if (!draggedNode) return;
 
-    const svg = e.currentTarget
-    const rect = svg.getBoundingClientRect()
-    const x = ((e.clientX - rect.left) / rect.width) * canvasWidth
-    const y = ((e.clientY - rect.top) / rect.height) * canvasHeight
+    const svg = e.currentTarget;
+    const rect = svg.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * canvasWidth;
+    const y = ((e.clientY - rect.top) / rect.height) * canvasHeight;
 
-    const clampedX = Math.max(30, Math.min(canvasWidth - 30, x))
-    const clampedY = Math.max(30, Math.min(canvasHeight - 30, y))
+    const clampedX = Math.max(30, Math.min(canvasWidth - 30, x));
+    const clampedY = Math.max(30, Math.min(canvasHeight - 30, y));
 
-    const newPositions = new Map(nodePositions)
-    newPositions.set(draggedNode, { x: clampedX, y: clampedY })
-    setNodePositions(newPositions)
-  }
+    const newPositions = new Map(nodePositions);
+    newPositions.set(draggedNode, { x: clampedX, y: clampedY });
+    setNodePositions(newPositions);
+  };
 
   const handleMouseUp = () => {
-    setDraggedNode(null)
-  }
+    setDraggedNode(null);
+  };
 
-  const calculateArrowEndpoint = (fromX: number, fromY: number, toX: number, toY: number, nodeRadius: number) => {
-    const dx = toX - fromX
-    const dy = toY - fromY
-    const distance = Math.sqrt(dx * dx + dy * dy)
+  const calculateArrowEndpoint = (
+    fromX: number,
+    fromY: number,
+    toX: number,
+    toY: number,
+    nodeRadius: number
+  ) => {
+    const dx = toX - fromX;
+    const dy = toY - fromY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-    if (distance === 0) return { x: toX, y: toY }
+    if (distance === 0) return { x: toX, y: toY };
 
-    const ux = dx / distance
-    const uy = dy / distance
+    const ux = dx / distance;
+    const uy = dy / distance;
 
     return {
       x: toX - ux * nodeRadius,
       y: toY - uy * nodeRadius,
-    }
-  }
+    };
+  };
 
   return (
     <div className="relative h-full w-full">
@@ -1488,19 +1533,27 @@ function GraphVisualization({
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         style={{
-          transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`,
+          transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${
+            pan.y / zoom
+          }px)`,
           transformOrigin: "center",
           transition: draggedNode ? "none" : "transform 0.1s ease-out",
         }}
       >
         {data.edges.map((edge: any, i: number) => {
-          const fromNode = nodeMap.get(edge.from.toString())
-          const toNode = nodeMap.get(edge.to.toString())
+          const fromNode = nodeMap.get(edge.from.toString());
+          const toNode = nodeMap.get(edge.to.toString());
 
-          if (!fromNode || !toNode) return null
+          if (!fromNode || !toNode) return null;
 
-          const nodeRadius = toNode.size / 2
-          const endpoint = calculateArrowEndpoint(fromNode.x, fromNode.y, toNode.x, toNode.y, nodeRadius)
+          const nodeRadius = toNode.size / 2;
+          const endpoint = calculateArrowEndpoint(
+            fromNode.x,
+            fromNode.y,
+            toNode.x,
+            toNode.y,
+            nodeRadius
+          );
 
           return (
             <line
@@ -1514,17 +1567,23 @@ function GraphVisualization({
               opacity="0.4"
               markerEnd="url(#network-arrowhead)"
             />
-          )
+          );
         })}
 
         {data.nodes.map((node: any) => {
-          const nodeData = nodeMap.get(node.id.toString())
-          if (!nodeData) return null
+          const nodeData = nodeMap.get(node.id.toString());
+          if (!nodeData) return null;
 
-          const radius = nodeData.size / 2
+          const radius = nodeData.size / 2;
 
           return (
-            <g key={`node-${node.id}`} style={{ cursor: draggedNode === node.id.toString() ? "grabbing" : "grab" }}>
+            <g
+              key={`node-${node.id}`}
+              style={{
+                cursor:
+                  draggedNode === node.id.toString() ? "grabbing" : "grab",
+              }}
+            >
               <circle
                 cx={nodeData.x}
                 cy={nodeData.y}
@@ -1543,7 +1602,7 @@ function GraphVisualization({
                 className="pointer-events-none"
               />
             </g>
-          )
+          );
         })}
 
         <defs>
@@ -1566,7 +1625,7 @@ function GraphVisualization({
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 function SearchResultsDisplay({ results }: { results: SearchResult[] }) {
