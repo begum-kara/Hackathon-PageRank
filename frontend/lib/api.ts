@@ -7,7 +7,7 @@ export interface PageRankResponse {
   top: PageRankNode[];
 }
 
-const API_BASE = "http://172.17.240.246:8000";
+const API_BASE = "https://burt-infracostal-kristy.ngrok-free.dev";
 //const API_BASE = "http://localhost:8000";
 
 
