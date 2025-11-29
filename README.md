@@ -7,21 +7,19 @@ This project implements the PageRank algorithm using both CPU and CUDA backends.
   │
   ├── api/                    
   │   ├── config.py
-  │   ├── main.py            
-  │   ├── requirements.txt
-  │   └── test.txt
+  │   ├── main.py   
+  │   ├── recompute_pagerank.py   
+  │   ├── tfidf_index.py   
   │
   ├── backend/                
   │   ├── data/               
-  │   ├── cuda/               
-  │   ├── output.txt
-  │   └── output_1k.txt
+  │   ├── cuda/        
+  │   ├── jobs/   
   │
   ├── crawler/                
   │   ├── crawl.py
-  │   ├── data/               
-  │   ├── source/             
-  │   ├── requirements.txt
+  │   ├── core.py  
+  │   ├── data/                          
   │   └── README.md
   │
   ├── frontend/               
@@ -30,12 +28,6 @@ This project implements the PageRank algorithm using both CPU and CUDA backends.
   │   ├── lib/
   │   ├── hooks/
   │   ├── styles/
-  │   ├── next-env.d.ts
-  │   ├── next.config.mjs
-  │   ├── package.json
-  │   ├── pnpm-lock.yaml  
-  │   ├── postccs.config.mjs
-  │   └── tsconfig.json
   │
   ├── start.sh                
   ├── LICENSE
@@ -57,7 +49,6 @@ Features:
 - Handles large graphs
 - Supports damping factor tuning
 - Outputs ranked scores to text files
-- Optional GPU acceleration
 ### API
 A lightweight Python API (FastAPI) exposing:
 - Graph upload
@@ -70,9 +61,35 @@ A Next.js UI for visualizing:
 - Graph insights
 - Eye-pleasing Website
 ## Installation & Setup:
-### Run the frontend locally
+
+## Running backend localy:
+### TUM, German-ish corpus
+```python build_corpus.py \
+  https://www.tum.de \
+  --max-pages 200 \
+  --lang de \
+  --workers 5
+```
+
+### Wikipedia, English corpus
+```python build_corpus.py \
+  "https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)" \
+  --max-pages 300 \
+  --lang en \
+  --workers 8
+```
+
+
+ #### run the fastAPI 
+
+``` uvicorn main:app --host 0.0.0.0 --port 8000 --reload```
+
+## run the front end 
+
+### Running the frontend locally
 
 ```bash
+npm install katex react-katex
 cd frontend
 corepack enable
 corepack prepare pnpm@latest --activate
