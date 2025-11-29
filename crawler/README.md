@@ -10,34 +10,36 @@ PowerShell, macOS Terminal, or Linux console.
 
 ### 2) Navigate to the crawler folder
 
-`cd Hackathon-PageRank/crawler`
+```cd Hackathon-PageRank/crawler```
 
 ### 3) Create & activate a virtual environment
 
 macOS / Linux
 
-`python3 -m venv .venv
-source .venv/bin/activate`
+```python3 -m venv .venv
+source .venv/bin/activate
+```
 
 
 Windows (PowerShell)
 
-`python -m venv .venv
-.\.venv\Scripts\activate`
+```python -m venv .venv
+.\.venv\Scripts\activate
+```
 
 ### 4) Install dependencies
 
-`pip install -r requirements.txt`
+```pip install -r requirements.txt```
 
 ## ▶️ 2. Running the crawler
 
 Activate the venv (same command as above), then run:
 
-`python crawl.py <start_url> --max-pages <N> --output <filename.csv>`
+```python crawl.py <start_url> --max-pages <N> --output <filename.csv>```
 
 Example:
 
-`python crawl.py https://www.python.org --max-pages 30 --output python.csv`
+```python crawl.py https://www.python.org --max-pages 30 --output python.csv```
 
 
 This produces:
@@ -60,7 +62,7 @@ The C++ PageRank engine uses this file to build the graph.
 
 Only same-domain links are followed
 
-`--max-pages` controls crawl size (20–50 recommended)
+```--max-pages``` controls crawl size (20–50 recommended)
 
 Always activate the virtual environment before running the crawler
 
@@ -69,8 +71,9 @@ All output files are saved to:
 Hackathon-PageRank/data/<filename.csv>
 
 ## 🧪 5. Example session
-`cd Hackathon-PageRank/crawler
+```cd Hackathon-PageRank/crawler
 source .venv/bin/activate    # Windows: .\.venv\Scripts\activate
 
-python crawl.py https://www.tum.de --max-pages 50 --output tum.csv`
+python crawl.py https://www.tum.de --max-pages 50 --output tum.csv
+```
 # → Output saved to ../data/tum.csv
