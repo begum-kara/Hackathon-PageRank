@@ -60,7 +60,7 @@ A Next.js UI for visualizing:
 - Node ranking
 - Graph insights
 - Eye-pleasing Website
-## Installation & Setup:
+# Installation & Setup:
 
 ## Running backend localy:
 ### TUM, German-ish corpus
