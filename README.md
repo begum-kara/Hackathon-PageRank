@@ -83,10 +83,7 @@ A Next.js UI for visualizing:
  #### run the fastAPI 
 
 ``` uvicorn main:app --host 0.0.0.0 --port 8000 --reload```
-
-## run the front end 
-
-### Running the frontend locally
+## Running the frontend locally
 
 ```bash
 npm install katex react-katex
