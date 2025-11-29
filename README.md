@@ -64,7 +64,8 @@ A Next.js UI for visualizing:
 
 ## Running backend localy:
 ### TUM, German-ish corpus
-```python build_corpus.py \
+```
+  python build_corpus.py \
   https://www.tum.de \
   --max-pages 200 \
   --lang de \
@@ -72,7 +73,8 @@ A Next.js UI for visualizing:
 ```
 
 ### Wikipedia, English corpus
-```python build_corpus.py \
+```
+  python build_corpus.py \
   "https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)" \
   --max-pages 300 \
   --lang en \
