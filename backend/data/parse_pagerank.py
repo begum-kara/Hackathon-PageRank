@@ -9,20 +9,21 @@ PATTERN = re.compile(r"node\s+(\d+)\s*:\s*([0-9.eE+-]+)")
 def main():
     if len(sys.argv) != 4:
         print(
-            "Usage: python parse_pagerank.py <pagerank_output_txt> <url_to_id_json> <output_json>",
+            "Usage: python parse_pagerank.py <pagerank_output_txt> <pages_json> <output_json>",
             file=sys.stderr,
         )
         sys.exit(1)
 
     output_txt_path = sys.argv[1]
-    url_to_id_path = sys.argv[2]
+    pages_json_path = sys.argv[2]
+
     output_json_path = sys.argv[3]
 
     # 1) Load URL -> ID mapping and invert it to ID -> URL
-    with open(url_to_id_path, "r", encoding="utf-8") as f:
-        url_to_id = json.load(f)
+    with open(pages_json_path, "r", encoding="utf-8") as f:
+        pages = json.load(f)
+    id_to_url = {int(p["id"]): p["url"] for p in pages}
 
-    id_to_url = {int(v): k for k, v in url_to_id.items()}
 
     # 2) Parse pagerank output file
     raw_entries = []

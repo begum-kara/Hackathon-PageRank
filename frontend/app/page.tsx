@@ -16,6 +16,7 @@ import {
   Search,
   Clock,
   HardDrive,
+    GitBranch
 } from "lucide-react";
 import {
   uploadGraph,
@@ -35,9 +36,8 @@ import {
   SelectItem,
   SelectValue,
 } from "../components/ui/select";
-import 'katex/dist/katex.min.css';
+import "katex/dist/katex.min.css";
 import { BlockMath } from "react-katex";
-
 
 function MouseTrail() {
   const [dots, setDots] = useState<
@@ -160,6 +160,7 @@ export default function Home() {
   );
 
   const demoSectionRef = useRef<HTMLElement>(null);
+  const whatIsSectionRef = useRef<HTMLElement | null>(null);
 
   interface ResultsPayload {
     pages: {
@@ -176,6 +177,12 @@ export default function Home() {
 
   const scrollToDemo = () => {
     demoSectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+  const scrollToWhatIs = () => {
+    whatIsSectionRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -285,78 +292,77 @@ export default function Home() {
   };
 
   const calculatePageRank = () => {
-  const N = customNodes.length;
-  if (N === 0) return [];
+    const N = customNodes.length;
+    if (N === 0) return [];
 
-  // Build adjacency
-  const inbound: Record<string, string[]> = {};
-  const outDegree: Record<string, number> = {};
+    // Build adjacency
+    const inbound: Record<string, string[]> = {};
+    const outDegree: Record<string, number> = {};
 
-  customNodes.forEach((n) => {
-    inbound[n.id] = [];
-    outDegree[n.id] = 0;
-  });
-
-  customEdges.forEach((e) => {
-    inbound[e.to].push(e.from);
-    outDegree[e.from]++;
-  });
-
-  // Initialize rank
-  let rank: Record<string, number> = {};
-  customNodes.forEach((n) => (rank[n.id] = 1 / N));
-
-  let converged = false;
-
-  while (!converged) {
-    const newRank: Record<string, number> = {};
-    converged = true;
-
-    // Total rank from dangling nodes
-    let danglingMass = 0;
     customNodes.forEach((n) => {
-      if (outDegree[n.id] === 0) {
-        danglingMass += rank[n.id];
-      }
+      inbound[n.id] = [];
+      outDegree[n.id] = 0;
     });
 
-    customNodes.forEach((node) => {
-      const id = node.id;
+    customEdges.forEach((e) => {
+      inbound[e.to].push(e.from);
+      outDegree[e.from]++;
+    });
 
-      // (1-d)/N teleportation base
-      let r = (1 - dampingFactor) / N;
+    // Initialize rank
+    let rank: Record<string, number> = {};
+    customNodes.forEach((n) => (rank[n.id] = 1 / N));
 
-      // Dangling node contribution
-      if (danglingNodeStrategy === "distribute") {
-        r += dampingFactor * (danglingMass / N);
-      } else if (danglingNodeStrategy === "teleport") {
-        // teleporting: danglingMass is absorbed into teleport (already in base term)
-        // so we add nothing here
-      }
+    let converged = false;
 
-      // Add inbound contribution
-      inbound[id].forEach((src) => {
-        if (outDegree[src] > 0) {
-          r += (dampingFactor * rank[src]) / outDegree[src];
+    while (!converged) {
+      const newRank: Record<string, number> = {};
+      converged = true;
+
+      // Total rank from dangling nodes
+      let danglingMass = 0;
+      customNodes.forEach((n) => {
+        if (outDegree[n.id] === 0) {
+          danglingMass += rank[n.id];
         }
       });
 
-      newRank[id] = r;
+      customNodes.forEach((node) => {
+        const id = node.id;
 
-      // Check convergence
-      if (Math.abs(newRank[id] - rank[id]) > convergenceThreshold) {
-        converged = false;
-      }
-    });
+        // (1-d)/N teleportation base
+        let r = (1 - dampingFactor) / N;
 
-    rank = newRank;
-  }
+        // Dangling node contribution
+        if (danglingNodeStrategy === "distribute") {
+          r += dampingFactor * (danglingMass / N);
+        } else if (danglingNodeStrategy === "teleport") {
+          // teleporting: danglingMass is absorbed into teleport (already in base term)
+          // so we add nothing here
+        }
 
-  return customNodes
-    .map((n) => ({ id: n.id, score: rank[n.id] }))
-    .sort((a, b) => b.score - a.score);
-};
+        // Add inbound contribution
+        inbound[id].forEach((src) => {
+          if (outDegree[src] > 0) {
+            r += (dampingFactor * rank[src]) / outDegree[src];
+          }
+        });
 
+        newRank[id] = r;
+
+        // Check convergence
+        if (Math.abs(newRank[id] - rank[id]) > convergenceThreshold) {
+          converged = false;
+        }
+      });
+
+      rank = newRank;
+    }
+
+    return customNodes
+      .map((n) => ({ id: n.id, score: rank[n.id] }))
+      .sort((a, b) => b.score - a.score);
+  };
 
   const buildAdjacencyMatrix = () => {
     const size = customNodes.length;
@@ -528,6 +534,7 @@ export default function Home() {
               size="lg"
               variant="outline"
               className="border-slate-600 bg-slate-800/50 text-white hover:bg-slate-700"
+              onClick={scrollToWhatIs}
             >
               Learn More
             </Button>
@@ -611,7 +618,9 @@ export default function Home() {
                     : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                 }
               >
-                ✏️ Custom Graph
+                <GitBranch className="mr-2 h-4 w-4" />
+
+              Custom Graph
               </Button>
             </div>
 
@@ -670,7 +679,7 @@ export default function Home() {
                   <Upload className="mx-auto mb-4 h-12 w-12 text-slate-400" />
                   <p className="mb-2 text-white">Click to browse.</p>
                   <p className="text-sm text-slate-400">
-                    Supports CSV and JSON formats
+                    Supports TXT in 0 1 edge list format
                   </p>
 
                   {/* Simple file input */}
@@ -1090,9 +1099,9 @@ export default function Home() {
                         <div className="rounded-lg bg-slate-950/50 p-4">
                           <div className="overflow-x-auto text-center">
                             <div className="text-base text-white">
-<span className="font-mono text-white">
- <BlockMath math="\mathrm{PR}(p_i)=\frac{1-d}{N}+d\sum_{p_j\in M(p_i)}\frac{\mathrm{PR}(p_j)}{L(p_j)}" />
- </span>
+                              <span className="font-mono text-white">
+                                <BlockMath math="\mathrm{PR}(p_i)=\frac{1-d}{N}+d\sum_{p_j\in M(p_i)}\frac{\mathrm{PR}(p_j)}{L(p_j)}" />
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1226,14 +1235,14 @@ export default function Home() {
               </div>
             )}
             {activeTab === "custom" && results && (
-              <ResultsDisplay results={results} />
+              <ResultsDisplay results={results} showNetworkGraph={true} />
             )}
           </Card>
         </div>
       </section>
 
       {/* What is PageRank Section */}
-      <section className="px-4 py-16">
+      <section ref={whatIsSectionRef} className="px-4 py-16">
         <div className="container mx-auto max-w-6xl">
           <h2 className="mb-4 text-center text-4xl font-bold text-white md:text-5xl">
             What is{" "}
@@ -1361,7 +1370,9 @@ export default function Home() {
 
 function ResultsDisplay({
   results,
+  showNetworkGraph,
 }: {
+  showNetworkGraph?: boolean;
   results: {
     pages: Array<{ name: string; rank: number; score: number }>;
     graphData: any;
@@ -1369,21 +1380,30 @@ function ResultsDisplay({
 }) {
   return (
     <div className="space-y-6">
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Card className="border-slate-700 bg-slate-900/50 p-6">
-          <h3 className="mb-4 text-lg font-semibold text-white">
-            Network Graph
-          </h3>
-          <div className="relative aspect-square overflow-hidden rounded-lg bg-slate-950/50">
-            <GraphVisualization
-              data={results.graphData}
-              draggedNode={null}
-              setDraggedNode={() => {}}
-              nodePositions={new Map()}
-              setNodePositions={() => {}}
-            />
-          </div>
-        </Card>
+      <div
+        className={
+          showNetworkGraph
+            ? "grid gap-6 lg:grid-cols-2" // two columns when graph exists
+            : "grid gap-6 lg:grid-cols-1" // one column when NO graph
+        }
+      >
+        {/* Only render the network graph if explicitly allowed */}
+        {showNetworkGraph && (
+          <Card className="border-slate-700 bg-slate-900/50 p-6">
+            <h3 className="mb-4 text-lg font-semibold text-white">
+              Network Graph
+            </h3>
+            <div className="relative aspect-square overflow-hidden rounded-lg bg-slate-950/50">
+              <GraphVisualization
+                data={results.graphData}
+                draggedNode={null}
+                setDraggedNode={() => {}}
+                nodePositions={new Map()}
+                setNodePositions={() => {}}
+              />
+            </div>
+          </Card>
+        )}
 
         <Card className="border-slate-700 bg-slate-900/50 p-6">
           <h3 className="mb-4 text-lg font-semibold text-white">

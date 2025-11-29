@@ -52,13 +52,28 @@ def main():
         workers=args.workers,
     )
 
+    # Paths
+    edges_csv_path = output_path  # keep your current CSV
+    edges_txt_path = output_path.with_suffix(".txt")  # new CUDA-ready file
+
     # ---- write edges.csv (source URL string + target_id) ----
-    with output_path.open("w", newline="", encoding="utf8") as f:
-        writer = csv.writer(f)
+    with edges_csv_path.open("w", newline="", encoding="utf8") as f_csv, \
+        edges_txt_path.open("w", encoding="utf8") as f_txt:
+        
+        writer = csv.writer(f_csv)
         writer.writerow(["source", "target_id"])
+
         for src_url, tgt_url in edges_url:
-            target_id = url_to_id[tgt_url]
-            writer.writerow([src_url, target_id])
+            src_id = url_to_id[src_url]
+            tgt_id = url_to_id[tgt_url]
+
+            # CSV version (for debugging)
+            writer.writerow([src_url, tgt_id])
+
+            # TXT version (for CUDA)
+            # Format: "src_id target_id"
+            f_txt.write(f"{src_id} {tgt_id}\n")
+
 
     # ---- write pages.json next to CSV ----
     pages_path = data_dir / "pages.json"

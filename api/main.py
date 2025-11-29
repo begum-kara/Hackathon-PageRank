@@ -9,7 +9,8 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse, urlunparse
 from config import CLUSTER_USER, CLUSTER_HOST, REMOTE_WORKDIR, REMOTE_BIN
-from tfidf_index import TfidfSearchIndex 
+from typing import Any
+from tfidf_index import create_tfidf_index
 from pydantic import BaseModel
 import sys
 
@@ -39,7 +40,7 @@ PAGERANK_PATH = ROOT_DIR / "backend" / "data" / "pagerank.json"
 TOP_LINE_RE = re.compile(r"^\s*node\s+(\d+)\s*:\s*([0-9\.Ee+-]+)\s*$")
 
 # Global search state 
-tfidf_index: TfidfSearchIndex | None = None
+tfidf_index: Any | None = None
 pages_by_url = {}           # url -> full page dict from crawler
 pagerank_by_url = {}        # url -> raw pagerank score
 pagerank_norm_by_url = {}   # url -> normalized pagerank score in [0, 1]
@@ -60,8 +61,9 @@ def _load_data_and_build_index():
 
     # pages is like: [{ "id": ..., "url": "...", "text": "..." }, ...]
     pages_by_url = {}
-    index = TfidfSearchIndex()
-
+    index = create_tfidf_index()
+    print(f"[search] Using TF-IDF index implementation: {type(index).__name__}")
+    
     for p in pages:
         raw_url = p["url"]
         url = normalize_url_backend(raw_url)

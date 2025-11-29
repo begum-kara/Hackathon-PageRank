@@ -1,997 +1,1497 @@
 [
   {
-    "id": 0,
-    "url": "https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)",
-    "score": 0.019692493078244284
-  },
-  {
     "id": 171,
     "url": "https://en.wikipedia.org/wiki/Wikipedia:Verifiability",
-    "score": 0.016633323038745578
+    "score": 0.013047237076180237
+  },
+  {
+    "id": 0,
+    "url": "https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)",
+    "score": 0.01275100499861526
   },
   {
     "id": 162,
     "url": "https://en.wikipedia.org/wiki/Help:Category",
-    "score": 0.009931472722051549
+    "score": 0.007721385946181046
   },
   {
     "id": 165,
     "url": "https://en.wikipedia.org/wiki/Category:Articles_with_short_description",
-    "score": 0.009109396791339543
-  },
-  {
-    "id": 134,
-    "url": "https://en.wikipedia.org/wiki/ISBN_(identifier)",
-    "score": 0.008646075323873148
-  },
-  {
-    "id": 5,
-    "url": "https://en.wikipedia.org/wiki/Graph_theory",
-    "score": 0.008023866105340723
-  },
-  {
-    "id": 137,
-    "url": "https://en.wikipedia.org/wiki/Doi_(identifier)",
-    "score": 0.008010715040392712
-  },
-  {
-    "id": 166,
-    "url": "https://en.wikipedia.org/wiki/Category:Short_description_is_different_from_Wikidata",
-    "score": 0.007865264435450225
-  },
-  {
-    "id": 7,
-    "url": "https://en.wikipedia.org/wiki/Vertex_(graph_theory)",
-    "score": 0.006905254032498388
-  },
-  {
-    "id": 158,
-    "url": "https://en.wikipedia.org/wiki/File:Commons-logo.svg",
-    "score": 0.0066073828448822355
-  },
-  {
-    "id": 28,
-    "url": "https://en.wikipedia.org/wiki/Directed_graph",
-    "score": 0.006226660815006258
-  },
-  {
-    "id": 160,
-    "url": "https://en.wikipedia.org/wiki/MathWorld",
-    "score": 0.00609833173496313
-  },
-  {
-    "id": 45,
-    "url": "https://en.wikipedia.org/wiki/Complete_graph",
-    "score": 0.0060484582500284455
-  },
-  {
-    "id": 159,
-    "url": "https://en.wikipedia.org/wiki/Eric_W._Weisstein",
-    "score": 0.00601256806618878
-  },
-  {
-    "id": 63,
-    "url": "https://en.wikipedia.org/wiki/Planar_graph",
-    "score": 0.005711506640009102
-  },
-  {
-    "id": 60,
-    "url": "https://en.wikipedia.org/wiki/Glossary_of_graph_theory",
-    "score": 0.005555618406722908
+    "score": 0.007061249399577131
   },
   {
     "id": 1,
     "url": "https://en.wikipedia.org/wiki/Graph_of_a_function",
-    "score": 0.005509680705233443
+    "score": 0.006731596658503522
   },
   {
-    "id": 61,
-    "url": "https://en.wikipedia.org/wiki/Path_(graph_theory)",
-    "score": 0.005387012564815266
+    "id": 134,
+    "url": "https://en.wikipedia.org/wiki/ISBN_(identifier)",
+    "score": 0.006554334001989705
   },
   {
-    "id": 69,
-    "url": "https://en.wikipedia.org/wiki/Cycle_(graph_theory)",
-    "score": 0.005365842557825783
+    "id": 166,
+    "url": "https://en.wikipedia.org/wiki/Category:Short_description_is_different_from_Wikidata",
+    "score": 0.0060294404753390195
   },
   {
-    "id": 50,
-    "url": "https://en.wikipedia.org/wiki/Connectivity_(graph_theory)",
-    "score": 0.005361187236878465
+    "id": 137,
+    "url": "https://en.wikipedia.org/wiki/Doi_(identifier)",
+    "score": 0.0058401443447022
   },
   {
-    "id": 67,
-    "url": "https://en.wikipedia.org/wiki/Tree_(graph_theory)",
-    "score": 0.0053597308236212025
+    "id": 5,
+    "url": "https://en.wikipedia.org/wiki/Graph_theory",
+    "score": 0.005262071173072413
   },
   {
-    "id": 65,
-    "url": "https://en.wikipedia.org/wiki/Cycle_graph",
-    "score": 0.005319800826817943
+    "id": 217,
+    "url": "https://en.wikipedia.org/wiki/Mathematics",
+    "score": 0.005015948890146491
   },
   {
-    "id": 79,
-    "url": "https://en.wikipedia.org/wiki/Graph_automorphism",
-    "score": 0.005317468831781018
+    "id": 158,
+    "url": "https://en.wikipedia.org/wiki/File:Commons-logo.svg",
+    "score": 0.0049674927441712745
   },
   {
-    "id": 16,
-    "url": "https://en.wikipedia.org/wiki/Ordered_pair",
-    "score": 0.005308687006604791
+    "id": 7,
+    "url": "https://en.wikipedia.org/wiki/Vertex_(graph_theory)",
+    "score": 0.0045602117986424445
   },
   {
-    "id": 56,
-    "url": "https://en.wikipedia.org/wiki/Chromatic_number",
-    "score": 0.005299558416367311
+    "id": 274,
+    "url": "https://en.wikipedia.org/wiki/MR_(identifier)",
+    "score": 0.004374994668043091
   },
   {
-    "id": 80,
-    "url": "https://en.wikipedia.org/wiki/Vertex-transitive_graph",
-    "score": 0.005283589885296619
+    "id": 160,
+    "url": "https://en.wikipedia.org/wiki/MathWorld",
+    "score": 0.004199860554168366
   },
   {
-    "id": 18,
-    "url": "https://en.wikipedia.org/wiki/Loop_(graph_theory)",
-    "score": 0.0052623505252948856
+    "id": 159,
+    "url": "https://en.wikipedia.org/wiki/Eric_W._Weisstein",
+    "score": 0.004102804097975444
   },
   {
-    "id": 88,
-    "url": "https://en.wikipedia.org/wiki/Category_theory",
-    "score": 0.005261379583123378
-  },
-  {
-    "id": 54,
-    "url": "https://en.wikipedia.org/wiki/Bipartite_graph",
-    "score": 0.00524431874210974
-  },
-  {
-    "id": 138,
-    "url": "https://en.wikipedia.org/wiki/JSTOR_(identifier)",
-    "score": 0.005222073763430373
-  },
-  {
-    "id": 6,
-    "url": "https://en.wikipedia.org/wiki/Set_(mathematics)",
-    "score": 0.005211029296229471
-  },
-  {
-    "id": 25,
-    "url": "https://en.wikipedia.org/wiki/Adjacency_matrix",
-    "score": 0.005205576415641271
-  },
-  {
-    "id": 43,
-    "url": "https://en.wikipedia.org/wiki/Regular_graph",
-    "score": 0.0052010164550857964
-  },
-  {
-    "id": 57,
-    "url": "https://en.wikipedia.org/wiki/Complete_bipartite_graph",
-    "score": 0.005181580273402578
-  },
-  {
-    "id": 90,
-    "url": "https://en.wikipedia.org/wiki/Functor",
-    "score": 0.005173890758169297
-  },
-  {
-    "id": 96,
-    "url": "https://en.wikipedia.org/wiki/Cayley_graph",
-    "score": 0.0051681171198994375
-  },
-  {
-    "id": 174,
-    "url": "https://en.wikipedia.org/wiki/Help:Maintenance_template_removal",
-    "score": 0.005144016948142369
-  },
-  {
-    "id": 92,
-    "url": "https://en.wikipedia.org/wiki/Computer_science",
-    "score": 0.005130129007439194
-  },
-  {
-    "id": 68,
-    "url": "https://en.wikipedia.org/wiki/Connected_graph",
-    "score": 0.005113111512058214
-  },
-  {
-    "id": 73,
-    "url": "https://en.wikipedia.org/wiki/Directed_acyclic_graph",
-    "score": 0.0050866359996315615
-  },
-  {
-    "id": 20,
-    "url": "https://en.wikipedia.org/wiki/Binary_relation",
-    "score": 0.005080038794341228
-  },
-  {
-    "id": 15,
-    "url": "https://en.wikipedia.org/wiki/Multigraph",
-    "score": 0.005069739872022019
-  },
-  {
-    "id": 59,
-    "url": "https://en.wikipedia.org/wiki/Path_graph",
-    "score": 0.005053797348330922
+    "id": 28,
+    "url": "https://en.wikipedia.org/wiki/Directed_graph",
+    "score": 0.004095324517865164
   },
   {
     "id": 176,
     "url": "https://en.wikipedia.org/wiki/Function_(mathematics)",
-    "score": 0.0050518814713675
+    "score": 0.003980951392074519
   },
   {
-    "id": 106,
-    "url": "https://en.wikipedia.org/wiki/Complement_graph",
-    "score": 0.005049246056901979
+    "id": 45,
+    "url": "https://en.wikipedia.org/wiki/Complete_graph",
+    "score": 0.003958809460478213
   },
   {
-    "id": 75,
-    "url": "https://en.wikipedia.org/wiki/Petersen_graph",
-    "score": 0.005003845841257457
-  },
-  {
-    "id": 104,
-    "url": "https://en.wikipedia.org/wiki/Line_graph",
-    "score": 0.00498639488954991
-  },
-  {
-    "id": 183,
-    "url": "https://en.wikipedia.org/wiki/Sequence",
-    "score": 0.004979849699018763
-  },
-  {
-    "id": 83,
-    "url": "https://en.wikipedia.org/wiki/Strongly_regular_graph",
-    "score": 0.004960890319294767
-  },
-  {
-    "id": 164,
-    "url": "https://en.wikipedia.org/wiki/Category:Webarchive_template_wayback_links",
-    "score": 0.004935385749039623
-  },
-  {
-    "id": 136,
-    "url": "https://en.wikipedia.org/wiki/Wayback_Machine",
-    "score": 0.004935385749039623
-  },
-  {
-    "id": 194,
-    "url": "https://en.wikipedia.org/wiki/Polynomial",
-    "score": 0.0049116150040907445
-  },
-  {
-    "id": 129,
-    "url": "https://en.wikipedia.org/wiki/Graph_drawing",
-    "score": 0.004909707796253854
-  },
-  {
-    "id": 76,
-    "url": "https://en.wikipedia.org/wiki/Perfect_graph",
-    "score": 0.004908286059502717
-  },
-  {
-    "id": 193,
-    "url": "https://en.wikipedia.org/wiki/Linear_map",
-    "score": 0.004879851324479987
-  },
-  {
-    "id": 178,
-    "url": "https://en.wikipedia.org/wiki/Domain_of_a_function",
-    "score": 0.004876609071157274
+    "id": 16,
+    "url": "https://en.wikipedia.org/wiki/Ordered_pair",
+    "score": 0.0038763051125270606
   },
   {
     "id": 199,
     "url": "https://en.wikipedia.org/wiki/Continuous_function",
-    "score": 0.004870427983940443
+    "score": 0.0038287563532545645
   },
   {
-    "id": 181,
-    "url": "https://en.wikipedia.org/wiki/Boolean_function",
-    "score": 0.004862643108315318
+    "id": 6,
+    "url": "https://en.wikipedia.org/wiki/Set_(mathematics)",
+    "score": 0.0038084715963114923
   },
   {
-    "id": 179,
-    "url": "https://en.wikipedia.org/wiki/Codomain",
-    "score": 0.00485438143073097
+    "id": 174,
+    "url": "https://en.wikipedia.org/wiki/Help:Maintenance_template_removal",
+    "score": 0.003758548367162717
   },
   {
-    "id": 82,
-    "url": "https://en.wikipedia.org/wiki/Distance-transitive_graph",
-    "score": 0.004842669440787157
+    "id": 138,
+    "url": "https://en.wikipedia.org/wiki/JSTOR_(identifier)",
+    "score": 0.003742495254749156
   },
   {
-    "id": 70,
-    "url": "https://en.wikipedia.org/wiki/Disjoint_union_of_graphs",
-    "score": 0.004841256373162552
+    "id": 63,
+    "url": "https://en.wikipedia.org/wiki/Planar_graph",
+    "score": 0.0037361096268318764
   },
   {
-    "id": 22,
-    "url": "https://en.wikipedia.org/wiki/Empty_set",
-    "score": 0.004840190070599199
+    "id": 218,
+    "url": "https://en.wikipedia.org/wiki/Real_number",
+    "score": 0.00367611186120803
   },
   {
-    "id": 84,
-    "url": "https://en.wikipedia.org/wiki/Distance-regular_graph",
-    "score": 0.004831642311839317
+    "id": 90,
+    "url": "https://en.wikipedia.org/wiki/Functor",
+    "score": 0.0036446077340995366
   },
   {
-    "id": 51,
-    "url": "https://en.wikipedia.org/wiki/K-vertex-connected_graph",
-    "score": 0.00482995183216571
+    "id": 60,
+    "url": "https://en.wikipedia.org/wiki/Glossary_of_graph_theory",
+    "score": 0.0036199386881349046
   },
   {
-    "id": 197,
-    "url": "https://en.wikipedia.org/wiki/Analytic_function",
-    "score": 0.004825305180344923
+    "id": 215,
+    "url": "https://en.wikipedia.org/wiki/Morphism",
+    "score": 0.00361193333255202
   },
   {
-    "id": 77,
-    "url": "https://en.wikipedia.org/wiki/Cograph",
-    "score": 0.004812240806662224
+    "id": 194,
+    "url": "https://en.wikipedia.org/wiki/Polynomial",
+    "score": 0.003598865267982925
   },
   {
-    "id": 189,
-    "url": "https://en.wikipedia.org/wiki/Function_of_several_complex_variables",
-    "score": 0.004808885854694603
+    "id": 88,
+    "url": "https://en.wikipedia.org/wiki/Category_theory",
+    "score": 0.0035953290039171804
   },
   {
-    "id": 192,
-    "url": "https://en.wikipedia.org/wiki/Identity_function",
-    "score": 0.004796445658122159
+    "id": 208,
+    "url": "https://en.wikipedia.org/wiki/Relation_(mathematics)",
+    "score": 0.003590978635893854
   },
   {
-    "id": 198,
-    "url": "https://en.wikipedia.org/wiki/Smooth_function",
-    "score": 0.00478863477511744
+    "id": 20,
+    "url": "https://en.wikipedia.org/wiki/Binary_relation",
+    "score": 0.00359072422840711
   },
   {
-    "id": 177,
-    "url": "https://en.wikipedia.org/wiki/History_of_the_function_concept",
-    "score": 0.0047835459978435545
+    "id": 183,
+    "url": "https://en.wikipedia.org/wiki/Sequence",
+    "score": 0.00358460996847569
   },
   {
-    "id": 188,
-    "url": "https://en.wikipedia.org/wiki/Function_of_a_complex_variable",
-    "score": 0.0047835459978435545
+    "id": 203,
+    "url": "https://en.wikipedia.org/wiki/Bijection",
+    "score": 0.003581777565123271
   },
   {
-    "id": 187,
-    "url": "https://en.wikipedia.org/wiki/Complex-valued_function",
-    "score": 0.0047835459978435545
+    "id": 61,
+    "url": "https://en.wikipedia.org/wiki/Path_(graph_theory)",
+    "score": 0.0035555481532399415
   },
   {
-    "id": 170,
-    "url": "https://en.wikipedia.org/wiki/File:Question_book-new.svg",
-    "score": 0.00478108396590866
-  },
-  {
-    "id": 195,
-    "url": "https://en.wikipedia.org/wiki/Rational_function",
-    "score": 0.00477911607418605
-  },
-  {
-    "id": 196,
-    "url": "https://en.wikipedia.org/wiki/Algebraic_function",
-    "score": 0.004772492861516122
-  },
-  {
-    "id": 191,
-    "url": "https://en.wikipedia.org/wiki/Constant_function",
-    "score": 0.004771634617989521
-  },
-  {
-    "id": 186,
-    "url": "https://en.wikipedia.org/wiki/Function_of_several_real_variables",
-    "score": 0.004768695784095404
-  },
-  {
-    "id": 127,
-    "url": "https://en.wikipedia.org/wiki/Graph_(abstract_data_type)",
-    "score": 0.0047621939391969135
-  },
-  {
-    "id": 114,
-    "url": "https://en.wikipedia.org/wiki/Hypergraph",
-    "score": 0.004762003218413225
+    "id": 202,
+    "url": "https://en.wikipedia.org/wiki/Surjective_function",
+    "score": 0.0035351446728030546
   },
   {
     "id": 185,
     "url": "https://en.wikipedia.org/wiki/Function_of_a_real_variable",
-    "score": 0.004761777821123411
+    "score": 0.0035314133629974725
+  },
+  {
+    "id": 205,
+    "url": "https://en.wikipedia.org/wiki/Function_composition",
+    "score": 0.0035248326893403555
+  },
+  {
+    "id": 69,
+    "url": "https://en.wikipedia.org/wiki/Cycle_(graph_theory)",
+    "score": 0.003518735389908052
+  },
+  {
+    "id": 206,
+    "url": "https://en.wikipedia.org/wiki/Lambda_calculus",
+    "score": 0.0035182265749345637
+  },
+  {
+    "id": 50,
+    "url": "https://en.wikipedia.org/wiki/Connectivity_(graph_theory)",
+    "score": 0.0035165814065202844
+  },
+  {
+    "id": 67,
+    "url": "https://en.wikipedia.org/wiki/Tree_(graph_theory)",
+    "score": 0.003509882009369353
+  },
+  {
+    "id": 212,
+    "url": "https://en.wikipedia.org/wiki/Implicit_function",
+    "score": 0.0035034963814520727
+  },
+  {
+    "id": 178,
+    "url": "https://en.wikipedia.org/wiki/Domain_of_a_function",
+    "score": 0.0035015204833050264
+  },
+  {
+    "id": 65,
+    "url": "https://en.wikipedia.org/wiki/Cycle_graph",
+    "score": 0.003496813944800258
+  },
+  {
+    "id": 18,
+    "url": "https://en.wikipedia.org/wiki/Loop_(graph_theory)",
+    "score": 0.003490368955136071
+  },
+  {
+    "id": 201,
+    "url": "https://en.wikipedia.org/wiki/Injective_function",
+    "score": 0.003490072146401536
+  },
+  {
+    "id": 79,
+    "url": "https://en.wikipedia.org/wiki/Graph_automorphism",
+    "score": 0.003485798100624233
+  },
+  {
+    "id": 193,
+    "url": "https://en.wikipedia.org/wiki/Linear_map",
+    "score": 0.003483550834491326
   },
   {
     "id": 184,
     "url": "https://en.wikipedia.org/wiki/Real-valued_function",
-    "score": 0.0047550765863147
+    "score": 0.0034782421982679297
   },
   {
-    "id": 139,
-    "url": "https://en.wikipedia.org/wiki/CRC_Press",
-    "score": 0.004752363149710397
+    "id": 80,
+    "url": "https://en.wikipedia.org/wiki/Vertex-transitive_graph",
+    "score": 0.0034736628635065334
   },
   {
-    "id": 4,
-    "url": "https://en.wikipedia.org/wiki/Discrete_mathematics",
-    "score": 0.004750664000910258
+    "id": 181,
+    "url": "https://en.wikipedia.org/wiki/Boolean_function",
+    "score": 0.003471407117124068
   },
   {
-    "id": 108,
-    "url": "https://en.wikipedia.org/wiki/Cartesian_product_of_graphs",
-    "score": 0.004750204537204098
+    "id": 197,
+    "url": "https://en.wikipedia.org/wiki/Analytic_function",
+    "score": 0.0034627657428243225
   },
   {
-    "id": 182,
-    "url": "https://en.wikipedia.org/wiki/Integer-valued_function",
-    "score": 0.004747187681171198
+    "id": 195,
+    "url": "https://en.wikipedia.org/wiki/Rational_function",
+    "score": 0.0034616802708808806
   },
   {
-    "id": 30,
-    "url": "https://en.wikipedia.org/wiki/Multiple_edges",
-    "score": 0.004741639440191154
+    "id": 191,
+    "url": "https://en.wikipedia.org/wiki/Constant_function",
+    "score": 0.00346131562014988
+  },
+  {
+    "id": 56,
+    "url": "https://en.wikipedia.org/wiki/Chromatic_number",
+    "score": 0.0034540904475263445
+  },
+  {
+    "id": 92,
+    "url": "https://en.wikipedia.org/wiki/Computer_science",
+    "score": 0.0034469331168992734
+  },
+  {
+    "id": 257,
+    "url": "https://en.wikipedia.org/wiki/Derivative",
+    "score": 0.0034340346573213418
+  },
+  {
+    "id": 207,
+    "url": "https://en.wikipedia.org/wiki/Inverse_function",
+    "score": 0.003432092680172527
+  },
+  {
+    "id": 186,
+    "url": "https://en.wikipedia.org/wiki/Function_of_several_real_variables",
+    "score": 0.003429319638567015
+  },
+  {
+    "id": 198,
+    "url": "https://en.wikipedia.org/wiki/Smooth_function",
+    "score": 0.003429200915073201
+  },
+  {
+    "id": 54,
+    "url": "https://en.wikipedia.org/wiki/Bipartite_graph",
+    "score": 0.0034251049545366194
+  },
+  {
+    "id": 275,
+    "url": "https://en.wikipedia.org/wiki/OCLC_(identifier)",
+    "score": 0.003421025954499153
+  },
+  {
+    "id": 213,
+    "url": "https://en.wikipedia.org/wiki/Function_space",
+    "score": 0.0034199574430548276
+  },
+  {
+    "id": 43,
+    "url": "https://en.wikipedia.org/wiki/Regular_graph",
+    "score": 0.003419787838063665
+  },
+  {
+    "id": 278,
+    "url": "https://en.wikipedia.org/wiki/Calculus",
+    "score": 0.0034160226072598504
+  },
+  {
+    "id": 192,
+    "url": "https://en.wikipedia.org/wiki/Identity_function",
+    "score": 0.0034151661020544784
+  },
+  {
+    "id": 196,
+    "url": "https://en.wikipedia.org/wiki/Algebraic_function",
+    "score": 0.0034118248837285703
+  },
+  {
+    "id": 187,
+    "url": "https://en.wikipedia.org/wiki/Complex-valued_function",
+    "score": 0.0034110531810187797
+  },
+  {
+    "id": 210,
+    "url": "https://en.wikipedia.org/wiki/Multivalued_function",
+    "score": 0.0034078391664362443
+  },
+  {
+    "id": 211,
+    "url": "https://en.wikipedia.org/wiki/Partial_function",
+    "score": 0.0034054731768095228
+  },
+  {
+    "id": 216,
+    "url": "https://en.wikipedia.org/wiki/List_of_mathematical_functions",
+    "score": 0.003405456216310407
+  },
+  {
+    "id": 189,
+    "url": "https://en.wikipedia.org/wiki/Function_of_several_complex_variables",
+    "score": 0.003405066124830732
+  },
+  {
+    "id": 200,
+    "url": "https://en.wikipedia.org/wiki/Measurable_function",
+    "score": 0.003403522719411151
+  },
+  {
+    "id": 239,
+    "url": "https://en.wikipedia.org/wiki/Cartesian_product",
+    "score": 0.003400215422083476
+  },
+  {
+    "id": 57,
+    "url": "https://en.wikipedia.org/wiki/Complete_bipartite_graph",
+    "score": 0.0033958226528123586
+  },
+  {
+    "id": 177,
+    "url": "https://en.wikipedia.org/wiki/History_of_the_function_concept",
+    "score": 0.003395559765076056
+  },
+  {
+    "id": 25,
+    "url": "https://en.wikipedia.org/wiki/Adjacency_matrix",
+    "score": 0.0033951951143450566
+  },
+  {
+    "id": 188,
+    "url": "https://en.wikipedia.org/wiki/Function_of_a_complex_variable",
+    "score": 0.00339262559872894
+  },
+  {
+    "id": 204,
+    "url": "https://en.wikipedia.org/wiki/Restriction_(mathematics)",
+    "score": 0.003389428544645521
   },
   {
     "id": 180,
     "url": "https://en.wikipedia.org/wiki/Boolean-valued_function",
-    "score": 0.004741119292599275
+    "score": 0.0033886483616861716
   },
   {
-    "id": 87,
-    "url": "https://en.wikipedia.org/wiki/Null_graph",
-    "score": 0.00474082454229721
+    "id": 214,
+    "url": "https://en.wikipedia.org/wiki/Higher-order_function",
+    "score": 0.0033886483616861716
   },
   {
-    "id": 105,
-    "url": "https://en.wikipedia.org/wiki/Dual_graph",
-    "score": 0.004732181423145484
+    "id": 209,
+    "url": "https://en.wikipedia.org/wiki/Set-valued_function",
+    "score": 0.0033802444343740542
   },
   {
-    "id": 128,
-    "url": "https://en.wikipedia.org/wiki/Graph_database",
-    "score": 0.004723408267095788
+    "id": 182,
+    "url": "https://en.wikipedia.org/wiki/Integer-valued_function",
+    "score": 0.0033802444343740542
   },
   {
-    "id": 55,
-    "url": "https://en.wikipedia.org/wiki/Partition_of_a_set",
-    "score": 0.004716429620238076
+    "id": 96,
+    "url": "https://en.wikipedia.org/wiki/Cayley_graph",
+    "score": 0.0033795490539102863
+  },
+  {
+    "id": 179,
+    "url": "https://en.wikipedia.org/wiki/Codomain",
+    "score": 0.0033599257564327486
+  },
+  {
+    "id": 68,
+    "url": "https://en.wikipedia.org/wiki/Connected_graph",
+    "score": 0.00335362493101105
+  },
+  {
+    "id": 136,
+    "url": "https://en.wikipedia.org/wiki/Wayback_Machine",
+    "score": 0.003350444837426747
+  },
+  {
+    "id": 164,
+    "url": "https://en.wikipedia.org/wiki/Category:Webarchive_template_wayback_links",
+    "score": 0.00334386416376963
+  },
+  {
+    "id": 59,
+    "url": "https://en.wikipedia.org/wiki/Path_graph",
+    "score": 0.003338614889293141
+  },
+  {
+    "id": 15,
+    "url": "https://en.wikipedia.org/wiki/Multigraph",
+    "score": 0.0033385894485444666
+  },
+  {
+    "id": 106,
+    "url": "https://en.wikipedia.org/wiki/Complement_graph",
+    "score": 0.003322739862120301
+  },
+  {
+    "id": 73,
+    "url": "https://en.wikipedia.org/wiki/Directed_acyclic_graph",
+    "score": 0.0033194834462899753
+  },
+  {
+    "id": 170,
+    "url": "https://en.wikipedia.org/wiki/File:Question_book-new.svg",
+    "score": 0.0033105367830061367
+  },
+  {
+    "id": 22,
+    "url": "https://en.wikipedia.org/wiki/Empty_set",
+    "score": 0.003272401100743177
+  },
+  {
+    "id": 75,
+    "url": "https://en.wikipedia.org/wiki/Petersen_graph",
+    "score": 0.003270052071615572
   },
   {
     "id": 173,
     "url": "https://en.wikipedia.org/wiki/Help:Referencing_for_beginners",
-    "score": 0.004696915416416075
+    "score": 0.0032614106973158264
   },
   {
-    "id": 31,
-    "url": "https://en.wikipedia.org/wiki/Quiver_(mathematics)",
-    "score": 0.004688116252986785
+    "id": 104,
+    "url": "https://en.wikipedia.org/wiki/Line_graph",
+    "score": 0.0032580864394890353
   },
   {
-    "id": 41,
-    "url": "https://en.wikipedia.org/wiki/Orientation_(graph_theory)",
-    "score": 0.004681787790618922
+    "id": 234,
+    "url": "https://en.wikipedia.org/wiki/Set_theory",
+    "score": 0.003250810385368151
   },
   {
-    "id": 78,
-    "url": "https://en.wikipedia.org/wiki/Chordal_graph",
-    "score": 0.004678718919826834
+    "id": 83,
+    "url": "https://en.wikipedia.org/wiki/Strongly_regular_graph",
+    "score": 0.0032490380132104988
   },
   {
-    "id": 163,
-    "url": "https://en.wikipedia.org/wiki/Category:Graph_theory",
-    "score": 0.0046738988854754205
+    "id": 129,
+    "url": "https://en.wikipedia.org/wiki/Graph_drawing",
+    "score": 0.00323667380935473
   },
   {
-    "id": 99,
-    "url": "https://en.wikipedia.org/wiki/Forgetful_functor",
-    "score": 0.004671332824022149
+    "id": 70,
+    "url": "https://en.wikipedia.org/wiki/Disjoint_union_of_graphs",
+    "score": 0.0032220453788669367
   },
   {
-    "id": 109,
-    "url": "https://en.wikipedia.org/wiki/Tensor_product_of_graphs",
-    "score": 0.004670500587875143
+    "id": 76,
+    "url": "https://en.wikipedia.org/wiki/Perfect_graph",
+    "score": 0.003203176823600073
   },
   {
-    "id": 124,
-    "url": "https://en.wikipedia.org/wiki/Geographic_information_systems",
-    "score": 0.004658823274437455
+    "id": 284,
+    "url": "https://en.wikipedia.org/wiki/Linear_function",
+    "score": 0.003198232838107677
   },
   {
-    "id": 37,
-    "url": "https://en.wikipedia.org/wiki/Shortest_path_problem",
-    "score": 0.00465610116870662
-  },
-  {
-    "id": 52,
-    "url": "https://en.wikipedia.org/wiki/K-edge-connected_graph",
-    "score": 0.004654566733310577
-  },
-  {
-    "id": 48,
-    "url": "https://en.wikipedia.org/wiki/Finite_set",
-    "score": 0.004653387732102317
-  },
-  {
-    "id": 157,
-    "url": "https://en.wikipedia.org/wiki/Wikipedia:The_Wikipedia_Library",
-    "score": 0.004652737547612468
-  },
-  {
-    "id": 148,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-3-540-26183-4",
-    "score": 0.004641172932819688
-  },
-  {
-    "id": 3,
-    "url": "https://en.wikipedia.org/wiki/File:6n-graf.svg",
-    "score": 0.00463173225402708
-  },
-  {
-    "id": 167,
-    "url": "https://en.wikipedia.org/wiki/Category:CS1_French-language_sources_(fr)",
-    "score": 0.004630561921945352
-  },
-  {
-    "id": 72,
-    "url": "https://en.wikipedia.org/wiki/Polytree",
-    "score": 0.00462700758006751
-  },
-  {
-    "id": 110,
-    "url": "https://en.wikipedia.org/wiki/Strong_product_of_graphs",
-    "score": 0.004615781061209452
-  },
-  {
-    "id": 118,
-    "url": "https://en.wikipedia.org/wiki/Model_theory",
-    "score": 0.004611316461045822
-  },
-  {
-    "id": 95,
-    "url": "https://en.wikipedia.org/wiki/Twitter",
-    "score": 0.00460296809219616
-  },
-  {
-    "id": 93,
-    "url": "https://en.wikipedia.org/wiki/Conceptual_graph",
-    "score": 0.004600055265681637
-  },
-  {
-    "id": 132,
-    "url": "https://en.wikipedia.org/wiki/Network_theory",
-    "score": 0.0045988936027264405
-  },
-  {
-    "id": 86,
-    "url": "https://en.wikipedia.org/wiki/Graph_property",
-    "score": 0.0045947931058771254
-  },
-  {
-    "id": 103,
-    "url": "https://en.wikipedia.org/wiki/Edge_contraction",
-    "score": 0.004594134252260746
-  },
-  {
-    "id": 140,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-1-58488-090-5",
-    "score": 0.004593206655721894
-  },
-  {
-    "id": 33,
-    "url": "https://en.wikipedia.org/wiki/Mixed_graph",
-    "score": 0.004592504456472858
-  },
-  {
-    "id": 107,
-    "url": "https://en.wikipedia.org/wiki/Graph_rewriting",
-    "score": 0.004592469779966732
-  },
-  {
-    "id": 102,
-    "url": "https://en.wikipedia.org/wiki/Graph_operations",
-    "score": 0.004590891998938032
-  },
-  {
-    "id": 12,
-    "url": "https://en.wikipedia.org/wiki/Mathematical_structure",
-    "score": 0.004590259152701245
-  },
-  {
-    "id": 21,
-    "url": "https://en.wikipedia.org/wiki/Empty_graph",
-    "score": 0.00458963497559099
-  },
-  {
-    "id": 190,
-    "url": "https://en.wikipedia.org/wiki/List_of_types_of_functions",
-    "score": 0.004588005179803102
-  },
-  {
-    "id": 122,
-    "url": "https://en.wikipedia.org/wiki/Computational_biology",
-    "score": 0.004585317750578393
-  },
-  {
-    "id": 117,
-    "url": "https://en.wikipedia.org/wiki/Matroid",
-    "score": 0.00458194546035771
-  },
-  {
-    "id": 98,
-    "url": "https://en.wikipedia.org/wiki/Small_category",
-    "score": 0.004574620048438745
-  },
-  {
-    "id": 112,
-    "url": "https://en.wikipedia.org/wiki/Series%E2%80%93parallel_graph",
-    "score": 0.004568430292095382
-  },
-  {
-    "id": 111,
-    "url": "https://en.wikipedia.org/wiki/Lexicographic_product_of_graphs",
-    "score": 0.004553744791751326
-  },
-  {
-    "id": 94,
-    "url": "https://en.wikipedia.org/wiki/Finite-state_machine",
-    "score": 0.004552496437530816
-  },
-  {
-    "id": 116,
-    "url": "https://en.wikipedia.org/wiki/Simplex",
-    "score": 0.004549488250624447
-  },
-  {
-    "id": 120,
-    "url": "https://en.wikipedia.org/wiki/Cardinal_number",
-    "score": 0.004548144536012093
-  },
-  {
-    "id": 130,
-    "url": "https://en.wikipedia.org/wiki/List_of_graph_theory_topics",
-    "score": 0.004543177126509647
-  },
-  {
-    "id": 17,
-    "url": "https://en.wikipedia.org/wiki/Incidence_(graph)",
-    "score": 0.004535331566998802
-  },
-  {
-    "id": 23,
-    "url": "https://en.wikipedia.org/wiki/Computational_complexity",
-    "score": 0.00453006073806776
-  },
-  {
-    "id": 29,
-    "url": "https://en.wikipedia.org/wiki/File:Directed.svg",
-    "score": 0.004528578317430904
-  },
-  {
-    "id": 89,
-    "url": "https://en.wikipedia.org/wiki/Comma_category",
-    "score": 0.004527555360500209
-  },
-  {
-    "id": 19,
-    "url": "https://en.wikipedia.org/wiki/Infinite_graph",
-    "score": 0.0045252927184755345
-  },
-  {
-    "id": 115,
-    "url": "https://en.wikipedia.org/wiki/Simplicial_complex",
-    "score": 0.004525258041969409
-  },
-  {
-    "id": 155,
-    "url": "https://en.wikipedia.org/wiki/Dover_Publications",
-    "score": 0.004525015306426532
-  },
-  {
-    "id": 2,
-    "url": "https://en.wikipedia.org/wiki/Graph_(disambiguation)",
-    "score": 0.004520654735781278
-  },
-  {
-    "id": 100,
-    "url": "https://en.wikipedia.org/wiki/Category_of_small_categories",
-    "score": 0.004519033609119921
-  },
-  {
-    "id": 97,
-    "url": "https://en.wikipedia.org/wiki/Schreier_coset_graph",
-    "score": 0.004514967788776731
-  },
-  {
-    "id": 38,
-    "url": "https://en.wikipedia.org/wiki/Traveling_salesman_problem",
-    "score": 0.004511196718735608
-  },
-  {
-    "id": 135,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-486-67870-2",
-    "score": 0.004510182430931443
-  },
-  {
-    "id": 46,
-    "url": "https://en.wikipedia.org/wiki/File:Complete_graph_K5.svg",
-    "score": 0.004510182430931443
-  },
-  {
-    "id": 26,
-    "url": "https://en.wikipedia.org/wiki/Symmetric_matrix",
-    "score": 0.004509488900808938
-  },
-  {
-    "id": 24,
-    "url": "https://en.wikipedia.org/wiki/Symmetric_relation",
-    "score": 0.004509358863910968
-  },
-  {
-    "id": 123,
-    "url": "https://en.wikipedia.org/wiki/Power_graph_analysis",
-    "score": 0.004507807090261861
-  },
-  {
-    "id": 131,
-    "url": "https://en.wikipedia.org/wiki/List_of_publications_in_mathematics",
-    "score": 0.004506073264955598
-  },
-  {
-    "id": 145,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-07-005489-9",
-    "score": 0.004499970199877548
-  },
-  {
-    "id": 9,
-    "url": "https://en.wikipedia.org/wiki/James_Joseph_Sylvester",
-    "score": 0.00449755151357531
-  },
-  {
-    "id": 121,
-    "url": "https://en.wikipedia.org/wiki/Continuous_graph",
-    "score": 0.004493190942930056
-  },
-  {
-    "id": 125,
-    "url": "https://en.wikipedia.org/wiki/Geometric_networks",
-    "score": 0.004491604492774824
-  },
-  {
-    "id": 147,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-387-98488-9",
-    "score": 0.00448974063057059
-  },
-  {
-    "id": 153,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-1-58488-291-6",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 141,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-03-010567-8",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 34,
-    "url": "https://en.wikipedia.org/wiki/File:Example_of_simple_mixed_graph.jpg",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 42,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=8",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 126,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=23",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 133,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=24",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 152,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-262-09016-2",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 151,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-201-41033-4",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 40,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=7",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 149,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-262-07169-7",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 146,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-521-45897-9",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 144,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=25",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 39,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=6",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 143,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-53492-373-0",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 142,
-    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-13-325012-1",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 36,
-    "url": "https://en.wikipedia.org/wiki/File:Weighted_network.svg",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 35,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=5",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 91,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=20",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 156,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=27",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 62,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=14",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 64,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=15",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 168,
-    "url": "https://en.wikipedia.org/wiki/Category:Inconsistent_wikidata_for_Commons_category",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 66,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=16",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 71,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=17",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 74,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=18",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 81,
-    "url": "https://en.wikipedia.org/wiki/Arc-transitive_graph",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 85,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=19",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 44,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=9",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 101,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=21",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 113,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=22",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 119,
-    "url": "https://en.wikipedia.org/wiki/Structure_(model_theory)",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 14,
-    "url": "https://en.wikipedia.org/wiki/File:Undirected.svg",
-    "score": 0.004485284699533493
+    "id": 51,
+    "url": "https://en.wikipedia.org/wiki/K-vertex-connected_graph",
+    "score": 0.0031901681207778853
   },
   {
     "id": 13,
     "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=2",
-    "score": 0.004485284699533493
+    "score": 0.0031880056571405592
   },
   {
     "id": 11,
     "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=1",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 10,
-    "url": "https://en.wikipedia.org/wiki/Chemical_structure",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 8,
-    "url": "https://en.wikipedia.org/wiki/Diagrammatic_form",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 53,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=12",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 58,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=13",
-    "score": 0.004485284699533493
-  },
-  {
-    "id": 154,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=26",
-    "score": 0.004485284699533493
+    "score": 0.0031880056571405592
   },
   {
     "id": 27,
     "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=3",
-    "score": 0.004485284699533493
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 74,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=18",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 133,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=24",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 66,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=16",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 126,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=23",
+    "score": 0.0031880056571405592
   },
   {
     "id": 47,
     "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=10",
-    "score": 0.004485284699533493
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 113,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=22",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 44,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=9",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 101,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=21",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 42,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=8",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 71,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=17",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 40,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=7",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 91,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=20",
+    "score": 0.0031880056571405592
   },
   {
     "id": 32,
     "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=4",
-    "score": 0.004485284699533493
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 39,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=6",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 34,
+    "url": "https://en.wikipedia.org/wiki/File:Example_of_simple_mixed_graph.jpg",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 85,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=19",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 35,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=5",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 62,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=14",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 156,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=27",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 58,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=13",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 154,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=26",
+    "score": 0.0031880056571405592
   },
   {
     "id": 49,
     "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=11",
-    "score": 0.004485284699533493
+    "score": 0.0031880056571405592
   },
   {
-    "id": 161,
-    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&oldid=1318446031",
-    "score": 0.004463481846307222
+    "id": 64,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=15",
+    "score": 0.0031880056571405592
   },
   {
-    "id": 169,
-    "url": "https://en.wikipedia.org/wiki/Functional_graph",
-    "score": 0.004397492455150816
+    "id": 53,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=12",
+    "score": 0.0031880056571405592
   },
   {
-    "id": 175,
-    "url": "https://en.wikipedia.org/wiki/File:Polynomial_of_degree_three.svg",
-    "score": 0.004374970064422446
+    "id": 144,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&action=edit&section=25",
+    "score": 0.0031880056571405592
+  },
+  {
+    "id": 82,
+    "url": "https://en.wikipedia.org/wiki/Distance-transitive_graph",
+    "score": 0.003182858145658768
+  },
+  {
+    "id": 55,
+    "url": "https://en.wikipedia.org/wiki/Partition_of_a_set",
+    "score": 0.0031758110582759532
+  },
+  {
+    "id": 289,
+    "url": "https://en.wikipedia.org/wiki/Limit_(mathematics)",
+    "score": 0.003174199810859906
+  },
+  {
+    "id": 84,
+    "url": "https://en.wikipedia.org/wiki/Distance-regular_graph",
+    "score": 0.003173987804620953
+  },
+  {
+    "id": 30,
+    "url": "https://en.wikipedia.org/wiki/Multiple_edges",
+    "score": 0.00317021409356758
+  },
+  {
+    "id": 298,
+    "url": "https://en.wikipedia.org/wiki/Partial_derivative",
+    "score": 0.0031699512058312776
+  },
+  {
+    "id": 283,
+    "url": "https://en.wikipedia.org/wiki/Free_variables_and_bound_variables",
+    "score": 0.0031642270373795326
+  },
+  {
+    "id": 77,
+    "url": "https://en.wikipedia.org/wiki/Cograph",
+    "score": 0.003153923534166391
+  },
+  {
+    "id": 139,
+    "url": "https://en.wikipedia.org/wiki/CRC_Press",
+    "score": 0.003150209184859926
+  },
+  {
+    "id": 291,
+    "url": "https://en.wikipedia.org/wiki/Limit_of_a_function",
+    "score": 0.003148623378192554
+  },
+  {
+    "id": 297,
+    "url": "https://en.wikipedia.org/wiki/Second_derivative",
+    "score": 0.0031340203884534347
+  },
+  {
+    "id": 157,
+    "url": "https://en.wikipedia.org/wiki/Wikipedia:The_Wikipedia_Library",
+    "score": 0.003130950538113388
+  },
+  {
+    "id": 108,
+    "url": "https://en.wikipedia.org/wiki/Cartesian_product_of_graphs",
+    "score": 0.003130280598398295
+  },
+  {
+    "id": 4,
+    "url": "https://en.wikipedia.org/wiki/Discrete_mathematics",
+    "score": 0.003124412265704061
+  },
+  {
+    "id": 87,
+    "url": "https://en.wikipedia.org/wiki/Null_graph",
+    "score": 0.0031218681908366194
+  },
+  {
+    "id": 190,
+    "url": "https://en.wikipedia.org/wiki/List_of_types_of_functions",
+    "score": 0.003121376336362247
+  },
+  {
+    "id": 237,
+    "url": "https://en.wikipedia.org/wiki/Interval_(mathematics)",
+    "score": 0.0031212576128684328
+  },
+  {
+    "id": 296,
+    "url": "https://en.wikipedia.org/wiki/Differential_calculus",
+    "score": 0.003117653506806223
   },
   {
     "id": 172,
     "url": "https://en.wikipedia.org/wiki/Special:EditPage/Graph_of_a_function",
-    "score": 0.004374970064422446
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 241,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_of_a_function&action=edit&section=3",
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 265,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_of_a_function&action=edit&section=6",
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 250,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_of_a_function&action=edit&section=5",
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 246,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_of_a_function&action=edit&section=4",
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 277,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_of_a_function&action=edit&section=8",
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 270,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_of_a_function&action=edit&section=7",
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 240,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_of_a_function&action=edit&section=2",
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 238,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_of_a_function&action=edit&section=1",
+    "score": 0.00311725493507699
+  },
+  {
+    "id": 293,
+    "url": "https://en.wikipedia.org/wiki/Limit_of_a_sequence",
+    "score": 0.0031158641741494556
+  },
+  {
+    "id": 127,
+    "url": "https://en.wikipedia.org/wiki/Graph_(abstract_data_type)",
+    "score": 0.003114447972473246
+  },
+  {
+    "id": 114,
+    "url": "https://en.wikipedia.org/wiki/Hypergraph",
+    "score": 0.0031121837458412223
+  },
+  {
+    "id": 260,
+    "url": "https://en.wikipedia.org/wiki/Slope",
+    "score": 0.0031086135607772446
+  },
+  {
+    "id": 281,
+    "url": "https://en.wikipedia.org/wiki/Factorial",
+    "score": 0.003108562679279896
+  },
+  {
+    "id": 48,
+    "url": "https://en.wikipedia.org/wiki/Finite_set",
+    "score": 0.003108028423557733
+  },
+  {
+    "id": 288,
+    "url": "https://en.wikipedia.org/wiki/Tangent",
+    "score": 0.0031066376626301983
+  },
+  {
+    "id": 36,
+    "url": "https://en.wikipedia.org/wiki/File:Weighted_network.svg",
+    "score": 0.0031055776314354304
+  },
+  {
+    "id": 279,
+    "url": "https://en.wikipedia.org/wiki/Precalculus",
+    "score": 0.003105043375713268
+  },
+  {
+    "id": 299,
+    "url": "https://en.wikipedia.org/wiki/Differential_(mathematics)",
+    "score": 0.0030998534629836857
+  },
+  {
+    "id": 286,
+    "url": "https://en.wikipedia.org/wiki/Rolle%27s_theorem",
+    "score": 0.0030998534629836857
+  },
+  {
+    "id": 235,
+    "url": "https://en.wikipedia.org/wiki/Map_(mathematics)",
+    "score": 0.0030964020014135223
+  },
+  {
+    "id": 261,
+    "url": "https://en.wikipedia.org/wiki/Stationary_point",
+    "score": 0.003088939381802358
+  },
+  {
+    "id": 105,
+    "url": "https://en.wikipedia.org/wiki/Dual_graph",
+    "score": 0.0030868532404110553
+  },
+  {
+    "id": 292,
+    "url": "https://en.wikipedia.org/wiki/One-sided_limit",
+    "score": 0.0030863613859366834
+  },
+  {
+    "id": 109,
+    "url": "https://en.wikipedia.org/wiki/Tensor_product_of_graphs",
+    "score": 0.003084724697771962
+  },
+  {
+    "id": 229,
+    "url": "https://en.wikipedia.org/wiki/Engineering",
+    "score": 0.003083698587575427
+  },
+  {
+    "id": 118,
+    "url": "https://en.wikipedia.org/wiki/Model_theory",
+    "score": 0.0030821297414071708
+  },
+  {
+    "id": 41,
+    "url": "https://en.wikipedia.org/wiki/Orientation_(graph_theory)",
+    "score": 0.0030810951509610777
+  },
+  {
+    "id": 128,
+    "url": "https://en.wikipedia.org/wiki/Graph_database",
+    "score": 0.0030808407434743334
+  },
+  {
+    "id": 52,
+    "url": "https://en.wikipedia.org/wiki/K-edge-connected_graph",
+    "score": 0.003077185755914775
+  },
+  {
+    "id": 31,
+    "url": "https://en.wikipedia.org/wiki/Quiver_(mathematics)",
+    "score": 0.003076405572955426
+  },
+  {
+    "id": 99,
+    "url": "https://en.wikipedia.org/wiki/Forgetful_functor",
+    "score": 0.003075625389996077
+  },
+  {
+    "id": 167,
+    "url": "https://en.wikipedia.org/wiki/Category:CS1_French-language_sources_(fr)",
+    "score": 0.00307483672678717
+  },
+  {
+    "id": 253,
+    "url": "https://en.wikipedia.org/wiki/Concave_function",
+    "score": 0.0030710969367320298
+  },
+  {
+    "id": 78,
+    "url": "https://en.wikipedia.org/wiki/Chordal_graph",
+    "score": 0.0030670942589405875
+  },
+  {
+    "id": 233,
+    "url": "https://en.wikipedia.org/wiki/Foundations_of_mathematics",
+    "score": 0.003066110549991843
+  },
+  {
+    "id": 295,
+    "url": "https://en.wikipedia.org/wiki/(%CE%B5,_%CE%B4)-definition_of_limit",
+    "score": 0.0030613192089914937
+  },
+  {
+    "id": 72,
+    "url": "https://en.wikipedia.org/wiki/Polytree",
+    "score": 0.0030546452525892363
+  },
+  {
+    "id": 163,
+    "url": "https://en.wikipedia.org/wiki/Category:Graph_theory",
+    "score": 0.003054619811840562
+  },
+  {
+    "id": 290,
+    "url": "https://en.wikipedia.org/wiki/Indeterminate_form",
+    "score": 0.0030532290509130275
+  },
+  {
+    "id": 175,
+    "url": "https://en.wikipedia.org/wiki/File:Polynomial_of_degree_three.svg",
+    "score": 0.003051829809735934
+  },
+  {
+    "id": 37,
+    "url": "https://en.wikipedia.org/wiki/Shortest_path_problem",
+    "score": 0.003050464489557073
+  },
+  {
+    "id": 287,
+    "url": "https://en.wikipedia.org/wiki/Secant_line",
+    "score": 0.0030490991693782124
+  },
+  {
+    "id": 249,
+    "url": "https://en.wikipedia.org/wiki/Cartesian_coordinate_system",
+    "score": 0.0030486157951533986
+  },
+  {
+    "id": 110,
+    "url": "https://en.wikipedia.org/wiki/Strong_product_of_graphs",
+    "score": 0.0030434937244202816
+  },
+  {
+    "id": 285,
+    "url": "https://en.wikipedia.org/wiki/Radian",
+    "score": 0.0030425778574680023
+  },
+  {
+    "id": 103,
+    "url": "https://en.wikipedia.org/wiki/Edge_contraction",
+    "score": 0.0030415432670219088
+  },
+  {
+    "id": 282,
+    "url": "https://en.wikipedia.org/wiki/Finite_difference",
+    "score": 0.0030400761838483507
+  },
+  {
+    "id": 3,
+    "url": "https://en.wikipedia.org/wiki/File:6n-graf.svg",
+    "score": 0.0030396691318695596
+  },
+  {
+    "id": 155,
+    "url": "https://en.wikipedia.org/wiki/Dover_Publications",
+    "score": 0.0030363787950410015
+  },
+  {
+    "id": 116,
+    "url": "https://en.wikipedia.org/wiki/Simplex",
+    "score": 0.0030344283376426287
+  },
+  {
+    "id": 280,
+    "url": "https://en.wikipedia.org/wiki/Binomial_theorem",
+    "score": 0.003033724476929303
+  },
+  {
+    "id": 33,
+    "url": "https://en.wikipedia.org/wiki/Mixed_graph",
+    "score": 0.0030335548719381406
+  },
+  {
+    "id": 125,
+    "url": "https://en.wikipedia.org/wiki/Geometric_networks",
+    "score": 0.003033232622454931
+  },
+  {
+    "id": 124,
+    "url": "https://en.wikipedia.org/wiki/Geographic_information_systems",
+    "score": 0.003033232622454931
+  },
+  {
+    "id": 102,
+    "url": "https://en.wikipedia.org/wiki/Graph_operations",
+    "score": 0.003029933805376814
+  },
+  {
+    "id": 111,
+    "url": "https://en.wikipedia.org/wiki/Lexicographic_product_of_graphs",
+    "score": 0.003029187543415698
+  },
+  {
+    "id": 148,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-3-540-26183-4",
+    "score": 0.003022649271006371
+  },
+  {
+    "id": 21,
+    "url": "https://en.wikipedia.org/wiki/Empty_graph",
+    "score": 0.0030220471732877435
+  },
+  {
+    "id": 120,
+    "url": "https://en.wikipedia.org/wiki/Cardinal_number",
+    "score": 0.0030215722793124873
+  },
+  {
+    "id": 294,
+    "url": "https://en.wikipedia.org/wiki/Order_of_approximation",
+    "score": 0.0030215044373160223
+  },
+  {
+    "id": 12,
+    "url": "https://en.wikipedia.org/wiki/Mathematical_structure",
+    "score": 0.0030192402106839983
+  },
+  {
+    "id": 93,
+    "url": "https://en.wikipedia.org/wiki/Conceptual_graph",
+    "score": 0.0030175017595245796
+  },
+  {
+    "id": 17,
+    "url": "https://en.wikipedia.org/wiki/Incidence_(graph)",
+    "score": 0.0030153308156376955
+  },
+  {
+    "id": 107,
+    "url": "https://en.wikipedia.org/wiki/Graph_rewriting",
+    "score": 0.0030151272896483004
+  },
+  {
+    "id": 2,
+    "url": "https://en.wikipedia.org/wiki/Graph_(disambiguation)",
+    "score": 0.0030141690214482305
+  },
+  {
+    "id": 86,
+    "url": "https://en.wikipedia.org/wiki/Graph_property",
+    "score": 0.0030135838842287187
+  },
+  {
+    "id": 276,
+    "url": "https://en.wikipedia.org/wiki/Internet_Archive",
+    "score": 0.0030101917844054626
+  },
+  {
+    "id": 112,
+    "url": "https://en.wikipedia.org/wiki/Series%E2%80%93parallel_graph",
+    "score": 0.003009733850929323
+  },
+  {
+    "id": 95,
+    "url": "https://en.wikipedia.org/wiki/Twitter",
+    "score": 0.0030065622375945785
+  },
+  {
+    "id": 247,
+    "url": "https://en.wikipedia.org/wiki/File:F(x,y)%3D%E2%88%92((cosx)%5E2_%2B_(cosy)%5E2)%5E2.PNG",
+    "score": 0.0030024069153110886
+  },
+  {
+    "id": 98,
+    "url": "https://en.wikipedia.org/wiki/Small_category",
+    "score": 0.003001516489107484
+  },
+  {
+    "id": 132,
+    "url": "https://en.wikipedia.org/wiki/Network_theory",
+    "score": 0.003000804148144601
+  },
+  {
+    "id": 100,
+    "url": "https://en.wikipedia.org/wiki/Category_of_small_categories",
+    "score": 0.002997802139801019
+  },
+  {
+    "id": 117,
+    "url": "https://en.wikipedia.org/wiki/Matroid",
+    "score": 0.0029957923206557395
+  },
+  {
+    "id": 236,
+    "url": "https://en.wikipedia.org/wiki/File:X%5E4_-_4%5Ex.PNG",
+    "score": 0.002993655297767088
+  },
+  {
+    "id": 24,
+    "url": "https://en.wikipedia.org/wiki/Symmetric_relation",
+    "score": 0.0029918320441120875
+  },
+  {
+    "id": 140,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-1-58488-090-5",
+    "score": 0.002991450432881971
+  },
+  {
+    "id": 220,
+    "url": "https://en.wikipedia.org/wiki/Plane_(geometry)",
+    "score": 0.002990373441188087
+  },
+  {
+    "id": 97,
+    "url": "https://en.wikipedia.org/wiki/Schreier_coset_graph",
+    "score": 0.002988143135554296
+  },
+  {
+    "id": 122,
+    "url": "https://en.wikipedia.org/wiki/Computational_biology",
+    "score": 0.0029868626178710172
+  },
+  {
+    "id": 219,
+    "url": "https://en.wikipedia.org/wiki/Cartesian_coordinates",
+    "score": 0.0029798155304882022
+  },
+  {
+    "id": 89,
+    "url": "https://en.wikipedia.org/wiki/Comma_category",
+    "score": 0.0029782806053181786
+  },
+  {
+    "id": 123,
+    "url": "https://en.wikipedia.org/wiki/Power_graph_analysis",
+    "score": 0.0029711232746911075
+  },
+  {
+    "id": 94,
+    "url": "https://en.wikipedia.org/wiki/Finite-state_machine",
+    "score": 0.0029689692913033396
+  },
+  {
+    "id": 14,
+    "url": "https://en.wikipedia.org/wiki/File:Undirected.svg",
+    "score": 0.002967476767381107
+  },
+  {
+    "id": 46,
+    "url": "https://en.wikipedia.org/wiki/File:Complete_graph_K5.svg",
+    "score": 0.0029673156426395023
+  },
+  {
+    "id": 267,
+    "url": "https://en.wikipedia.org/wiki/Tom_M._Apostol",
+    "score": 0.0029668068276660136
+  },
+  {
+    "id": 254,
+    "url": "https://en.wikipedia.org/wiki/Convex_function",
+    "score": 0.0029649157320145486
+  },
+  {
+    "id": 23,
+    "url": "https://en.wikipedia.org/wiki/Computational_complexity",
+    "score": 0.002963804819322432
+  },
+  {
+    "id": 130,
+    "url": "https://en.wikipedia.org/wiki/List_of_graph_theory_topics",
+    "score": 0.0029635758525843625
+  },
+  {
+    "id": 29,
+    "url": "https://en.wikipedia.org/wiki/File:Directed.svg",
+    "score": 0.002962829590623246
+  },
+  {
+    "id": 115,
+    "url": "https://en.wikipedia.org/wiki/Simplicial_complex",
+    "score": 0.0029589625968247336
+  },
+  {
+    "id": 244,
+    "url": "https://en.wikipedia.org/wiki/Real_line",
+    "score": 0.002957122382670617
+  },
+  {
+    "id": 26,
+    "url": "https://en.wikipedia.org/wiki/Symmetric_matrix",
+    "score": 0.0029569612579290125
+  },
+  {
+    "id": 248,
+    "url": "https://en.wikipedia.org/wiki/Trigonometric_function",
+    "score": 0.0029557485822421983
+  },
+  {
+    "id": 121,
+    "url": "https://en.wikipedia.org/wiki/Continuous_graph",
+    "score": 0.002952449765164081
+  },
+  {
+    "id": 228,
+    "url": "https://en.wikipedia.org/wiki/Science",
+    "score": 0.002951703503202965
+  },
+  {
+    "id": 19,
+    "url": "https://en.wikipedia.org/wiki/Infinite_graph",
+    "score": 0.002949651282809895
+  },
+  {
+    "id": 10,
+    "url": "https://en.wikipedia.org/wiki/Chemical_structure",
+    "score": 0.0029483538046274995
+  },
+  {
+    "id": 252,
+    "url": "https://en.wikipedia.org/wiki/Chart",
+    "score": 0.0029478110686557784
+  },
+  {
+    "id": 221,
+    "url": "https://en.wikipedia.org/wiki/Plane_curve",
+    "score": 0.0029471665696893597
+  },
+  {
+    "id": 243,
+    "url": "https://en.wikipedia.org/wiki/Range_of_a_function",
+    "score": 0.002946148939742383
+  },
+  {
+    "id": 135,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-486-67870-2",
+    "score": 0.002944503771328103
+  },
+  {
+    "id": 81,
+    "url": "https://en.wikipedia.org/wiki/Arc-transitive_graph",
+    "score": 0.0029442324033422426
+  },
+  {
+    "id": 38,
+    "url": "https://en.wikipedia.org/wiki/Traveling_salesman_problem",
+    "score": 0.0029415526444818707
+  },
+  {
+    "id": 256,
+    "url": "https://en.wikipedia.org/wiki/Critical_point_(mathematics)",
+    "score": 0.0029399922785631727
+  },
+  {
+    "id": 262,
+    "url": "https://en.wikipedia.org/wiki/Tetraview",
+    "score": 0.0029384149521453585
+  },
+  {
+    "id": 131,
+    "url": "https://en.wikipedia.org/wiki/List_of_publications_in_mathematics",
+    "score": 0.0029371005134638467
+  },
+  {
+    "id": 226,
+    "url": "https://en.wikipedia.org/wiki/Surface_(mathematics)",
+    "score": 0.0029345309978477297
+  },
+  {
+    "id": 272,
+    "url": "https://en.wikipedia.org/wiki/World_Scientific_Publishing",
+    "score": 0.0029336575321432415
+  },
+  {
+    "id": 225,
+    "url": "https://en.wikipedia.org/wiki/Three-dimensional_space",
+    "score": 0.002932987592428148
+  },
+  {
+    "id": 9,
+    "url": "https://en.wikipedia.org/wiki/James_Joseph_Sylvester",
+    "score": 0.002932868868934334
+  },
+  {
+    "id": 145,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-07-005489-9",
+    "score": 0.0029308420892899386
+  },
+  {
+    "id": 168,
+    "url": "https://en.wikipedia.org/wiki/Category:Inconsistent_wikidata_for_Commons_category",
+    "score": 0.002928942513388915
+  },
+  {
+    "id": 264,
+    "url": "https://en.wikipedia.org/wiki/Y-intercept",
+    "score": 0.0029272295029781703
+  },
+  {
+    "id": 251,
+    "url": "https://en.wikipedia.org/wiki/Asymptote",
+    "score": 0.0029249822368452635
+  },
+  {
+    "id": 147,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-387-98488-9",
+    "score": 0.002924193573636356
+  },
+  {
+    "id": 8,
+    "url": "https://en.wikipedia.org/wiki/Diagrammatic_form",
+    "score": 0.002923209864687612
+  },
+  {
+    "id": 119,
+    "url": "https://en.wikipedia.org/wiki/Structure_(model_theory)",
+    "score": 0.0029230911411937976
+  },
+  {
+    "id": 149,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-262-07169-7",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 153,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-1-58488-291-6",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 143,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-53492-373-0",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 141,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-03-010567-8",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 152,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-262-09016-2",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 142,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-13-325012-1",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 151,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-201-41033-4",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 146,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-521-45897-9",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 150,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-8493-3982-0",
+    "score": 0.002921284848037914
+  },
+  {
+    "id": 161,
+    "url": "https://en.wikipedia.org/w/index.php?title=Graph_(discrete_mathematics)&oldid=1318446031",
+    "score": 0.002917027762759727
+  },
+  {
+    "id": 242,
+    "url": "https://en.wikipedia.org/wiki/File:Three-dimensional_graph.png",
+    "score": 0.0029158320475720294
+  },
+  {
+    "id": 222,
+    "url": "https://en.wikipedia.org/wiki/Plot_(graphics)",
+    "score": 0.0029056727086013766
+  },
+  {
+    "id": 245,
+    "url": "https://en.wikipedia.org/wiki/Cartesian_plane",
+    "score": 0.0029037985734490274
+  },
+  {
+    "id": 258,
+    "url": "https://en.wikipedia.org/wiki/Epigraph_(mathematics)",
+    "score": 0.002898472976726515
+  },
+  {
+    "id": 255,
+    "url": "https://en.wikipedia.org/wiki/Contour_line",
+    "score": 0.0028931897812517933
+  },
+  {
+    "id": 231,
+    "url": "https://en.wikipedia.org/wiki/Finance",
+    "score": 0.0028862274963645596
+  },
+  {
+    "id": 259,
+    "url": "https://en.wikipedia.org/wiki/Normal_(geometry)",
+    "score": 0.002883598619001536
+  },
+  {
+    "id": 169,
+    "url": "https://en.wikipedia.org/wiki/Functional_graph",
+    "score": 0.002883369652263466
+  },
+  {
+    "id": 230,
+    "url": "https://en.wikipedia.org/wiki/Technology",
+    "score": 0.002878739436004721
+  },
+  {
+    "id": 223,
+    "url": "https://en.wikipedia.org/wiki/Bivariate_function",
+    "score": 0.0028685292155367194
+  },
+  {
+    "id": 232,
+    "url": "https://en.wikipedia.org/wiki/Rectangular_coordinate_system",
+    "score": 0.0028684020117933475
+  },
+  {
+    "id": 263,
+    "url": "https://en.wikipedia.org/wiki/Vertical_translation",
+    "score": 0.0028668755668728825
+  },
+  {
+    "id": 224,
+    "url": "https://en.wikipedia.org/wiki/Ordered_triple",
+    "score": 0.0028642806105080914
+  },
+  {
+    "id": 266,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-486-79549-2",
+    "score": 0.0028612870824140674
+  },
+  {
+    "id": 227,
+    "url": "https://en.wikipedia.org/wiki/Surface_plot_(graphics)",
+    "score": 0.0028598369597396256
+  },
+  {
+    "id": 268,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/0-387-90685-1",
+    "score": 0.002856453340165927
+  },
+  {
+    "id": 273,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-981-4488-15-0",
+    "score": 0.002856453340165927
+  },
+  {
+    "id": 269,
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/0-387-98239-6",
+    "score": 0.002856453340165927
   }
 ]
