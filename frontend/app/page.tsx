@@ -35,6 +35,9 @@ import {
   SelectItem,
   SelectValue,
 } from "../components/ui/select";
+import 'katex/dist/katex.min.css';
+import { BlockMath } from "react-katex";
+
 
 function MouseTrail() {
   const [dots, setDots] = useState<
@@ -1087,11 +1090,9 @@ export default function Home() {
                         <div className="rounded-lg bg-slate-950/50 p-4">
                           <div className="overflow-x-auto text-center">
                             <div className="text-base text-white">
-                              <span className="font-mono text-white">
-                                {
-                                  "PR(pᵢ) = (1-d)/N + d Σ_{pⱼ ∈ M(pᵢ)} PR(pⱼ)/L(pⱼ)"
-                                }
-                              </span>
+<span className="font-mono text-white">
+ <BlockMath math="\mathrm{PR}(p_i)=\frac{1-d}{N}+d\sum_{p_j\in M(p_i)}\frac{\mathrm{PR}(p_j)}{L(p_j)}" />
+ </span>
                             </div>
                           </div>
                         </div>
