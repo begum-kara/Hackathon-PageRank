@@ -955,7 +955,7 @@ export default function Home() {
                       {/* Edge creation controls */}
                       <div className="flex items-center gap-2">
                         <Select value={edgeFrom} onValueChange={setEdgeFrom}>
-                          <SelectTrigger className="h-8 w-20 border-slate-600 bg-slate-950/50 text-sm text-white">
+                          <SelectTrigger className="h-8 w-24 border-slate-600 bg-slate-950/50 text-sm text-white">
                             <SelectValue placeholder="From" />
                           </SelectTrigger>
                           <SelectContent>
