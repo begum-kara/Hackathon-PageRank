@@ -28,9 +28,9 @@ def tokenize(text: str):
     return [t.lower() for t in TOKEN_RE.findall(text)]
 
 
-# ---------------------------------------------------------------------------
+# 
 # CPU-only version (drop-in replacement)
-# ---------------------------------------------------------------------------
+# 
 class TfidfSearchIndex:
     """
     CPU-only TF-IDF index (more efficient than original).
@@ -132,9 +132,9 @@ class TfidfSearchIndex:
         return results[:top_k]
 
 
-# ---------------------------------------------------------------------------
+# 
 # GPU TF-IDF index for cluster usage
-# ---------------------------------------------------------------------------
+# 
 class GPUTfidfSearchIndex:
     """
     TF-IDF search index optimized for GPU.
@@ -193,7 +193,7 @@ class GPUTfidfSearchIndex:
 
         self._finalized: bool = False
 
-    # ---------------------- building the index (CPU) ---------------------- #
+    # -- building the index (CPU) -- #
 
     def add_document(self, doc_id: Hashable, text: str):
         tokens = tokenize(text)
@@ -298,7 +298,7 @@ class GPUTfidfSearchIndex:
         self._upload_to_gpu()
         self._finalized = True
 
-    # ------------------------------ search (GPU) -------------------------- #
+    #  search (GPU) - #
 
     def search(self, query: str, top_k: int = 10):
         """
@@ -357,9 +357,9 @@ class GPUTfidfSearchIndex:
         return results
 
 
-# ---------------------------------------------------------------------------
+# 
 # Factory / convenience: choose CPU or GPU index automatically
-# ---------------------------------------------------------------------------
+# 
 def create_tfidf_index(prefer_gpu: bool | None = None):
     """
     Factory to create a TF-IDF index that works both on macOS (no GPU)

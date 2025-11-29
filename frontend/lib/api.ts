@@ -72,7 +72,7 @@ export async function searchTum(query: string, topK = 10): Promise<SearchRespons
 }
 
 
-// ---------- URL PageRank demo ----------
+//  URL PageRank demo 
 
 export interface UrlPage {
   node_id: number;

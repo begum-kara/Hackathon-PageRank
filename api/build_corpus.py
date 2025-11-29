@@ -7,7 +7,7 @@ import json
 
 from config import CLUSTER_USER, CLUSTER_HOST, REMOTE_WORKDIR, REMOTE_BIN
 
-# ---------- Paths & imports ----------
+#  Paths & imports 
 
 API_DIR = Path(__file__).resolve().parent
 ROOT_DIR = API_DIR.parent
@@ -39,7 +39,7 @@ def run_cmd(cmd, cwd=None):
     subprocess.run(cmd, check=True, cwd=cwd)
 
 
-# ----------------- Step 0: crawl + write pages.json & edges.txt -----------------
+#  Step 0: crawl + write pages.json & edges.txt 
 
 def step_crawl(start_url: str, max_pages: int, lang: str | None, workers: int):
     """
@@ -70,12 +70,12 @@ def step_crawl(start_url: str, max_pages: int, lang: str | None, workers: int):
     print(f"[crawl] Unique pages (url_to_id): {len(url_to_id)}")
     print(f"[crawl] Raw edges (url,url): {len(edges_url)}")
 
-    # ---- write pages.json ----
+    #  write pages.json 
     with CRAWLER_PAGES_JSON.open("w", encoding="utf-8") as jf:
         json.dump(pages, jf, ensure_ascii=False, indent=2)
     print(f"[crawl] Wrote pages.json -> {CRAWLER_PAGES_JSON}")
 
-    # ---- write edges.txt (src_id dst_id) for CUDA ----
+    #  write edges.txt (src_id dst_id) for CUDA 
     # edges_url is (src_url, tgt_url); map via url_to_id
     num_edges_written = 0
     with CRAWLER_EDGES_TXT.open("w", encoding="utf-8") as f_txt:
@@ -95,7 +95,7 @@ def step_crawl(start_url: str, max_pages: int, lang: str | None, workers: int):
     print(f"[crawl] Wrote {num_edges_written} unique edges -> {CRAWLER_EDGES_TXT}")
 
 
-# ----------------- Step 1: CUDA on cluster -----------------
+#  Step 1: CUDA on cluster 
 
 def step_run_pagerank_on_cluster(
     damping: float = 0.85,
@@ -155,7 +155,7 @@ def step_run_pagerank_on_cluster(
     print(f"[pagerank] Downloaded cluster output -> {OUTPUT_TXT_LOCAL}")
 
 
-# ----------------- Step 2: parse_pagerank.py -----------------
+#  Step 2: parse_pagerank.py 
 
 def step_parse_pagerank():
     """
@@ -195,7 +195,7 @@ def step_parse_pagerank():
         pass
 
 
-# ----------------- Step 3: check_pagerank_sum.py (optional) -----------------
+#  Step 3: check_pagerank_sum.py (optional) 
 
 def step_check_sum():
     """
@@ -210,7 +210,7 @@ def step_check_sum():
     run_cmd([sys.executable, str(CHECK_SUM_PY)], cwd=BACKEND_DATA_DIR)
 
 
-# ----------------- Main CLI -----------------
+#  Main CLI 
 
 def parse_args():
     parser = argparse.ArgumentParser(

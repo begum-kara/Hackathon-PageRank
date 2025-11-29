@@ -52,7 +52,7 @@ pagerank_norm_by_url = {}   # url -> normalized pagerank score in [0, 1]
 def _load_data_and_build_index():
     global tfidf_index, pages_by_url, pagerank_by_url, pagerank_norm_by_url
 
-    # ---- Load crawler pages (text) ----
+    #  Load crawler pages (text) 
     if not CRAWLER_PAGES_PATH.exists():
         raise RuntimeError(f"pages.json not found at {CRAWLER_PAGES_PATH}")
 
@@ -90,7 +90,7 @@ def _load_data_and_build_index():
     tfidf_index = index
 
 
-    # ---- Load PageRank (CUDA output) ----
+    #  Load PageRank (CUDA output) 
     pagerank_by_url = {}
     pagerank_norm_by_url = {}
 
@@ -113,7 +113,7 @@ def _load_data_and_build_index():
 
         pagerank_by_url[url] = score
 
-    # ---- Normalize PageRank to [0, 1] for combining ----
+    #  Normalize PageRank to [0, 1] for combining 
     if pagerank_by_url:
         values = list(pagerank_by_url.values())
         pr_min = min(values)

@@ -17,7 +17,7 @@
 } while (0)
 
 
-// ---- Basic graph struct (CPU side) ----
+//  Basic graph struct (CPU side) 
 
 struct Graph {
     int n;  // number of nodes
@@ -26,7 +26,7 @@ struct Graph {
     std::vector<unsigned char> is_dangling;       // 1 if outdeg == 0
 };
 
-// ---- CSR matrix for transition matrix P ----
+//  CSR matrix for transition matrix P 
 // P is column-stochastic, but stored in row-wise CSR form: P[i,j] is prob from j->i
 
 struct CSR {
@@ -36,7 +36,7 @@ struct CSR {
     std::vector<double> val;            // size nnz
 };
 
-// --------- Load graph from edge list file ----------
+// -- Load graph from edge list file 
 
 Graph load_graph(const char* input_path) {
     Graph g;
@@ -82,7 +82,7 @@ Graph load_graph(const char* input_path) {
     return g;
 }
 
-// --------- Build CSR for transition matrix P ---------
+// -- Build CSR for transition matrix P --
 //
 // For each edge u -> v:
 //   P[v, u] = 1 / outdeg[u]
@@ -132,7 +132,7 @@ CSR build_P(const Graph& g) {
     return P;
 }
 
-// --------- CPU PageRank using CSR ----------
+// -- CPU PageRank using CSR 
 
 std::vector<double> pagerank_cpu(const CSR& P,
                                  const std::vector<unsigned char>& is_dangling,
@@ -242,13 +242,13 @@ std::vector<double> pagerank_gpu_cuda(
     int n   = P.n;
     int nnz = (int)P.col_idx.size();
 
-    // ----- Host vectors -----
+    //  Host vectors 
     std::vector<double> r_host(n, 1.0 / n);
     std::vector<double> r_new_host(n);
 
     double teleport = (1.0 - alpha) / n;
 
-    // ----- Device memory -----
+    //  Device memory 
     int *d_row_ptr = nullptr, *d_col_idx = nullptr;
     double *d_val = nullptr, *d_r = nullptr, *d_r_new = nullptr, *d_y = nullptr;
 
@@ -352,7 +352,7 @@ bool has_gpu() {
 }
 
 
-// ------------------ MAIN --------------------
+// - MAIN 
 
 int main(int argc, char** argv) {
     if (argc < 3) {

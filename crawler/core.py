@@ -8,7 +8,7 @@ from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
-# ---------- Domain + URL helpers ----------
+#Domain + URL helpers
 
 def get_base_domain(netloc: str) -> str:
     """
@@ -60,7 +60,7 @@ def normalize_url(url: str) -> str:
     return urlunparse(parsed)
 
 
-# ---------- Language detection ----------
+#Language detection
 
 def detect_page_language(soup: BeautifulSoup) -> str | None:
     """
@@ -95,7 +95,7 @@ def detect_page_language(soup: BeautifulSoup) -> str | None:
     return lang or None
 
 
-# ---------- Text extraction (reuse soup) ----------
+#Text extraction (reuse soup)
 
 def extract_text_from_soup(soup: BeautifulSoup) -> str:
     """
@@ -158,7 +158,7 @@ def extract_text_from_soup(soup: BeautifulSoup) -> str:
     return text
 
 
-# ---------- Fetch helper (for threads) ----------
+#Fetch helper (for threads)
 
 def fetch_url(session: requests.Session, url: str, timeout: float = 2.0):
     """
@@ -172,7 +172,7 @@ def fetch_url(session: requests.Session, url: str, timeout: float = 2.0):
         return url, None
 
 
-# ---------- Main concurrent crawler ----------
+#Main concurrent crawler
 
 def crawl_graph(
     start_url: str,
@@ -271,7 +271,7 @@ def crawl_graph(
                 html = resp.text
                 soup = BeautifulSoup(html, "html.parser")
 
-                # ---------- language filter ----------
+                #  language filter 
                 page_lang = detect_page_language(soup)
 
                 if target_lang:
@@ -282,17 +282,17 @@ def crawl_graph(
                         # visited but not indexed or expanded
                         continue
 
-                # ---------- assign ID ----------
+                #  assign ID 
                 if url not in url_to_id:
                     url_to_id[url] = next_id
                     next_id += 1
                 page_id = url_to_id[url]
 
-                # ---------- store page text ----------
+                #  store page text 
                 page_text = extract_text_from_soup(soup)
                 pages.append({"id": page_id, "url": url, "text": page_text})
 
-                # ---------- parse links ----------
+                #  parse links 
                 for a in soup.find_all("a", href=True):
                     href = a["href"]
                     target = urljoin(url, href)
