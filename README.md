@@ -95,4 +95,4 @@ corepack prepare pnpm@latest --activate
 pnpm install
 pnpm dev
 ```
-Then open: http://localhost:3000
+Then go to the network or local host link.
